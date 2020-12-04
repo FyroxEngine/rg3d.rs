@@ -6,7 +6,7 @@ feature_image: "assets/light.png"
 excerpt: "A feature-rich and easy-to-use game engine written in Rust programming language"
 ---
 
-{% include button.html text="View on Github" icon="github" link="https://github.com/mrDIMAS/rg3d" color="#0366d6" %} {% include button.html text="Join Discord" link="https://discord.gg/nGhjVBU9" color="#0366d6" %} {% include button.html text="Sponsor ♥" link="https://www.patreon.com/mrdimas" color="#0366d6" %} 
+{% include button.html text="Github" icon="github" link="https://github.com/mrDIMAS/rg3d" color="#0366d6" %} {% include button.html text="Join Discord" link="https://discord.gg/nGhjVBU9" color="#0366d6" %} {% include button.html text="Sponsor ♥" link="https://www.patreon.com/mrdimas" color="#0366d6" %} {% include button.html text="Follow on Twitter" link="https://twitter.com/DmitryNStepanov" icon="twitter" color="#0366d6" %} 
 
 ## Features
 

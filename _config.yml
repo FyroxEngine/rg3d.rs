@@ -40,14 +40,27 @@ twitter:
 navigation_header:
 - title: Home
   url: /
+- title: Blog
+  url: /blog/
 - title: "View on GitHub"
   url: https://github.com/mrDIMAS
 - title: Sponsor
   url: https://www.patreon.com/mrdimas
 
+logo: "/assets/logos/logo.svg"
+
 navigation_footer:
 - title: Created by Dmitry Stepanov
   url: https://github.com/mrDIMAS
+
+collections:
+  posts:
+    title: Posts # Needed for Siteleaf
+    output: true
+    description: "RG3D news"
+    feature_text: |
+      Welcome to the blog
+    feature_image: "https://picsum.photos/2560/600?image=866"
 
 defaults:
   -
