@@ -43,7 +43,7 @@ navigation_header:
 - title: Blog
   url: /blog/
 - title: "View on GitHub"
-  url: https://github.com/mrDIMAS
+  url: https://github.com/mrDIMAS/rg3d
 - title: Sponsor
   url: https://www.patreon.com/mrdimas
 
@@ -58,9 +58,7 @@ collections:
     title: Posts # Needed for Siteleaf
     output: true
     description: "RG3D news"
-    feature_text: |
-      Welcome to the blog
-    feature_image: "https://picsum.photos/2560/600?image=866"
+    feature_image: "../assets/light.png"
 
 defaults:
   -
