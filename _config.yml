@@ -65,7 +65,7 @@ defaults:
     scope:
       path: ""
     values:
-      image: "/assets/default-social-image.png" # Default image for sharing
+      image: "/assets/logos/logo.svg" # Default image for sharing
   -
     scope:
       path: ""
