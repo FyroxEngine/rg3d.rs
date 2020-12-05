@@ -1,9 +1,9 @@
 ---
 feature_text: |
-  <div style="background-color:black;color:white;padding:5px;font-size:40px">RG3D</div>
-  <div style="background-color:black;color:white;padding:5px">A feature-rich and easy-to-use game engine written in Rust programming language</div>  
+  <div style="background-color:black;color:white;padding:4px;font-size:40px">RG3D</div>
+  <div style="background-color:black;color:white;padding:4px;font-size:18px">A feature-rich and easy-to-use game engine written in the Rust programming language</div>  
 feature_image: "assets/light.png"
-excerpt: "A feature-rich and easy-to-use game engine written in Rust programming language"
+excerpt: "A feature-rich and easy-to-use game engine written in the Rust programming language"
 ---
 
 {% include button.html text="Github" icon="github" link="https://github.com/mrDIMAS/rg3d" color="#0366d6" %} {% include button.html text="Join Discord" link="https://discord.gg/nGhjVBU9" color="#0366d6" %} {% include button.html text="Sponsor ♥" link="https://www.patreon.com/mrdimas" color="#0366d6" %} {% include button.html text="Follow on Twitter" link="https://twitter.com/DmitryNStepanov" icon="twitter" color="#0366d6" %} 
@@ -62,3 +62,104 @@ Gameplay video
 ## Examples
 
 rg3d has lots of examples covering various aspects of the engine, they can be found [here](https://github.com/mrDIMAS/rg3d/tree/master/examples)
+
+<style type="text/css">
+	.wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-column-gap: 10px;
+		grid-row-gap: 10px;
+		border-radius: 5px;
+		grid-auto-rows: 200px;
+	}
+	.inner {
+		display: grid;
+		border-radius: 5px;
+		background: #73AD21;
+	}
+	.cell {
+		display: grid;
+		padding: 2px;
+		text-align: center;
+	}
+	.round_image {
+		border-radius: 5px;
+	}
+</style>
+
+<div class="wrapper">
+   <div class="inner">
+		<div class="cell">
+			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/simple.rs">
+				<img class="round_image" src="assets/example01.png"/>
+			</a>
+		</div>
+		<div class="cell">Simple Scene</div>  
+   </div>
+   <div class="inner">
+		<div class="cell">
+			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/async.rs">
+				<img class="round_image" src="assets/example02.png"/>
+			</a>
+		</div>
+		<div class="cell">Async Loading</div>  
+   </div>
+   <div class="inner">
+		<div class="cell">
+			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/3rd_person.rs">
+				<img class="round_image" src="assets/example03.png"/>
+			</a>
+		</div>
+		<div class="cell">Walking Simulator</div>  
+	</div>
+	<div class="inner">
+		<div class="cell">
+			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/ui.rs">
+				<img class="round_image" src="assets/example04.png"/>
+			</a>
+		</div>
+		<div class="cell">User Interface</div>  
+	</div>
+	<div class="inner">
+		<div class="cell">
+			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/scene.rs">
+				<img class="round_image" src="assets/example05.png"/>
+			</a>
+		</div>
+		<div class="cell">Scene</div>  
+	</div>
+	<div class="inner">
+		<div class="cell">
+			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/lightmap.rs">
+				<img class="round_image" src="assets/example06.png"/>
+			</a>
+		</div>
+		<div class="cell">Lightmap</div>  
+	</div>
+	<div class="inner">
+		<div class="cell">
+			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/instancing.rs">
+				<img class="round_image" src="assets/example07.jpg"/>
+			</a>
+		</div>
+		<div class="cell">Instancing</div>  
+	</div>
+		<div class="inner">
+		<div class="cell">
+			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/lod.rs">
+				<img class="round_image" src="assets/example08.png"/>
+			</a>
+		</div>
+		<div class="cell">Level of detail</div>  
+	</div>
+</div>
+
+## Sponsors
+
+- [Yuki Ishii](https://www.patreon.com/user?u=9564103)
+- [Vitaliy (ArcticNoise) Chernyshev](https://www.patreon.com/user?u=2601918)
+- [Alexey Kuznetsov](https://www.patreon.com/user?u=39375025)
+
+## About
+
+RG3D stands for **R**ust **G**ame engine **3D**, it was started in the January 2019 as a hobby project to learn Rust.

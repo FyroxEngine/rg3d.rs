@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "jekyll-remote-theme"
 gem "jekyll-include-cache"
+gem "jekyll-github-contributions"
 
 gem "github-pages", group: :jekyll_plugins
 
