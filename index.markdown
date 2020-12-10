@@ -49,7 +49,9 @@ rusty-editor is a native scene editor for the rg3d game engine.
 
 Timelapse of editing process:
 
-{% include video.html id="ccfkhJE56ok" title="Timelapse" %}
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/ccfkhJE56ok" frameborder="0" allowfullscreen title="Timelapse"></iframe>
+</div>
 
 ## Showcase
 
@@ -61,7 +63,9 @@ rusty-shooter is a first-person shooter, which is a big demo for the engine.
 
 Gameplay video:
 
-{% include video.html id="UDn8ymyXPcI" title="Gameplay video" %}
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/UDn8ymyXPcI" frameborder="0" allowfullscreen title="Gameplay video"></iframe>
+</div>
 
 ## Examples
 
