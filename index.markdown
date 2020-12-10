@@ -47,6 +47,10 @@ rusty-editor is a native scene editor for the rg3d game engine.
 
 ![rusty_editor](assets/rusty_editor.png)
 
+Timelapse of editing process:
+
+{% include video.html id="ccfkhJE56ok" title="Timelapse" %}
+
 ## Showcase
 
 #### [rusty-shooter](https://github.com/mrDIMAS/rusty-shooter)
@@ -55,7 +59,7 @@ rusty-shooter is a first-person shooter, which is a big demo for the engine.
 
 [![rusty_editor](assets/rusty_shooter.jpg)](https://github.com/mrDIMAS/rusty-shooter)
 
-Gameplay video
+Gameplay video:
 
 {% include video.html id="UDn8ymyXPcI" title="Gameplay video" %}
 
