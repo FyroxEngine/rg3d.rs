@@ -2,7 +2,7 @@
 feature_text: |
   <div style="background-color:black;color:white;padding:4px;font-size:40px">RG3D</div>
   <div style="background-color:black;color:white;padding:4px;font-size:18px">A feature-rich and easy-to-use game engine written in the Rust programming language</div>  
-feature_image: "assets/light.png"
+feature_image: "assets/light.jpg"
 excerpt: "A feature-rich and easy-to-use game engine written in the Rust programming language"
 ---
 
@@ -45,7 +45,7 @@ and so on.
 
 rusty-editor is a native scene editor for the rg3d game engine.
 
-![rusty_editor](assets/rusty_editor.png)
+![rusty_editor](assets/rusty_editor.jpg)
 
 Timelapse of editing process:
 
@@ -99,7 +99,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
    <div class="inner">
 		<div class="cell">
 			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/simple.rs">
-				<img class="round_image" src="assets/example01.png"/>
+				<img class="round_image" src="assets/example01.jpg"/>
 			</a>
 		</div>
 		<div class="cell">Simple Scene</div>  
@@ -107,7 +107,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
    <div class="inner">
 		<div class="cell">
 			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/async.rs">
-				<img class="round_image" src="assets/example02.png"/>
+				<img class="round_image" src="assets/example02.jpg"/>
 			</a>
 		</div>
 		<div class="cell">Async Loading</div>  
@@ -115,7 +115,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
    <div class="inner">
 		<div class="cell">
 			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/3rd_person.rs">
-				<img class="round_image" src="assets/example03.png"/>
+				<img class="round_image" src="assets/example03.jpg"/>
 			</a>
 		</div>
 		<div class="cell">Walking Simulator</div>  
@@ -123,7 +123,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 	<div class="inner">
 		<div class="cell">
 			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/ui.rs">
-				<img class="round_image" src="assets/example04.png"/>
+				<img class="round_image" src="assets/example04.jpg"/>
 			</a>
 		</div>
 		<div class="cell">User Interface</div>  
@@ -131,7 +131,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 	<div class="inner">
 		<div class="cell">
 			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/scene.rs">
-				<img class="round_image" src="assets/example05.png"/>
+				<img class="round_image" src="assets/example05.jpg"/>
 			</a>
 		</div>
 		<div class="cell">Scene</div>  
@@ -139,7 +139,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 	<div class="inner">
 		<div class="cell">
 			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/lightmap.rs">
-				<img class="round_image" src="assets/example06.png"/>
+				<img class="round_image" src="assets/example06.jpg"/>
 			</a>
 		</div>
 		<div class="cell">Lightmap</div>  
@@ -155,7 +155,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 		<div class="inner">
 		<div class="cell">
 			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/lod.rs">
-				<img class="round_image" src="assets/example08.png"/>
+				<img class="round_image" src="assets/example08.jpg"/>
 			</a>
 		</div>
 		<div class="cell">Level of detail</div>  
