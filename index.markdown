@@ -1,6 +1,6 @@
 ---
 feature_text: |
-  <div style="background-color:black;color:white;padding:4px;font-size:40px">RG3D</div>
+  <div style="background-color:black;color:white;padding:4px;font-size:40px">Rust Game engine 3D</div>
   <div style="background-color:black;color:white;padding:4px;font-size:18px">A feature-rich and easy-to-use game engine written in the Rust programming language</div>  
 feature_image: "assets/light.jpg"
 excerpt: "A feature-rich and easy-to-use game engine written in the Rust programming language"
