@@ -6,7 +6,7 @@ exclude:
 - .jekyll-cache
 
 # Build settings
-remote_theme: daviddarnes/alembic
+remote_theme: daviddarnes/alembic@main
 plugins: 
 - jekyll-remote-theme
 - jekyll-sitemap
