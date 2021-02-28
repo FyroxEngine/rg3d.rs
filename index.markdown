@@ -170,6 +170,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 - [Alexey Kuznetsov](https://www.patreon.com/user?u=39375025)
 - [Ben Anderson](https://www.patreon.com/user/creators?u=14436239)
 - [Jesper Nordenberg](https://www.patreon.com/jesnor)
+- [Joseph Catrambone](https://www.patreon.com/user/creators?u=4738580)
 
 ## About
 
