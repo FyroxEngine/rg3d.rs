@@ -25,7 +25,6 @@ description: "rg3d is a feature-rich and easy-to-use game engine written in Rust
 baseurl: ""
 url: "rg3d.rs"
 repo: "https://github.com/mrDIMAS/rg3d"
-css_inline: true
 
 sass:
   style: compressed 
