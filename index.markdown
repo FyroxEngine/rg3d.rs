@@ -164,6 +164,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 
 ## Sponsors
 
+- [tom cors](https://www.patreon.com/user/creators?u=11268466)
 - [false](https://www.patreon.com/user/creators?u=713537)
 - [zrkn](https://www.patreon.com/user?u=23413376)
 - [Yuki Ishii](https://www.patreon.com/user?u=9564103)
