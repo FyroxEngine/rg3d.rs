@@ -50,10 +50,24 @@ rusty-editor is a native scene editor for the rg3d game engine.
 Timelapse of editing process:
 
 <div class="video">
-  <iframe src="https://www.youtube.com/embed/ccfkhJE56ok" frameborder="0" allowfullscreen title="Timelapse"></iframe>
+  <iframe src="https://www.youtube.com/embed/74VGnf69yDI" frameborder="0" allowfullscreen title="Timelapse"></iframe>
 </div>
 
 ## Showcase
+
+#### [Station Iapetus](https://github.com/mrDIMAS/StationIapetus)
+
+3rd person shooter in the very early development phase. 
+This is commercial project that will eventually be released in Steam.
+Also, the project is meant to be the proof that rg3d game engine is ready for commercial production.
+
+[![si](assets/station_iapetus_27_02_21_01.jpg)](https://github.com/mrDIMAS/StationIapetus)
+
+Gameplay video:
+
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/cagT0GbiLxY" frameborder="0" allowfullscreen title="Gameplay video"></iframe>
+</div>
 
 #### [rusty-shooter](https://github.com/mrDIMAS/rusty-shooter)
 
