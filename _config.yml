@@ -57,7 +57,7 @@ collections:
     title: Posts # Needed for Siteleaf
     output: true
     description: "RG3D news"
-    feature_image: "../assets/light.png"
+    feature_image: "/assets/light.jpg"
 
 defaults:
   -
