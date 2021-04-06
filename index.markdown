@@ -11,19 +11,25 @@ excerpt: "A feature-rich and easy-to-use game engine written in the Rust program
 ## Features
 
 - **High quality volumetric lighting** (directional, point, spot) with soft shadows.
+- **Deferred shading** - use tons of lights with small overhead.
 - **Built-in save/load** - save or load entire state of the engine in one call.
 - **Full-featured scene graph** with various nodes (pivot, camera, mesh, light, particle system, sprite).
 - **High quality binaural sound** with Head-Related Transfer Function (HRTF) support.
-- **Standalone scene editor** - make scenes in native engine format.
+- **Standalone scene editor** - make scenes in native engine format using the power of rusty-editor.
+- **Advanced physics**: rigid bodies, rich set of various colliders, joints, ray casting, etc.
+- **Advanced user interface** with lots of widgets, the editor is made using this UI.
+- **Advanced animation system** with animation blending machines (similar to Mecanim) and animation retargetting.
 - **Multi-camera rendering** - allows you to create picture-in-picture effects, make split-screen games
 and so on.
+- **Async asset management** - load textures, models, sound buffers asynchronously and utilize all available CPU power.
 - **Skinning** with flexible animation system.
 - **Multiple scenes** support - allows you to have separate scenes for game menu, levels and so on.
-- **Normal and environment** mapping.
+- **Normal, parallax, environment** mapping - classic techiques that tremendously improves quality of graphics.
 - **Level-of-detail (LOD)** support - allows you to change details of distant models to improve performance.
-- **Screen-Space Ambient Occlusion** (SSAO).
-- **Geometry instancing** - render lots of objects without any overhead.
-- **Render in texture** - each scene can be rendered into separate texture which, for example, allows you to build "screens" in your game.
+- **Screen-Space Ambient Occlusion** (SSAO) - add "volume" to your scenes at low cost.
+- **Fast Approximate AntiAliasing** (FXAA) - old, but good antialising.
+- **Geometry instancing** - render lots of objects without low overhead.
+- **Render in texture** - render scene in a texture and use it later in other scene.
 - **Sky box** - add details for outdoor scenes.
 - **Lightmap generator** - bake static lights into texture to improve runtime performance.
 - **Particle systems** with soft particles - flexible particles system allows you to build complex effects.
@@ -31,19 +37,16 @@ and so on.
 - **FBX Loader** - allows you to load models of any complexity from industry-standard FBX format.
 - **TTF/OTF fonts** support.
 - **Support of various texture formats**, such as: png, jpg, dds (including compressed), tga, bmp, etc.
-- **Advanced user interface** with lots of widgets.
-- **Advanced animation system** with animation blending machines (similar to Mecanim) and animation retargetting.
-- **Async asset management** (textures, models, sound buffers).
-- **Advanced physics**: rigid bodies, rich set of various colliders, joints, ray casting, etc.
 - **Powerful core library** with lots of commonly used algorithms.
 - **Fast iterative compilation**: ~3 seconds in Debug, ~8 seconds in Release.
 - **Lots of examples** covering various aspects of the engine.
 - **Production ready** - it is possible to build almost any kind of game.
-- **Documentation**
+- **Documentation and tutorials** - it's easy start making your own game!
+- **Hierarchical model resources** - combine multiple assets in prefabs and engine will do the rest of the work.
 
 ## [rusty-editor](https://github.com/mrDIMAS/rusty-editor)
 
-rusty-editor is a native scene editor for the rg3d game engine.
+The engine comes with an editor: rusty-editor is a native scene editor for the rg3d game engine.
 
 ![rusty_editor](assets/rusty_editor.jpg)
 
@@ -66,7 +69,7 @@ Also, the project is meant to be the proof that rg3d game engine is ready for co
 Gameplay video:
 
 <div class="video">
-  <iframe src="https://www.youtube.com/embed/cagT0GbiLxY" frameborder="0" allowfullscreen title="Gameplay video"></iframe>
+  <iframe src="https://www.youtube.com/embed/O_ETjSkVBME" frameborder="0" allowfullscreen title="Gameplay video"></iframe>
 </div>
 
 #### [rusty-shooter](https://github.com/mrDIMAS/rusty-shooter)
@@ -80,6 +83,13 @@ Gameplay video:
 <div class="video">
   <iframe src="https://www.youtube.com/embed/UDn8ymyXPcI" frameborder="0" allowfullscreen title="Gameplay video"></iframe>
 </div>
+
+## Tutorials
+
+Writing a 3D Shooter using rg3d:
+- [Character controller](https://rg3d.rs/tutorials/2021/03/05/tutorial1.html)
+- [Weapons](https://rg3d.rs/tutorials/2021/03/09/tutorial2.html)
+- [Bots and AI](https://rg3d.rs/tutorials/2021/03/11/tutorial3.html)
 
 ## Examples
 
@@ -177,6 +187,8 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 </div>
 
 ## Sponsors
+
+This project wouldn't exist without these people:
 
 - [tom cors](https://www.patreon.com/user/creators?u=11268466)
 - [false](https://www.patreon.com/user/creators?u=713537)
