@@ -184,6 +184,8 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 - [BlueSkye](https://www.patreon.com/EmotionalSnow/creators)
 - [L.apz](https://www.patreon.com/user/creators?u=5448832)
 - [Yuki Ishii](https://www.patreon.com/user?u=9564103)
+- [Vish Vadlamani](https://www.patreon.com/user/creators?u=42768509)
+- [Edward](https://www.patreon.com/user/creators?u=53507198)
 - [Aleks Row](https://www.patreon.com/user/creators?u=51907853)
 - [Vitaliy (ArcticNoise) Chernyshev](https://www.patreon.com/user?u=2601918)
 - [Alexey Kuznetsov](https://www.patreon.com/user?u=39375025)
