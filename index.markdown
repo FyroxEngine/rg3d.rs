@@ -195,6 +195,8 @@ This project wouldn't exist without these people:
 - [zrkn](https://www.patreon.com/user?u=23413376)
 - [BlueSkye](https://www.patreon.com/EmotionalSnow/creators)
 - [L.apz](https://www.patreon.com/user/creators?u=5448832)
+- [toyboot4e](https://www.patreon.com/user/creators?u=53758973)
+- [Daniel Simon](https://www.patreon.com/user/creators?u=43754885)
 - [Yuki Ishii](https://www.patreon.com/user?u=9564103)
 - [Vish Vadlamani](https://www.patreon.com/user/creators?u=42768509)
 - [Edward](https://www.patreon.com/user/creators?u=53507198)
