@@ -11,6 +11,7 @@ excerpt: "A feature-rich and easy-to-use game engine written in the Rust program
 ## Features
 
 - **High quality volumetric lighting** (directional, point, spot) with soft shadows.
+- **PC (Windows, Linux, macOS) and Web (WebAssembly)** support.
 - **Deferred shading** - use tons of lights with small overhead.
 - **Built-in save/load** - save or load entire state of the engine in one call.
 - **Full-featured scene graph** with various nodes (pivot, camera, mesh, light, particle system, sprite).
