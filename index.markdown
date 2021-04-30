@@ -59,6 +59,8 @@ Timelapse of editing process:
 
 ## Showcase
 
+[Check online example!](./assets/webexample/index.html)
+
 #### [Station Iapetus](https://github.com/mrDIMAS/StationIapetus)
 
 3rd person shooter in the very early development phase. 
