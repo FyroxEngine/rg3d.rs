@@ -9,7 +9,7 @@ but rg3d has a reputation of an engine for 3D shooters. In this series I'll try 
 game engine.
 
 **rg3d version**: 0.21  
-**rusty-editor version**: [0.9](https://github.com/rg3dengine/rusty-editor/releases/tag/v0.9)
+**rusty-editor version**: [0.9](https://github.com/rg3dengine/rusty-editor/releases/tag/v0.9)  
 **Source code**: [GitHub](https://github.com/mrDIMAS/rg3d-tutorials)
 
 **Notes:** In this tutorial I assume that you're using an IDE (like VS Code or IntelliJ IDEA) and you're able to add
@@ -819,5 +819,5 @@ the scene. I hope you liked this tutorial, and if so, please consider supporting
 [Patreon](https://patreon.com/mrdimas) or do a one-time donation via [BuyMeACoffee](https://www.buymeacoffee.com/mrDIMAS).
 The source code for this tutorial is available on [GitHub](https://github.com/mrDIMAS/rg3d-tutorials).
 
-Discussion: [Reddit](INSERT LINK),
+Discussion: [Reddit](https://www.reddit.com/r/rust/comments/ois776/media_writing_a_roleplaying_game_using_rg3d_game/),
 [Discord](https://discord.gg/xENF5Uh).
