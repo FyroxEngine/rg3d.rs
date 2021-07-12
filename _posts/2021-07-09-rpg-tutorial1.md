@@ -248,7 +248,7 @@ impl CameraController {
 
 To understand what this code does let's look closely at this picture:
 
-![Scene](/assets/rpg-tutorial1/camera-layout.png)
+![Camera Layout](/assets/rpg-tutorial1/camera-layout.png)
 
 The pivot is marked green here, the hinge - yellow, and finally the camera is just a trapeze. Lines with arrows shows
 how the nodes linked together. As you can see we're attaching the hinge to the pivot and move it up slightly (usually to the
@@ -258,7 +258,7 @@ camera. We need to rotate the camera around imaginary axis that goes through hin
 in this layout the camera will always look at character's head and rotate around **local** hinge's X axis. So to do that
 we need to rotate the hinge around X axis, not the camera. Here's the picture to help your understanding this better.
 
-![Scene](/assets/rpg-tutorial1/camera-layout-rotated.png)
+![Camera Layout](/assets/rpg-tutorial1/camera-layout-rotated.png)
 
 That was just one of the axes, now we need to understand how to rotate the camera around Y axis, but preserving the 
 rotation around X axis. This is very simple, we have the pivot for that. Remember that each of the nodes (pivot, hinge, camera)
