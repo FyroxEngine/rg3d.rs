@@ -250,7 +250,7 @@ To understand what this code does let's look closely at this picture:
 
 ![Camera Layout](/assets/rpg-tutorial1/camera-layout.png)
 
-The pivot is marked green here, the hinge - yellow, and finally the camera is just a trapeze. Lines with arrows shows
+The pivot is marked yellow here, the hinge - green, and finally the camera is just a trapeze. Lines with arrows shows
 how the nodes linked together. As you can see we're attaching the hinge to the pivot and move it up slightly (usually to the
 height of the character). Next we're attaching the camera to the hinge and move it back so in default position it will
 be behind the character. To understand why we need such layout, let's find out how we need to move and rotate the
