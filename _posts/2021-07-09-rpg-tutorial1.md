@@ -12,9 +12,6 @@ game engine.
 **rusty-editor version**: [0.9](https://github.com/rg3dengine/rusty-editor/releases/tag/v0.9)  
 **Source code**: [GitHub](https://github.com/mrDIMAS/rg3d-tutorials)
 
-**Notes:** In this tutorial I assume that you're using an IDE (like VS Code or IntelliJ IDEA) and you're able to add
-missing imports by yourself.
-
 ##### Table of contents
 
 - [Introduction](#introduction)
@@ -58,7 +55,13 @@ your game code. `Framework` is not mandatory, you may use the [previous](https:/
 variant with manual engine initialization and "opened" main loop.
 
 ```rust
-use rg3d::engine::framework::{Framework, GameEngine, GameState};
+// Import everything we need for the tutorial.
+use rg3d::{
+    core::{color::Color, futures::executor::block_on, pool::Handle},
+    engine::framework::{Framework, GameEngine, GameState},
+    event::{DeviceEvent, DeviceId, WindowEvent},
+    scene::Scene,
+};
 
 struct Game {
     // Empty for now.
@@ -99,9 +102,27 @@ following content:
 
 ```rust
 use crate::player::camera::CameraController;
+
+// Import everything we need for the tutorial.
 use rg3d::{
-    core::{algebra::Vector3, pool::Handle},
-    engine::resource_manager::{MaterialSearchOptions, ResourceManager},
+    animation::{
+        machine::{Machine, Parameter, PoseNode, State, Transition},
+        Animation,
+    },
+    core::{
+        algebra::{Isometry3, UnitQuaternion, Vector3},
+        pool::Handle,
+    },
+    engine::{
+        resource_manager::{MaterialSearchOptions, ResourceManager},
+        ColliderHandle, RigidBodyHandle,
+    },
+    event::{DeviceEvent, ElementState, KeyboardInput, VirtualKeyCode},
+    physics::{
+        dynamics::{CoefficientCombineRule, RigidBodyBuilder},
+        geometry::ColliderBuilder,
+    },
+    resource::model::Model,
     scene::{base::BaseBuilder, node::Node, Scene},
 };
 
@@ -128,9 +149,12 @@ impl Player {
             .unwrap()
             .instantiate_geometry(scene);
 
-        // Scale down paladin's model because it is too big. 
         scene.graph[model]
             .local_transform_mut()
+            // Move the model a bit down because its center is at model's feet
+            // and we'd get floating model without this offset.
+            .set_position(Vector3::new(0.0, -0.75, 0.0))
+            // Scale down paladin's model because it is too big. 
             .set_scale(Vector3::new(0.02, 0.02, 0.02));
 
         // Finally attach the model to the pivot. This will force model to move together with the pivot.
@@ -151,14 +175,21 @@ Let's disassemble this heap of code line by line. At first, we're creating pivot
 "mounting point" for character's 3D model, also it will have a physical body, but that will be added later in this 
 tutorial. Next, we're loading paladin 3D model and creating its instance in the scene, we need only geometry without
 animations, so we use `instantiate_geometry` here, animations will be added later in this tutorial. Next we scale the
-model a bit, because it is too big. Finally, we're attaching the model to the pivot, forcing the engine to move 
+model a bit, because it is too big. Also, we're moving the model a bit down because its center is at paladin's feet so
+when we're attaching the model to the pivot, it will "stay" on the pivot. We want it to stay on ground, so we're moving 
+it down by height of the model. Finally, we're attaching the model to the pivot, forcing the engine to move 
 the model together with pivot. In the end we're creating camera controller, it needs its own module, so add `camera.rs` 
 module under `src/player` with following content:
 
 ```rust
+// Import everything we need for the tutorial.
 use rg3d::{
-    core::{algebra::Vector3, pool::Handle},
+    core::{
+        algebra::{UnitQuaternion, Vector3},
+        pool::Handle,
+    },
     engine::resource_manager::ResourceManager,
+    event::DeviceEvent,
     resource::texture::TextureWrapMode,
     scene::{
         base::BaseBuilder,
@@ -307,6 +338,7 @@ use crate::{level::Level, player::Player};
 use rg3d::{
     core::{color::Color, futures::executor::block_on, pool::Handle},
     engine::framework::{Framework, GameEngine, GameState},
+    event::{DeviceEvent, DeviceId, WindowEvent},
     scene::Scene,
 };
 
