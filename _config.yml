@@ -42,7 +42,7 @@ navigation_header:
 - title: Blog
   url: /blog/
 - title: "View on GitHub"
-  url: https://github.com/mrDIMAS/rg3d
+  url: https://github.com/rg3dengine/rg3d
 - title: Sponsor
   url: https://www.patreon.com/mrdimas
 

@@ -21,15 +21,15 @@ excerpt: "A feature-rich and easy-to-use game engine written in the Rust program
 - **Advanced user interface** with lots of widgets, the editor is made using this UI.
 - **Advanced animation system** with animation blending machines (similar to Mecanim) and animation retargetting.
 - **Multi-camera rendering** - allows you to create picture-in-picture effects, make split-screen games
-and so on.
+and more.
 - **Async asset management** - load textures, models, sound buffers asynchronously and utilize all available CPU power.
 - **Skinning** with flexible animation system.
 - **Multiple scenes** support - allows you to have separate scenes for game menu, levels and so on.
 - **Normal, parallax, environment** mapping - classic techiques that tremendously improves quality of graphics.
 - **Level-of-detail (LOD)** support - allows you to change details of distant models to improve performance.
-- **Screen-Space Ambient Occlusion** (SSAO) - add "volume" to your scenes at low cost.
-- **Fast Approximate AntiAliasing** (FXAA) - old, but good antialising.
-- **Geometry instancing** - render lots of objects without low overhead.
+- **Screen-Space Ambient Occlusion** (SSAO) - add "volume" to your scenes at a low cost.
+- **Fast Approximate AntiAliasing** (FXAA) - old, but good antialiasing.
+- **Geometry instancing** - render lots of objects with low overhead.
 - **Render in texture** - render scene in a texture and use it later in other scene.
 - **Sky box** - add details for outdoor scenes.
 - **Lightmap generator** - bake static lights into texture to improve runtime performance.
@@ -63,9 +63,9 @@ Timelapse of editing process:
 
 #### [Station Iapetus](https://github.com/mrDIMAS/StationIapetus)
 
-3rd person shooter in the very early development phase. 
-This is commercial project that will eventually be released in Steam.
-Also, the project is meant to be the proof that rg3d game engine is ready for commercial production.
+A 3rd person shooter in a very early development phase. 
+This is commercial project that will eventually be released on Steam.
+Also, the project is meant to be proof that rg3d game engine is ready for commercial production.
 
 [![si](assets/station_iapetus_27_02_21_01.jpg)](https://github.com/mrDIMAS/StationIapetus)
 
@@ -96,7 +96,7 @@ Writing a 3D Shooter using rg3d:
 
 ## Examples
 
-rg3d has lots of examples covering various aspects of the engine, they can be found [here](https://github.com/mrDIMAS/rg3d/tree/master/examples)
+rg3d has lots of examples covering various aspects of the engine, they can be found [here](https://github.com/rg3dengine/rg3d/tree/master/examples)
 
 <style type="text/css">
 	.wrapper {
@@ -125,7 +125,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 <div class="wrapper">
    <div class="inner">
 		<div class="cell">
-			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/simple.rs">
+			<a href="https://github.com/rg3dengine/rg3d/blob/master/examples/simple.rs">
 				<img class="round_image" src="assets/example01.jpg"/>
 			</a>
 		</div>
@@ -133,7 +133,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
    </div>
    <div class="inner">
 		<div class="cell">
-			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/async.rs">
+			<a href="https://github.com/rg3dengine/rg3d/blob/master/examples/async.rs">
 				<img class="round_image" src="assets/example02.jpg"/>
 			</a>
 		</div>
@@ -141,7 +141,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
    </div>
    <div class="inner">
 		<div class="cell">
-			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/3rd_person.rs">
+			<a href="https://github.com/rg3dengine/rg3d/blob/master/examples/3rd_person.rs">
 				<img class="round_image" src="assets/example03.jpg"/>
 			</a>
 		</div>
@@ -149,7 +149,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 	</div>
 	<div class="inner">
 		<div class="cell">
-			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/ui.rs">
+			<a href="https://github.com/rg3dengine/rg3d/blob/master/examples/ui.rs">
 				<img class="round_image" src="assets/example04.jpg"/>
 			</a>
 		</div>
@@ -157,7 +157,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 	</div>
 	<div class="inner">
 		<div class="cell">
-			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/scene.rs">
+			<a href="https://github.com/rg3dengine/rg3d/blob/master/examples/scene.rs">
 				<img class="round_image" src="assets/example05.jpg"/>
 			</a>
 		</div>
@@ -165,7 +165,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 	</div>
 	<div class="inner">
 		<div class="cell">
-			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/lightmap.rs">
+			<a href="https://github.com/rg3dengine/rg3d/blob/master/examples/lightmap.rs">
 				<img class="round_image" src="assets/example06.jpg"/>
 			</a>
 		</div>
@@ -173,7 +173,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 	</div>
 	<div class="inner">
 		<div class="cell">
-			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/instancing.rs">
+			<a href="https://github.com/rg3dengine/rg3d/blob/master/examples/instancing.rs">
 				<img class="round_image" src="assets/example07.jpg"/>
 			</a>
 		</div>
@@ -181,7 +181,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 	</div>
 		<div class="inner">
 		<div class="cell">
-			<a href="https://github.com/mrDIMAS/rg3d/blob/master/examples/lod.rs">
+			<a href="https://github.com/rg3dengine/rg3d/blob/master/examples/lod.rs">
 				<img class="round_image" src="assets/example08.jpg"/>
 			</a>
 		</div>
