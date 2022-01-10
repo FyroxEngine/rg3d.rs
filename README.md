@@ -1,3 +1,3 @@
-# Rust Game engine 3D website
+# Fyrox Game Engine Website
 
-Source code for the RG3D engine website: https://rg3d.rs/
+Source code for the Fyrox Game Engine website: https://rg3d.rs/
