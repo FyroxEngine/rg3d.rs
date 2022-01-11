@@ -39,6 +39,8 @@ twitter:
 navigation_header:
 - title: Home
   url: /
+- title: Book
+  url: https://fyrox-book.github.io/
 - title: Blog
   url: /blog/
 - title: "View on GitHub"
