@@ -1,12 +1,12 @@
 ---
 feature_text: |
-  <div style="background-color:black;color:white;padding:4px;font-size:40px">Rust Game engine 3D</div>
+  <div style="background-color:black;color:white;padding:4px;font-size:40px">Fyrox Game Engine</div>
   <div style="background-color:black;color:white;padding:4px;font-size:18px">A feature-rich and easy-to-use game engine written in the Rust programming language</div>  
 feature_image: "assets/light.jpg"
 excerpt: "A feature-rich and easy-to-use game engine written in the Rust programming language"
 ---
 
-{% include button.html text="Github" icon="github" link="https://github.com/mrDIMAS/rg3d" color="#0366d6" %} {% include button.html text="Join Discord" link="https://discord.com/invite/xENF5Uh" color="#0366d6" %} {% include button.html text="Sponsor ♥" link="https://www.patreon.com/mrdimas" color="#0366d6" %} {% include button.html text="Follow on Twitter" link="https://twitter.com/DmitryNStepanov" icon="twitter" color="#0366d6" %} 
+{% include button.html text="Github" icon="github" link="https://github.com/FyroxEngine/Fyrox" color="#0366d6" %} {% include button.html text="Join Discord" link="https://discord.com/invite/xENF5Uh" color="#0366d6" %} {% include button.html text="Sponsor ♥" link="https://www.patreon.com/mrdimas" color="#0366d6" %} {% include button.html text="Follow on Twitter" link="https://twitter.com/DmitryNStepanov" icon="twitter" color="#0366d6" %} 
 
 ## Features
 
@@ -25,7 +25,7 @@ and more.
 - **Async asset management** - load textures, models, sound buffers asynchronously and utilize all available CPU power.
 - **Skinning** with flexible animation system.
 - **Multiple scenes** support - allows you to have separate scenes for game menu, levels and so on.
-- **Normal, parallax, environment** mapping - classic techiques that tremendously improves quality of graphics.
+- **Normal, parallax, environment** mapping - classic techniques that tremendously improves quality of graphics.
 - **Level-of-detail (LOD)** support - allows you to change details of distant models to improve performance.
 - **Screen-Space Ambient Occlusion** (SSAO) - add "volume" to your scenes at a low cost.
 - **Fast Approximate AntiAliasing** (FXAA) - old, but good antialiasing.
@@ -45,9 +45,9 @@ and more.
 - **Documentation and tutorials** - it's easy start making your own game!
 - **Hierarchical model resources** - combine multiple assets in prefabs and engine will do the rest of the work.
 
-## [rusty-editor](https://github.com/mrDIMAS/rusty-editor)
+## [Fyroxed](https://github.com/FyroxEngine/Fyrox/tree/master/editor)
 
-The engine comes with an editor: rusty-editor is a native scene editor for the rg3d game engine.
+The engine comes with an editor: Fyroxed (**Fyrox** + **ed**itor) is a native scene editor for the Fyrox Game Engine.
 
 ![rusty_editor](assets/rusty_editor.jpg)
 
@@ -65,7 +65,7 @@ Timelapse of editing process:
 
 A 3rd person shooter in a very early development phase. 
 This is commercial project that will eventually be released on Steam.
-Also, the project is meant to be proof that rg3d game engine is ready for commercial production.
+Also, the project is meant to be proof that Fyrox Game Engine is ready for commercial production.
 
 [![si](assets/station_iapetus_27_02_21_01.jpg)](https://github.com/mrDIMAS/StationIapetus)
 
@@ -87,16 +87,16 @@ Gameplay video:
   <iframe src="https://www.youtube.com/embed/UDn8ymyXPcI" frameborder="0" allowfullscreen title="Gameplay video"></iframe>
 </div>
 
-## Tutorials
+## [Learning materials](https://fyrox-book.github.io/)
 
-Writing a 3D Shooter using rg3d:
-- [Character controller](https://rg3d.rs/tutorials/2021/03/05/tutorial1.html)
-- [Weapons](https://rg3d.rs/tutorials/2021/03/09/tutorial2.html)
-- [Bots and AI](https://rg3d.rs/tutorials/2021/03/11/tutorial3.html)
+[Read the official Fyrox book here.](https://fyrox-book.github.io/) It is in early development stage, but it should
+help you start using the engine, also the book contains a series of tutorials that should help you to create your
+first game.
 
 ## Examples
 
-rg3d has lots of examples covering various aspects of the engine, they can be found [here](https://github.com/rg3dengine/rg3d/tree/master/examples)
+Fyrox has lots of examples covering various aspects of the engine, they can be found
+[here](https://github.com/FyroxEngine/Fyrox/tree/master/examples)
 
 <style type="text/css">
 	.wrapper {
@@ -125,7 +125,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 <div class="wrapper">
    <div class="inner">
 		<div class="cell">
-			<a href="https://github.com/rg3dengine/rg3d/blob/master/examples/simple.rs">
+			<a href="https://github.com/FyroxEngine/Fyrox/blob/master/examples/simple.rs">
 				<img class="round_image" src="assets/example01.jpg"/>
 			</a>
 		</div>
@@ -133,7 +133,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
    </div>
    <div class="inner">
 		<div class="cell">
-			<a href="https://github.com/rg3dengine/rg3d/blob/master/examples/async.rs">
+			<a href="https://github.com/FyroxEngine/Fyrox/blob/master/examples/async.rs">
 				<img class="round_image" src="assets/example02.jpg"/>
 			</a>
 		</div>
@@ -141,7 +141,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
    </div>
    <div class="inner">
 		<div class="cell">
-			<a href="https://github.com/rg3dengine/rg3d/blob/master/examples/3rd_person.rs">
+			<a href="https://github.com/FyroxEngine/Fyrox/blob/master/examples/3rd_person.rs">
 				<img class="round_image" src="assets/example03.jpg"/>
 			</a>
 		</div>
@@ -149,7 +149,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 	</div>
 	<div class="inner">
 		<div class="cell">
-			<a href="https://github.com/rg3dengine/rg3d/blob/master/examples/ui.rs">
+			<a href="https://github.com/FyroxEngine/Fyrox/blob/master/examples/ui.rs">
 				<img class="round_image" src="assets/example04.jpg"/>
 			</a>
 		</div>
@@ -157,7 +157,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 	</div>
 	<div class="inner">
 		<div class="cell">
-			<a href="https://github.com/rg3dengine/rg3d/blob/master/examples/scene.rs">
+			<a href="https://github.com/FyroxEngine/Fyrox/blob/master/examples/scene.rs">
 				<img class="round_image" src="assets/example05.jpg"/>
 			</a>
 		</div>
@@ -165,7 +165,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 	</div>
 	<div class="inner">
 		<div class="cell">
-			<a href="https://github.com/rg3dengine/rg3d/blob/master/examples/lightmap.rs">
+			<a href="https://github.com/FyroxEngine/Fyrox/blob/master/examples/lightmap.rs">
 				<img class="round_image" src="assets/example06.jpg"/>
 			</a>
 		</div>
@@ -173,7 +173,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 	</div>
 	<div class="inner">
 		<div class="cell">
-			<a href="https://github.com/rg3dengine/rg3d/blob/master/examples/instancing.rs">
+			<a href="https://github.com/FyroxEngine/Fyrox/blob/master/examples/instancing.rs">
 				<img class="round_image" src="assets/example07.jpg"/>
 			</a>
 		</div>
@@ -181,7 +181,7 @@ rg3d has lots of examples covering various aspects of the engine, they can be fo
 	</div>
 		<div class="inner">
 		<div class="cell">
-			<a href="https://github.com/rg3dengine/rg3d/blob/master/examples/lod.rs">
+			<a href="https://github.com/FyroxEngine/Fyrox/blob/master/examples/lod.rs">
 				<img class="round_image" src="assets/example08.jpg"/>
 			</a>
 		</div>
@@ -212,4 +212,4 @@ This project wouldn't exist without these people:
 
 ## About
 
-RG3D stands for **R**ust **G**ame engine **3D**, it was started in the January 2019 as a hobby project to learn Rust.
+The engine was created in the January 2019 as a hobby project to learn Rust.

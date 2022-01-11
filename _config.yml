@@ -18,13 +18,13 @@ plugins:
 - jekyll-commonmark
 - jekyll-include-cache
 
-title: rg3d
+title: Fyrox
 encoding: utf-8
 email: d1maxa@yandex.ru
-description: "rg3d is a feature-rich and easy-to-use game engine written in Rust programming language"
+description: "Fyrox is a feature-rich and easy-to-use game engine written in Rust programming language"
 baseurl: ""
 url: "rg3d.rs"
-repo: "https://github.com/mrDIMAS/rg3d"
+repo: "https://github.com/FyroxEngine/Fyrox"
 
 sass:
   style: compressed 
@@ -42,7 +42,7 @@ navigation_header:
 - title: Blog
   url: /blog/
 - title: "View on GitHub"
-  url: https://github.com/rg3dengine/rg3d
+  url: https://github.com/FyroxEngine/Fyrox
 - title: Sponsor
   url: https://www.patreon.com/mrdimas
 
