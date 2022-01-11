@@ -12,6 +12,7 @@ excerpt: "A feature-rich and easy-to-use game engine written in the Rust program
 
 - **High quality volumetric lighting** (directional, point, spot) with soft shadows.
 - **PC (Windows, Linux, macOS) and Web (WebAssembly)** support.
+- **First class 3D and 2D** support + ability to mix 3D with 2D.
 - **Deferred shading** - use tons of lights with small overhead.
 - **Built-in save/load** - save or load entire state of the engine in one call.
 - **Full-featured scene graph** with various nodes (pivot, camera, mesh, light, particle system, sprite).
@@ -43,7 +44,7 @@ and more.
 - **Lots of examples** covering various aspects of the engine.
 - **Production ready** - it is possible to build almost any kind of game.
 - **Documentation and tutorials** - it's easy start making your own game!
-- **Hierarchical model resources** - combine multiple assets in prefabs and engine will do the rest of the work.
+- **Hierarchical prefabs** - combine multiple assets in prefabs and engine will do the rest of the work.
 
 ## [Fyroxed](https://github.com/FyroxEngine/Fyrox/tree/master/editor)
 
