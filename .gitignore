@@ -1,7 +1,4 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
-Gemfile.lock
+node_modules
+docs/src/.vuepress/dist
+docs/node_modules
 .idea/**/*
