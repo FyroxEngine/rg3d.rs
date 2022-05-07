@@ -44,7 +44,7 @@ jobs:
           git config user.email "<>"
 
           echo Push builded code to website repo
-          cd .vuepress/dist
+          cd src/.vuepress/dist
           git init
           git add -A
           git commit -m 'deploy'
