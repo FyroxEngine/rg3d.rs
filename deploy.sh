@@ -11,6 +11,8 @@ cd docs/.vuepress/dist
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
+git config user.name "GitHub Actions Bot"
+git config user.email "<>"
 
 git init
 git add -A
