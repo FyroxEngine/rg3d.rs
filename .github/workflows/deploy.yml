@@ -51,8 +51,7 @@ jobs:
           echo Set git mail
           git config user.email "<>"
           echo Set git url
-          git remote add origin https://github.com/LordCocoNut/LordCocoNut.github.io.git
-          #git config url."https://github.com/LordCocoNut/LordCocoNut.github.io.git".insteadOf  git@github.com:LordCocoNut/LordCocoNut.github.io.git
+          git remote add origin git@github.com:LordCocoNut/LordCocoNut.github.io.git
 
           echo Committing deploy
           git add -A
