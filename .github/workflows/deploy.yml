@@ -28,5 +28,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run the deploy.sh
         run: | 
+          echo Installing dependencies for vuepress 
+          npm i
+          echo Installing dependencies for project 
+          cd ./docs
+          npm i
+          echo Going back in hierarchy
+          cd ../
           echo Trying to run deploy script
           sh deploy.sh
