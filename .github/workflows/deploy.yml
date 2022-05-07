@@ -40,8 +40,8 @@ jobs:
           npm run build
           
           echo Set git user
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "<>"
 
           echo Push builded code to website repo
           cd src/.vuepress/dist
