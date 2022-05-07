@@ -39,17 +39,20 @@ jobs:
           echo Build the app
           npm run build
           
-          echo Set git user
-          git config --global user.name "GitHub Actions Bot"
-           echo Set git mail
-          git config --global user.email "<>"
-           echo Set git url
-          git remote add origin https://github.com/LordCocoNut/LordCocoNut.github.io.git
-          git config --global url."https://github.com/LordCocoNut/LordCocoNut.github.io.git".insteadOf  git@github.com:LordCocoNut/LordCocoNut.github.io.git
-
+         
           echo Push builded code to website repo
           cd src/.vuepress/dist
           git init
+          
+          echo Set git user
+          git config user.name "GitHub Actions Bot"
+          echo Set git mail
+          git config user.email "<>"
+           echo Set git url
+          git remote add origin https://github.com/LordCocoNut/LordCocoNut.github.io.git
+          git config url."https://github.com/LordCocoNut/LordCocoNut.github.io.git".insteadOf  git@github.com:LordCocoNut/LordCocoNut.github.io.git
+
+
           git add -A
           git commit -m 'deploy'
 
