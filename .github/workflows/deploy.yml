@@ -28,7 +28,7 @@ jobs:
         with:
             node-version: '14'
 
-        run: | 
+      - run: | 
           echo Installing dependencies for vuepress 
           npm i
 
