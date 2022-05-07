@@ -48,12 +48,13 @@ jobs:
           git config user.name "GitHub Actions Bot"
           echo Set git mail
           git config user.email "<>"
-           echo Set git url
+          echo Set git url
           git remote add origin https://github.com/LordCocoNut/LordCocoNut.github.io.git
           git config url."https://github.com/LordCocoNut/LordCocoNut.github.io.git".insteadOf  git@github.com:LordCocoNut/LordCocoNut.github.io.git
 
-
+          echo Committing deploy
           git add -A
           git commit -m 'deploy'
 
+          echo Trying to push stuff
           git push origin HEAD -f
