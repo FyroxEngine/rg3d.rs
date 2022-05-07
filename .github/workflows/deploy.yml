@@ -24,20 +24,28 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+            node-version: '14'
 
-      # Runs a single command using the runners shell
-      - name: Run the deploy.sh
         run: | 
           echo Installing dependencies for vuepress 
           npm i
+
           echo Installing dependencies for project 
           cd ./docs
           npm i
-          echo Going back in hierarchy
-          cd ../
-          echo Setting github bot user for committing 
-          echo Trying to run deploy script
-          echo Trying to setup git user 
-          git config  --global user.name "GitHub Actions Bot"
-          git config  --global user.email "<>"
-          sh deploy.sh
+
+          echo Build the app
+          npm run build
+          
+          echo Set git user
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
+          echo Push builded code to website repo
+          cd .vuepress/dist
+          git init
+          git add -A
+          git commit -m 'deploy'
+          git push -f git@github.com:LordCocoNut/LordCocoNut.github.io.git master
