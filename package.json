@@ -1,5 +1,5 @@
 {
-  "name": "fyrox_website",
+  "name": "fyroxEngineSite",
   "version": "0.4",
   "description": "Official webpage for Fyrox game engine.",
   "main": "index.js",
