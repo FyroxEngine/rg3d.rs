@@ -14,5 +14,5 @@ jobs:
         TARGET_REPO: FyroxEngine/rg3d.rs
         TARGET_BRANCH: master
         BUILD_SCRIPT: yarn && yarn build
-        BUILD_DIR: docs/.vuepress/dist
+        BUILD_DIR: src/.vuepress/dist
         CNAME: https://www.fyrox.rs
