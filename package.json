@@ -1,8 +1,26 @@
 {
-  "scripts": {
-    "docs:build": "vuepress build docs"
+  "name": "fyrox_website",
+  "version": "0.4",
+  "description": "Official webpage for Fyrox game engine.",
+  "main": "index.js",
+  "authors": {
+    "name": "mr. DIMAS",
+    "email": ""
   },
+  "repository": "/Fyrox website",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "dev-legacy": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
   "devDependencies": {
+    "vuepress": "^1.5.3",
     "@vuepress/plugin-blog": "^1.9.4"
+  },
+  "dependencies": {
+    "@mdi/font": "^6.6.96",
+    "vue-typed-js": "^0.1.2",
+    "vuetify": "^2.6.4"
   }
 }

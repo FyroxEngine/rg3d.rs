@@ -1,0 +1,94 @@
+<template>
+    <v-sheet color="grey darken-4 pt-16 pb-16">
+        <v-container class="pb-9">
+            <v-row>
+                <v-col cols="12">
+                    <h4 class="mb-2 text-decoration-underline">Features</h4>
+                </v-col>
+                <v-col
+                    cols="12"
+                    md="6"
+                    lg="4"
+                    v-for="({ title, desc, icon }, key) in features"
+                    :key="'feature' + key"
+                    class="d-flex mb-4"
+                >
+                    <div class="d-flex">
+                        <v-avatar
+                            color="grey darken-3"
+                            size="55"
+                            class="align-stretch align-self-center me-5"
+                        >
+                            <v-icon>
+                                {{ `mdi-${icon}` }}
+                            </v-icon>
+                        </v-avatar>
+                    </div>
+                    <div class="d-flex flex-column align-self-center">
+                        <h4 class="mb-2 text-decoration-underline">
+                            {{ title }}
+                        </h4>
+                        <p class="mb-0">{{ desc }}</p>
+                    </div>
+                </v-col>
+            </v-row>
+        </v-container>
+    </v-sheet>
+</template>
+
+<script>
+export default {
+    props: ["src"],
+    data() {
+        return {
+            features: [
+                {
+                    title: "First Class 2D and 3D Support",
+                    icon: "lightbulb-on-outline",
+                    desc: "Create 2D or 3D games, or even mix 2D and 3D.",
+                },
+                {
+                    title: "High Quality Flexible Renderer",
+                    icon: "lightbulb-on-outline",
+                    desc: "Powerful and extensible renderer will cover most of your needs.",
+                },
+                {
+                    title: "High Quality Binaural Sound System",
+                    icon: "lightbulb-on-outline",
+                    desc: "Use powerful sound system to create rich sound environment.",
+                },
+                {
+                    title: "Advanced 2D/3D Physics",
+                    icon: "lightbulb-on-outline",
+                    desc: "Rigid bodies, various colliders, joints, ray casting, etc.",
+                },
+                {
+                    title: "Advanced User Interface",
+                    icon: "lightbulb-on-outline",
+                    desc: "Use powerful UI system to create interfaces limited by your imagination.",
+                },
+                {
+                    title: "Powerful Animation System",
+                    icon: "lightbulb-on-outline",
+                    desc: "Use built-in animation system to create complex animations.",
+                },
+                {
+                    title: "Multiplatform",
+                    icon: "desktop-mac",
+                    desc: "Make your games for PC (Windows, Linux, macOS) and Web (WebAssembly)",
+                },
+                {
+                    title: "Plugins Support",
+                    icon: "content-save-cog",
+                    desc: "Extend functionality of the engine using custom plugins.",
+                },
+                {
+                    title: "Scene Graph",
+                    icon: "chart-timeline",
+                    desc: "Full-featured, with various nodes (pivot, camera, mesh, light, particle system, sprite), including your own.",
+                },
+            ],
+        };
+    },
+};
+</script>
