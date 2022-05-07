@@ -27,6 +27,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
             node-version: '14'
+        env:
+              ACCESS_TOKEN: '${{ secrets.ACCESS_TOKEN }}'
 
       - run: | 
           echo Installing dependencies for vuepress 
@@ -50,7 +52,7 @@ jobs:
           git config user.email "<>"
           echo Set git url
           git remote add origin https://github.com/LordCocoNut/LordCocoNut.github.io.git
-          git config url."https://github.com/LordCocoNut/LordCocoNut.github.io.git".insteadOf  git@github.com:LordCocoNut/LordCocoNut.github.io.git
+          #git config url."https://github.com/LordCocoNut/LordCocoNut.github.io.git".insteadOf  git@github.com:LordCocoNut/LordCocoNut.github.io.git
 
           echo Committing deploy
           git add -A
