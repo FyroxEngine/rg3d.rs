@@ -44,6 +44,7 @@ jobs:
            echo Set git mail
           git config --global user.email "<>"
            echo Set git url
+          git remote set-url origin https://github.com/LordCocoNut/LordCocoNut.github.io.git
           git config --global url."https://github.com/LordCocoNut/LordCocoNut.github.io.git".insteadOf  git@github.com:LordCocoNut/LordCocoNut.github.io.git
 
           echo Push builded code to website repo
@@ -52,4 +53,4 @@ jobs:
           git add -A
           git commit -m 'deploy'
 
-          git push -f
+          git push origin HEAD -f
