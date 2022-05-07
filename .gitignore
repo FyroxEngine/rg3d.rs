@@ -1,4 +1,4 @@
 node_modules
-docs/src/.vuepress/dist
-docs/node_modules
+src/.vuepress/dist
+node_modules
 .idea/**/*
