@@ -1,6 +1,6 @@
 ---
-title: Hello world
-layout: Layout
+title: Games built using Fyrox
+layout: LayoutFluid
 ---
 
-Hello world!
+<PageTitle text="Coming soon!" subtitle="Some games created using fyrox engine" />

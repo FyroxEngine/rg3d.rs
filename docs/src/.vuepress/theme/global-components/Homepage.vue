@@ -1,12 +1,10 @@
 <template>
     <div>
-        <v-container class="text-center pt-16 pb-16 mb-16">
-            <h1 class="mt-16">Fyrox Game Engine</h1>
-           
+        <page-title text="Fyrox Game Engine">
             <v-btn @click="$vuetify.goTo('#startMaking', {duration: 1200, easing: 'easeInOutQuad'})" class="mt-4" color="primary" depressed>
-                <span>Start creating games</span>
+                <span>Start Creating Games</span>
             </v-btn>
-        </v-container>
+        </page-title>
         <features-list src="features"></features-list>
         <v-container class="text-center pt-16 pb-16 mb-16">
             <h2 class="mt-3 mb-2">FyroxEd</h2>

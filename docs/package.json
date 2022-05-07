@@ -9,7 +9,7 @@
   },
   "repository": "/Fyrox website",
   "scripts": {
-    "dev": "vuepress dev src",
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress dev src",
     "build": "vuepress build src"
   },
   "license": "MIT",
