@@ -32,13 +32,8 @@ jobs:
           echo Installing dependencies for vuepress 
           npm i
 
-          echo Installing dependencies for project 
-          cd ./docs
-          npm i
-
           echo Build the app
           npm run build
-          
          
           echo Push builded code to website repo
           cd src/.vuepress/dist
