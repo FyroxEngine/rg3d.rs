@@ -41,8 +41,10 @@ jobs:
           
           echo Set git user
           git config --global user.name "GitHub Actions Bot"
+           echo Set git mail
           git config --global user.email "<>"
-          git config --global url."https://github.com/LordCocoNut/LordCocoNut.github.io.git"
+           echo Set git url
+          git config --global url."https://github.com/LordCocoNut/LordCocoNut.github.io.git".insteadOf  git@github.com:LordCocoNut/LordCocoNut.github.io.git
 
           echo Push builded code to website repo
           cd src/.vuepress/dist
