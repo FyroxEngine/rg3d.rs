@@ -24,10 +24,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
       - uses: webfactory/ssh-agent@v0.5.4
         with:
-            node-version: '14'
             ssh-private-key: ${{ secrets.ACCESS_TOKEN }}
         
       - run: | 
