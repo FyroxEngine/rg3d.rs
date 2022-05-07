@@ -37,4 +37,7 @@ jobs:
           cd ../
           echo Setting github bot user for committing 
           echo Trying to run deploy script
+          echo Trying to setup git user 
+          git config  --global user.name "GitHub Actions Bot"
+          git config  --global user.email "<>"
           sh deploy.sh
