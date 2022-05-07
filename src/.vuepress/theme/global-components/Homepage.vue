@@ -1,14 +1,14 @@
 <template>
     <div>
-        <page-title text="Fyrox">
+        <page-title text="Fyrox Game Engine">
             <v-btn @click="$vuetify.goTo('#startMaking', {duration: 1200, easing: 'easeInOutQuad'})" class="mt-4" color="primary" depressed>
-                <span>Start creating games</span>
+                <span>Start Creating Games</span>
             </v-btn>
         </page-title>
         <features-list src="features"></features-list>
         <v-container class="text-center pt-16 pb-16 mb-16">
-            <h2 class="mt-3 mb-2">Rusty editor</h2>
-            <p>Got you coverd with full features scene editor.</p>
+            <h2 class="mt-3 mb-2">FyroxEd</h2>
+            <p>A Powerful Editor</p>
             <v-divider></v-divider>
             <v-row class="mt-5">
                 <v-col cols="12" md="6" class="mb-sm-16">
@@ -46,7 +46,7 @@
         </v-container>
         <v-sheet id="startMaking">
             <v-container class="text-center pt-16 pb-16 mb-16">
-                <h2 class="mt-3 mb-2">Start making games</h2>
+                <h2 class="mt-3 mb-2">Start Making Games</h2>
 
                 <p>Installation is easy as pie.</p>
                 <v-divider> </v-divider>

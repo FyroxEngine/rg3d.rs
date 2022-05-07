@@ -16,7 +16,7 @@
                     to="/"
                     class="text-decoration-none white--text"
                 >
-                    Fyrox
+                    Fyrox Game Engine
                 </router-link></v-toolbar-title
             >
 

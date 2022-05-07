@@ -25,9 +25,9 @@
                         </v-avatar>
                     </div>
                     <div class="d-flex flex-column align-self-center">
-                        <h4 class="mb-2 text-decoration-underline">
+                        <h3 class="mb-2">
                             {{ title }}
-                        </h4>
+                        </h3>
                         <p class="mb-0">{{ desc }}</p>
                     </div>
                 </v-col>
@@ -43,29 +43,49 @@ export default {
         return {
             features: [
                 {
-                    title: "HQ Volumetrics",
+                    title: "First Class 2D and 3D Support",
                     icon: "lightbulb-on-outline",
-                    desc: "(directional, point, spot) with soft shadows",
+                    desc: "Create 2D or 3D games, or even mix 2D and 3D.",
+                },
+                {
+                    title: "High Quality Flexible Renderer",
+                    icon: "lightbulb-on-outline",
+                    desc: "Powerful and extensible renderer will cover most of your needs.",
+                },
+                 {
+                    title: "High Quality Binaural Sound System",
+                    icon: "lightbulb-on-outline",
+                    desc: "Use powerful sound system to create rich sound environment.",
+                },
+                {
+                    title: "Advanced 2D/3D Physics",
+                    icon: "lightbulb-on-outline",
+                    desc: "Rigid bodies, various colliders, joints, ray casting, etc.",
+                },
+                {
+                    title: "Advanced User Interface",
+                    icon: "lightbulb-on-outline",
+                    desc: "Use powerful UI system to create interfaces limited by your imagination.",
+                },
+                {
+                    title: "Powerful Animation System",
+                    icon: "lightbulb-on-outline",
+                    desc: "Use built-in animation system to create complex animations.",
                 },
                 {
                     title: "Multiplatform",
                     icon: "desktop-mac",
-                    desc: "PC (Windows, Linux, macOS) and Web (WebAssembly) support",
+                    desc: "Make your games for PC (Windows, Linux, macOS) and Web (WebAssembly)",
                 },
                 {
-                    title: "Deferred shading",
-                    icon: "home-lightbulb-outline",
-                    desc: "use tons of lights with small overhead",
-                },
-                {
-                    title: "Built-in save/load",
+                    title: "Plugins Support",
                     icon: "content-save-cog",
-                    desc: "Dont have to deal with savegame mechanics anymore. Save or load entire state of the engine in one call",
+                    desc: "Extend functionality of the engine using custom plugins.",
                 },
                 {
-                    title: "Scene graph",
+                    title: "Scene Graph",
                     icon: "chart-timeline",
-                    desc: "Full-featured, with various nodes (pivot, camera, mesh, light, particle system, sprite)",
+                    desc: "Full-featured, with various nodes (pivot, camera, mesh, light, particle system, sprite), including your own.",
                 },
             ],
         };
