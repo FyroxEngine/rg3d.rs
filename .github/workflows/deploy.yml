@@ -36,7 +36,5 @@ jobs:
           echo Going back in hierarchy
           cd ../
           echo Setting github bot user for committing 
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
           echo Trying to run deploy script
           sh deploy.sh
