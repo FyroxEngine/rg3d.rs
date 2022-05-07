@@ -1,9 +1,7 @@
 <template>
     <div>
-        <v-container class="text-center pt-16 pb-16 mb-16">
-            <h1 class="mt-16">Blog</h1>
-
-            <v-btn v-if="activePage !== 1" class="mt-4"  @click="
+        <page-title text="Blog">
+             <v-btn v-if="activePage !== 1" class="mt-4"  @click="
                         $vuetify.goTo('#posts', {
                             duration: 1200,
                             easing: 'easeInOutQuad',
@@ -13,7 +11,7 @@
                     >See latest posts</span
                 >
             </v-btn>
-        </v-container>
+        </page-title>
         <v-sheet>
             <v-container class="pt-16 pb-16" id="posts">
                 <v-row>

@@ -19,9 +19,6 @@ import TopNav from '../components/TopNav.vue'
 
 export default {
     components: { AppFooter, TopNav },
-    mounted() {
-        console.log(this);
-    }
 }
 </script>
 
