@@ -8,8 +8,6 @@
         <features-list src="features"></features-list>
         <v-container class="text-center pt-16 pb-16 mb-16">
             <h2 class="mt-3 mb-2">FyroxEd</h2>
-            <p>A Powerful Editor</p>
-            <v-divider></v-divider>
             <v-row class="mt-5">
                 <v-col cols="12" md="6" class="mb-sm-16">
                     <v-img
@@ -77,17 +75,6 @@
             </v-container>
         </v-sheet>
      
-            <v-container class="text-center pt-16 pb-16">
-                <h2 class="mt-3 mb-2">Sponsors</h2>
-                <p>Keeping the dream alive.</p>
-                <v-divider></v-divider>
-                <p class="mb-0 mt-4">
-                    tom cors, false, zrkn, BlueSkye, L.apz, toyboot4e, Daniel
-                    Simon, Yuki Ishii, Vish Vadlamani, Edward, Aleks Row,
-                    Vitaliy (ArcticNoise) Chernyshev, Alexey Kuznetsov, Ben
-                    Anderson, Jesper Nordenberg, Joseph Catrambone
-                </p>
-            </v-container>
         <v-sheet>
             <v-container class="text-center pt-16 pb-16">
                 <h2 class="mt-3 mb-2">Examples</h2>
@@ -96,6 +83,19 @@
                 <p class="mb-0 mt-4"></p>
             </v-container>
         </v-sheet>
+
+        <v-container class="text-center pt-16 pb-16">
+            <h2 class="mt-3 mb-2">Sponsors</h2>
+            <p>Keeping the dream alive.</p>
+            <v-divider></v-divider>
+            <p class="mb-0 mt-4">
+                tom cors, false, zrkn, BlueSkye, L.apz, toyboot4e, Daniel
+                Simon, Yuki Ishii, Vish Vadlamani, Edward, Aleks Row,
+                Vitaliy (ArcticNoise) Chernyshev, Alexey Kuznetsov, Ben
+                Anderson, Jesper Nordenberg, Joseph Catrambone
+            </p>
+        </v-container>
+
     </div>
 </template>
 

@@ -3,7 +3,7 @@
         <v-container class="pb-9">
             <v-row>
                 <v-col cols="12">
-                    <h4 class="mb-2 text-decoration-underline">Features</h4>
+                    <h2 class="mb-2">Features</h2>
                 </v-col>
                 <v-col
                     cols="12"
@@ -25,12 +25,20 @@
                         </v-avatar>
                     </div>
                     <div class="d-flex flex-column align-self-center">
-                        <h4 class="mb-2 text-decoration-underline">
+                        <h3 class="mb-2">
                             {{ title }}
-                        </h4>
+                        </h3>
                         <p class="mb-0">{{ desc }}</p>
                     </div>
                 </v-col>
+            </v-row>
+            <v-row justify="center">
+                <v-btn 
+                    color="primary"
+                    href="/features/"
+                >
+                    See Full List Of Features
+                </v-btn>
             </v-row>
         </v-container>
     </v-sheet>
