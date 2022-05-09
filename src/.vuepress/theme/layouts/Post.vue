@@ -4,7 +4,7 @@
         <v-main>
             <transition name="fade">
                 <v-container class="pb-16">
-                    <h1 class="text-center mt-16 mb-10">{{$frontmatter.title}} Hello world</h1>
+                    <h1 class="text-center mt-16 mb-10">{{$frontmatter.title}}</h1>
                     <Content />
                 </v-container>
             </transition>
