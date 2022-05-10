@@ -24,7 +24,7 @@
                                     :key="'feature' + key"
                                     class="d-flex mb-4"
                                 >
-                                    <v-card width="400" color="secondary">
+                                    <v-card color="secondary">
                                         <v-img v-bind:src="img"></v-img>
                                         <v-card-title> {{title}} </v-card-title>
                                         <v-card-text> {{description}} </v-card-text>
@@ -46,7 +46,7 @@ export default {
         return {
             features: [
                 {
-                    title: "First Class 2D and 3D Support",
+                    title: "General",
                     properties: [
                         {
                             img: "/assets/2d_scene.png",
@@ -59,23 +59,23 @@ export default {
                             description: "Create first class 3D games"
                         },
                         {
-                            img: "/assets/2d_scene.png",
+                            img: "/assets/mixed_2d_3d.png",
                             title: "Mix 2D with 3D",
-                            description: "Want to create something else? Then try mixing 2D with 3D, it is limited by your imagination"
+                            description: "Want to create something else? Then try mixing 2D with 3D, everything is limited by your imagination."
                         },
                         {
-                            img: "/assets/2d_scene.png",
+                            img: "/assets/multi_scene.png",
                             title: "Multiple Scenes",
                             description: "Create and manage multiple scenes for various game parts, for example one for game menu and one per game level."
                         }
                     ]
                 },
                 {
-                    title: "High Quality Flexible Renderer",
+                    title: "Rendering",
                     properties: [
                         {
                             img: "/assets/light.jpg",
-                            title: "Built-in advanced lighting system",
+                            title: "Advanced Lighting System",
                             description: "Use built-in advanced lighting system, that can handle tons of light sources with soft shadows."
                         },
                         {
@@ -90,18 +90,23 @@ export default {
                         },
                         {
                             img: "/assets/light.jpg",
-                            title: "Various Built-in Postprocessing",
-                            description: "Use built-in postprocessing effects, such as SSAO, FXAA, etc."
+                            title: "Various Built-in Postprocessing Effects",
+                            description: "Use built-in postprocessing effects, such as SSAO, FXAA, Color Grading, Tone Mapping, etc."
                         },
                         {
                             img: "/assets/light.jpg",
                             title: "Physically-based Rendering (PBR)",
-                            description: "Standard material provides easy-to-use physically-based rendering."
+                            description: "Standard material provides easy-to-use physically-based rendering with metallic workflow."
+                        },
+                        {
+                            img: "/assets/skybox.png",
+                            title: "Skybox",
+                            description: "Use skybox to add details to background of your scenes."
                         },
                     ]
                 },
                 {
-                    title: "High Quality Binaural Sound System",
+                    title: "Sound",
                     properties: [
                         {
                             img: "/assets/placeholder.png",
@@ -116,7 +121,7 @@ export default {
                     ]
                 },
                 {
-                    title: "Advanced 2D/3D Physics",
+                    title: "Physics",
                     properties: [
                         {
                             img: "/assets/placeholder.png",
@@ -136,22 +141,43 @@ export default {
                     ]
                 },
                 {
-                    title: "Advanced User Interface",
+                    title: "User Interface",
                     properties: [
                         {
-                            img: "/assets/placeholder.png",
+                            img: "/assets/widgets.png",
                             title: "Various Widgets",
-                            description: "Use wide variety of built-in widgets (30+) or create your own."
+                            description: "Use wide variety of built-in widgets (30+) or create your own. The widget list includes: Border, \
+                            Button, Canvas, CheckBox, ColorPicker, Decorator, DockingManager, DropdownList, Expander, FileBrowser, Grid, Image, \
+                            ListView, Menu, MessageBox, NumericUpDown, Popup, ProgressBar, RangeEditor, Rect, ScrollBar, ScrollViewer, StackPanel, \
+                            TabControl, Text, TextBox, TreeView, VectorImage, Window, WrapPanel, Inspector"
                         },
                         {
-                            img: "/assets/placeholder.png",
+                            img: "/assets/layout.png",
                             title: "Powerful Layout System",
                             description: "Two-step layout system allows you to built user interfaces of any complexity."
+                        },
+                        {
+                            img: "/assets/editor_small.png",
+                            title: "Battle Tested",
+                            description: "The UI system of the engine powers FyroxEd - native editor of the engine."
                         },
                     ]
                 },
                 {
-                    title: "Powerful Animation System",
+                    title: "Animation",
+                     properties: [
+                        {
+                            img: "/assets/animation.png",
+                            title: "Skeletal Animation",
+                            description: "Use GPU-powered skeletal animation to create quality animations for your game characters."
+                        },
+                        {
+                            img: "/assets/absm.png",
+                            title: "Animation Blending State Machine",
+                            description: "Animation blending state machine (ABSM) allows you to create state graphs to mix multiple animation into one, \
+                            creating complex animations from simple ones."
+                        },
+                    ]
                 },
                 {
                     title: "Multiplatform",
@@ -169,7 +195,7 @@ export default {
                     ]
                 },
                 {
-                    title: "Plugins Support",
+                    title: "Plugins & Scripting",
                     properties: [
                         {
                             img: "/assets/placeholder.png",
@@ -183,8 +209,10 @@ export default {
                     properties: [
                         {
                             img: "/assets/placeholder.png",
-                            title: "Static Plugins",
-                            description: "Create static plugins, that can used in other projects."
+                            title: "Wide Variety of Built-in Nodes",
+                            description: "By default the engine offers Camera, Collider, Decal, Joint, Pivot, RigidBody, Sprite, \
+                            Terrain, 2D Rigid Body, 2D Collider, 2D Joint, Rectangle (2D Sprite), Point Light, Spot Light, Directional \
+                            Light, Mesh, Particle System, Sound Source."
                         },
                     ]
                 },
