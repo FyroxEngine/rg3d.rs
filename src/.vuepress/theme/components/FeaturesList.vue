@@ -3,7 +3,7 @@
         <v-container class="pb-9">
             <v-row>
                 <v-col cols="12">
-                    <h2 class="mb-2">Features</h2>
+                    <h2 class="text-center mb-2">Features</h2>
                 </v-col>
                 <v-col
                     cols="12"

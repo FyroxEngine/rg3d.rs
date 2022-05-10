@@ -54,13 +54,14 @@
 
                 <p  class="mt-6 mb-1">Add to your Cargo.toml</p>
                 <p>
+                    <code> 
                     [dependencies] <br />
-                    fyrox = "^0.24"
+                    fyrox = "^0.25"
+                    </code>
                 </p>
 
                 <p class="text-center">
-                    Start coding. If you want to learn basics of this engine,
-                    visit our book at:
+                    Start learning basics of this engine using the book
                 </p>
                 <p class="text-center">
                     <v-btn
@@ -69,7 +70,7 @@
                         color="primary"
                         depressed
                     >
-                        <span>https://fyrox-book.github.io/</span>
+                        <span>Read The Book</span>
                     </v-btn>
                 </p>
             </v-container>
