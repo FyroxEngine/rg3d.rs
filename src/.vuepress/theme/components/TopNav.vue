@@ -3,7 +3,7 @@
         <v-app-bar app flat dark>
             <router-link to="/" class="v-toolbar__title">
                 <v-img
-                    src="https://cdn.discordapp.com/attachments/756573453561102430/929760860145082438/Fyrox-Logo-2_7-1024.png"
+                    src="/assets/logos/logo.png"
                     width="40px"
                     max-width="40"
                     height="40px"
