@@ -49,15 +49,15 @@ export default {
                     title: "General",
                     properties: [
                         {
-                            img: "/assets/2d_scene.png",
-                            title: "Create 2D Games",
-                            description: "Create first class 2D games"
-                        },
-                        {
                             img: "/assets/station_iapetus_27_02_21_01.jpg",
                             title: "Create 3D Games",
-                            description: "Create first class 3D games"
+                            description: "Create first class 3D games. The engine provides almost everything you need to create 3D games."
                         },
+                        {
+                            img: "/assets/2d_scene.png",
+                            title: "Create 2D Games",
+                            description: "Want something simpler, then create first class 2D games!"
+                        },                       
                         {
                             img: "/assets/mixed_2d_3d.png",
                             title: "Mix 2D with 3D",
@@ -67,7 +67,59 @@ export default {
                             img: "/assets/multi_scene.png",
                             title: "Multiple Scenes",
                             description: "Create and manage multiple scenes for various game parts, for example one for game menu and one per game level."
+                        },
+                        {
+                            img: "/assets/multi_scene.png",
+                            title: "Scripting",
+                            description: "Write your game entirely in Rust using powerful scripting system of the engine."
+                        },
+                        {
+                            img: "/assets/multi_scene.png",
+                            title: "Multi-mode",
+                            description: "Use the engine either as Framework or as Full-Featured Game Engine. The first option allows you to use the engine \
+                            in a editor-less mode, it is possible to build your own tooling using this mode. The latter option releases the full power of the \
+                            engine, allowing you to run your game in the editor and use full power of the editor."
                         }
+                    ]
+                },
+                {
+                    title: "Editor",
+                    properties: [
+                        {
+                            img: "/assets/editor_small.png",
+                            title: "Full-Featured Editor",
+                            description: "Use the editor to create levels for your games. It handles 2D as well as 3D, providing enough flexibility to mix both."
+                        },
+                        {
+                            img: "/assets/world_viewer.png",
+                            title: "World Viewer",
+                            description: "World viewer allows you to see objects hierarchy in the world, search objects, attach/detach objects, etc."
+                        },
+                        {
+                            img: "/assets/asset_browser.png",
+                            title: "Asset Browser",
+                            description: "Manage your game assets in easy way. The asset browser allows you to preview your assets, change their properies, etc."
+                        },
+                        {
+                            img: "/assets/absm_editor.png",
+                            title: "Animation Blending State Machine Editor",
+                            description: "Use animation blending state machine editor to create complex animations using simple ones."
+                        },
+                        {
+                            img: "/assets/curve_editor.png",
+                            title: "Curve Editor",
+                            description: "Use curve editor to create complex behavior for numeric parameters."
+                        },
+                        {
+                            img: "/assets/navmesh.png",
+                            title: "Navigation Mesh Editor",
+                            description: "Create and editor navigational meshes for path finding."
+                        },
+                        {
+                            img: "/assets/inspector_small.png",
+                            title: "Property Inspector",
+                            description: "Edit properties of your game objects in unified way."
+                        },
                     ]
                 },
                 {
