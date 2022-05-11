@@ -26,7 +26,7 @@
                                 >
                                     <v-card color="secondary">
                                         <v-img v-bind:src="img"></v-img>
-                                        <v-card-title> {{title}} </v-card-title>
+                                        <v-card-title> <h3> {{title}} </h3> </v-card-title>
                                         <v-card-text> {{description}} </v-card-text>
                                     </v-card>   
                                 </v-col>    
@@ -69,7 +69,7 @@ export default {
                             description: "Create and manage multiple scenes for various game parts, for example one for game menu and one per game level."
                         },
                         {
-                            img: "/assets/multi_scene.png",
+                            img: "/assets/scripting.png",
                             title: "Scripting",
                             description: "Write your game entirely in Rust using powerful scripting system of the engine."
                         },
@@ -120,6 +120,29 @@ export default {
                             title: "Property Inspector",
                             description: "Edit properties of your game objects in unified way."
                         },
+                        {
+                            img: "/assets/material_editor2.png",
+                            title: "Material Editor",
+                            description: "Edit properties of your materials."
+                        },
+                    ]
+                },
+                {
+                    title: "Scene Graph",
+                    properties: [
+                        {
+                            img: "/assets/placeholder.png",
+                            title: "Wide Variety of Built-in Nodes",
+                            description: "By default the engine offers Camera, Collider, Decal, Joint, Pivot, RigidBody, Sprite, \
+                            Terrain, 2D Rigid Body, 2D Collider, 2D Joint, Rectangle (2D Sprite), Point Light, Spot Light, Directional \
+                            Light, Mesh, Particle System, Sound Source."
+                        },
+                        {
+                            img: "/assets/placeholder.png",
+                            title: "Property Inheritance",
+                            description: "Object properties are inheritable, this means that you can create a prefab, put its instances on a \
+                            scene and every change to prefab properties will reflect to its instances (if there was no manual change to a property)."
+                        },
                     ]
                 },
                 {
@@ -163,12 +186,17 @@ export default {
                         {
                             img: "/assets/placeholder.png",
                             title: "Spatial Sound",
-                            description: "TODO"
+                            description: "Use "
                         },
                         {
                             img: "/assets/placeholder.png",
                             title: "Head-Related Transfer Function (HRTF)",
                             description: "HRTF dramatically increases perception of sound, it makes it sound natural as if it'd be in real world."
+                        },
+                        {
+                            img: "/assets/reverb.png",
+                            title: "Sound Effects",
+                            description: "Use sound effects (such as reverb) to improves sound quality and make it sound more natural."
                         },
                     ]
                 },
@@ -176,19 +204,19 @@ export default {
                     title: "Physics",
                     properties: [
                         {
-                            img: "/assets/placeholder.png",
+                            img: "/assets/rapier.png",
                             title: "Powered by Rapier",
                             description: "The engine offers powerful physics system that is powered by Rapier physics engine."
                         },
                         {
-                            img: "/assets/placeholder.png",
+                            img: "/assets/rigidbody.png",
                             title: "Rigid Body Dynamics",
-                            description: "TODO"
+                            description: "Rigid body dynamics provides you with everything you need for physics simulation."
                         },
                         {
-                            img: "/assets/placeholder.png",
-                            title: "Various Colliders",
-                            description: "TODO"
+                            img: "/assets/shapes.png",
+                            title: "Various Collider Shapes",
+                            description: "The engine offers a lot of colliders shapes, the list includes: "
                         },
                     ]
                 },
@@ -206,12 +234,15 @@ export default {
                         {
                             img: "/assets/layout.png",
                             title: "Powerful Layout System",
-                            description: "Two-step layout system allows you to built user interfaces of any complexity."
+                            description: "Two-step layout system allows you to built user interfaces of any complexity. At first every widget is measured \
+                            to get how many space it needs, as the last step every widget is arranged using info from previous stage and some user settings. \
+                            Unlike stateless user interfaces, stateful UIs provides rich layouting."
                         },
                         {
                             img: "/assets/editor_small.png",
                             title: "Battle Tested",
-                            description: "The UI system of the engine powers FyroxEd - native editor of the engine."
+                            description: "The UI system of the engine powers FyroxEd - native editor of the engine. It utilizes all available widgets and you \
+                            can use the editor as a demo of the UI library."
                         },
                     ]
                 },
@@ -221,7 +252,8 @@ export default {
                         {
                             img: "/assets/animation.png",
                             title: "Skeletal Animation",
-                            description: "Use GPU-powered skeletal animation to create quality animations for your game characters."
+                            description: "Use GPU-powered skeletal animation to create quality animations for your game characters. GPU acceleration means \
+                            that you can have tons of objects with skeletal animation with very little performance overhead."
                         },
                         {
                             img: "/assets/absm.png",
@@ -229,20 +261,11 @@ export default {
                             description: "Animation blending state machine (ABSM) allows you to create state graphs to mix multiple animation into one, \
                             creating complex animations from simple ones."
                         },
-                    ]
-                },
-                {
-                    title: "Multiplatform",
-                    properties: [
                         {
-                            img: "/assets/placeholder.png",
-                            title: "PC",
-                            description: "Create your games for Windows, Linux, macOS"
-                        },
-                        {
-                            img: "/assets/placeholder.png",
-                            title: "WebAssembly",
-                            description: "Create your games for Web using WebAssembly."
+                            img: "/assets/absm.png",
+                            title: "Events",
+                            description: "Add custom events to a animation timeline and be notified when they'll happen. It could be useful to add foostep \
+                            sound effect for walking animation, and so on."
                         },
                     ]
                 },
@@ -250,21 +273,31 @@ export default {
                     title: "Plugins & Scripting",
                     properties: [
                         {
-                            img: "/assets/placeholder.png",
+                            img: "/assets/scripting.png",
+                            title: "Scripting",
+                            description: "Write your game entirely in Rust, while being able to run it in the editor. Scripts are statically linked, \
+                            so there is no performance loss."
+                        },
+                        {
+                            img: "/assets/plugin.png",
                             title: "Static Plugins",
-                            description: "Create static plugins, that can used in other projects."
+                            description: "Create static plugins, that can used in multiple projects."
                         },
                     ]
                 },
                 {
-                    title: "Scene Graph",
+                    title: "Multiplatform",
                     properties: [
                         {
-                            img: "/assets/placeholder.png",
-                            title: "Wide Variety of Built-in Nodes",
-                            description: "By default the engine offers Camera, Collider, Decal, Joint, Pivot, RigidBody, Sprite, \
-                            Terrain, 2D Rigid Body, 2D Collider, 2D Joint, Rectangle (2D Sprite), Point Light, Spot Light, Directional \
-                            Light, Mesh, Particle System, Sound Source."
+                            img: "/assets/platforms.png",
+                            title: "PC",
+                            description: "Create your games for Windows, Linux, macOS"
+                        },
+                        {
+                            img: "/assets/webassembly.png",
+                            title: "WebAssembly",
+                            description: "Create your games for Web using WebAssembly. WebAssembly allows you extending your game audience to more users, \
+                            especially for cases when you need to run your game on a mobile device (since there is no Android support yet)."
                         },
                     ]
                 },

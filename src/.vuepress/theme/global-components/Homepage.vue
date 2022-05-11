@@ -34,8 +34,8 @@
                 >
                     <p>
                         What would be a game engine without scene editor eh?
-                        Don't worry. For this purpose We provide our own
-                        rusty-editor that allows you to create your game scenes
+                        Don't worry. For this purpose We provide our own editor - 
+                        FyroxEd. It allows you to create your game scenes
                         in no time. Supporting tons of features, you're ready to
                         create games of tomorrow, today.
                     </p>

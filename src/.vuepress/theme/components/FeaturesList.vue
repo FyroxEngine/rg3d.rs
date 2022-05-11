@@ -86,9 +86,9 @@ export default {
                     desc: "Make your games for PC (Windows, Linux, macOS) and Web (WebAssembly)",
                 },
                 {
-                    title: "Plugins Support",
+                    title: "Plugins & Scripting",
                     icon: "content-save-cog",
-                    desc: "Extend functionality of the engine using custom plugins.",
+                    desc: "Write your game completely in Rust, while being able to run it in the editor. Extend functionality of the engine using custom plugins.",
                 },
                 {
                     title: "Scene Graph",
