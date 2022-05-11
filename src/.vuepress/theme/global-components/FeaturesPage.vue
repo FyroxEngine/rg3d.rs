@@ -125,6 +125,11 @@ export default {
                             title: "Material Editor",
                             description: "Edit properties of your materials."
                         },
+                        {
+                            img: "/assets/lightmap.png",
+                            title: "Lightmapper",
+                            description: "Bake static lighting into a texture to speed up rendering."
+                        },
                     ]
                 },
                 {
@@ -154,22 +159,22 @@ export default {
                             description: "Use built-in advanced lighting system, that can handle tons of light sources with soft shadows."
                         },
                         {
-                            img: "/assets/light.jpg",
+                            img: "/assets/custom_material.png",
                             title: "Custom Materials and Shaders",
                             description: "Create your own materials and shaders."
                         },
                         {
-                            img: "/assets/light.jpg",
+                            img: "/assets/rt.png",
                             title: "Render To Texture",
                             description: "Render scene to a texture and use it later, it could be useful for offscreen rendering."
                         },
                         {
-                            img: "/assets/light.jpg",
+                            img: "/assets/postprocessing.png",
                             title: "Various Built-in Postprocessing Effects",
                             description: "Use built-in postprocessing effects, such as SSAO, FXAA, Color Grading, Tone Mapping, etc."
                         },
                         {
-                            img: "/assets/light.jpg",
+                            img: "/assets/pbr.png",
                             title: "Physically-based Rendering (PBR)",
                             description: "Standard material provides easy-to-use physically-based rendering with metallic workflow."
                         },
@@ -181,22 +186,41 @@ export default {
                     ]
                 },
                 {
+                    title: "Asset Management",
+                    properties: [
+                        {
+                            img: "",
+                            title: "Wide Variety of Supported Formats",
+                            description: "The engine supports import of following formats: 3D models - FBX; Textures - DDS, PNG, TGA, JPG, TIFF; \
+                            Sound - OGG, WAV. There are also few native engine formats for: shaders, curves, animation blending state machines."
+                        },
+                        {
+                            img: "",
+                            title: "Fully Asynchronous Asset Import",
+                            description: "Import tons of assets in parallel and fully utilize the available power of your CPU to speed up asset loading."
+                        },
+                    ]
+                },
+                {
                     title: "Sound",
                     properties: [
                         {
-                            img: "/assets/placeholder.png",
-                            title: "Spatial Sound",
-                            description: "Use "
+                            img: "",
+                            title: "Sound Sources",
+                            description: "Use powerful sound system to create rich sound environment. Mix spatial sound sources with 2D sources using \
+                            spatial blend parameter, tweak various parameters (distance falloff, gain, etc.) to get best results."
                         },
                         {
-                            img: "/assets/placeholder.png",
+                            img: "",
                             title: "Head-Related Transfer Function (HRTF)",
-                            description: "HRTF dramatically increases perception of sound, it makes it sound natural as if it'd be in real world."
+                            description: "HRTF dramatically increases perception of sound, it makes it sound natural as if it'd be in real world. The engine \
+                            offers 40+ individual 'head models' to allow you to pick one that best suits you or your players."
                         },
                         {
-                            img: "/assets/reverb.png",
+                            img: "",
                             title: "Sound Effects",
-                            description: "Use sound effects (such as reverb) to improves sound quality and make it sound more natural."
+                            description: "Use sound effects (such as reverb) to improve sound quality and make it sound more natural. Digital sound processing (DSP) \
+                            module will help you to create your own, custom effects."
                         },
                     ]
                 },
@@ -204,19 +228,19 @@ export default {
                     title: "Physics",
                     properties: [
                         {
-                            img: "/assets/rapier.png",
-                            title: "Powered by Rapier",
-                            description: "The engine offers powerful physics system that is powered by Rapier physics engine."
-                        },
-                        {
                             img: "/assets/rigidbody.png",
                             title: "Rigid Body Dynamics",
-                            description: "Rigid body dynamics provides you with everything you need for physics simulation."
+                            description: "Rigid body dynamics provides you with everything you need for physics simulation, including joints."
                         },
                         {
                             img: "/assets/shapes.png",
                             title: "Various Collider Shapes",
-                            description: "The engine offers a lot of colliders shapes, the list includes: "
+                            description: "The engine offers a lot of colliders shapes, the list includes: ball, capsule, cube, cone, cylinder, triangle mesh, convex hull, etc."
+                        },
+                        {
+                            img: "/assets/rapier.png",
+                            title: "Powered by Rapier",
+                            description: "The engine offers powerful physics system that is powered by Rapier physics engine."
                         },
                     ]
                 },
