@@ -85,26 +85,17 @@
             </v-container>
         </v-sheet>
 
-        <v-container class="text-center pt-16 pb-16">
-            <h2 class="mt-3 mb-2">Sponsors</h2>
-            <p>Keeping the dream alive.</p>
-            <v-divider></v-divider>
-            <p class="mb-0 mt-4">
-                tom cors, false, zrkn, BlueSkye, L.apz, toyboot4e, Daniel
-                Simon, Yuki Ishii, Vish Vadlamani, Edward, Aleks Row,
-                Vitaliy (ArcticNoise) Chernyshev, Alexey Kuznetsov, Ben
-                Anderson, Jesper Nordenberg, Joseph Catrambone
-            </p>
-        </v-container>
+        <sponsors/>
 
     </div>
 </template>
 
 <script>
 import FeaturesList from "../components/FeaturesList";
+import Sponsors from "../components/Sponsors";
 
 export default {
-    components: { FeaturesList },
+    components: { FeaturesList, Sponsors },
     data() {
         return {};
     },
