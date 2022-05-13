@@ -3,6 +3,8 @@
         <v-row>
             <v-col cols="12">
                 <h2 class="mb-2">Examples</h2>
+
+                <p> Source code for all examples can be found <a href="https://github.com/FyroxEngine/Fyrox/blob/master/examples/">here</a></p>
             </v-col>
             <v-row>
                 <v-col
@@ -177,6 +179,13 @@ export default {
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/ui.rs",
                     command: "cargo run --example ui --release",
                     description: "The example shows how create user interface and handle its events to perform some actions."
+                },
+                {
+                    title: "Scripting",    
+                    img: "/assets/examples/scripting.png",
+                    link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/scripting",
+                    command: "cd examples/scripting && cargo run --package [editor/executor] --release",
+                    description: "Scripting example shows how to create game plugin with custom scripts. It is possible to run it in two 'modes' - editor or executor."
                 },
             ],
         };
