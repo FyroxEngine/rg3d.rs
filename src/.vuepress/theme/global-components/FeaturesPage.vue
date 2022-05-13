@@ -136,14 +136,14 @@ export default {
                     title: "Scene Graph",
                     properties: [
                         {
-                            img: "/assets/placeholder.png",
+                            img: "",
                             title: "Wide Variety of Built-in Nodes",
                             description: "By default the engine offers Camera, Collider, Decal, Joint, Pivot, RigidBody, Sprite, \
                             Terrain, 2D Rigid Body, 2D Collider, 2D Joint, Rectangle (2D Sprite), Point Light, Spot Light, Directional \
                             Light, Mesh, Particle System, Sound Source."
                         },
                         {
-                            img: "/assets/placeholder.png",
+                            img: "",
                             title: "Property Inheritance",
                             description: "Object properties are inheritable, this means that you can create a prefab, put its instances on a \
                             scene and every change to prefab properties will reflect to its instances (if there was no manual change to a property)."

@@ -61,7 +61,7 @@
                 </p>
 
                 <p class="text-center">
-                    Start learning basics of this engine using the book
+                    Start learning basics of the engine using the book
                 </p>
                 <p class="text-center">
                     <v-btn
@@ -79,9 +79,16 @@
         <v-sheet>
             <v-container class="text-center pt-16 pb-16">
                 <h2 class="mt-3 mb-2">Examples</h2>
-                <p>See all features in prepared scenes.</p>
-                <v-divider></v-divider>
-                <p class="mb-0 mt-4"></p>
+                <p>The engine offers a large set of examples covering most aspects of game development.</p>
+               
+                <v-row justify="center">
+                    <v-btn 
+                        color="primary"
+                        href="/examples/"
+                    >
+                        See Full List Of Examples
+                    </v-btn>
+                </v-row>
             </v-container>
         </v-sheet>
 
