@@ -2,9 +2,9 @@
     <v-app>
         <top-nav />
         <v-main>
-            <transition name="fade">
-                <Content />
-            </transition>
+            <v-fade-transition appear>
+                <Content :key="new Date()" />
+            </v-fade-transition>
         </v-main>
         <app-footer />
     </v-app>

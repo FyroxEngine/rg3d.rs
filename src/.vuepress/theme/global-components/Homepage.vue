@@ -111,9 +111,6 @@ import Sponsors from "../components/Sponsors";
 
 export default {
     components: { FeaturesList, Sponsors },
-    data() {
-        return {};
-    },
 };
 </script>
 

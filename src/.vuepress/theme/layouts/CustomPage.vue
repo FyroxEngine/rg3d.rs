@@ -2,10 +2,12 @@
     <v-app>
         <top-nav />
         <v-main>
-            <v-container>
+            <v-fade-transition appear>
+            <v-container :key="$frontmatter.title">
                 <page-title :text="$frontmatter.title" />
                 <Content />
             </v-container>
+            </v-fade-transition>
         </v-main>
         <app-footer />
     </v-app>

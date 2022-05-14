@@ -2,8 +2,10 @@
     <v-app>
         <top-nav />
         <v-main>
-            <blog-page v-if="$pagination" />
-            <Content v-else />
+            <v-fade-transition appear>
+                <blog-page v-if="$pagination" />
+                <Content v-else />
+            </v-fade-transition>
         </v-main>
         <app-footer />
     </v-app>
