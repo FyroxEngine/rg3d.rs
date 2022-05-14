@@ -94,7 +94,7 @@
                 <v-row justify="center">
                     <v-btn 
                         color="primary"
-                        href="/examples/"
+                        href="/examples.html"
                     >
                         See Full List Of Examples
                     </v-btn>

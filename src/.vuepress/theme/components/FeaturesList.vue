@@ -35,7 +35,7 @@
             <v-row justify="center">
                 <v-btn 
                     color="primary"
-                    href="/features/"
+                    href="/features.html"
                 >
                     See Full List Of Features
                 </v-btn>
