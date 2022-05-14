@@ -6,7 +6,6 @@
 
                 <p> Source code for all examples can be found <a href="https://github.com/FyroxEngine/Fyrox/blob/master/examples/">here</a></p>
             </v-col>
-            <v-row>
                 <v-col
                     cols="12"
                     md="6"
@@ -16,20 +15,25 @@
                     class="d-flex mb-4"
                 >
                     <v-card color="secondary">
-                        <a v-bind:href="link">
-                            <v-img v-bind:src="img"/>
+                        <a :href="link">
+                            <v-img class="rounded-t" :src="img"/>
                         </a>
-                        <a v-bind:href="link">
-                            <v-card-title> 
+                        <a :href="link">
+                            <v-card-title class="pb-0"> 
                                 <h3> {{title}} </h3> 
                             </v-card-title>
                         </a>
-                        <code class="ml-3">{{command}}</code>
-                        <v-card-text> {{description}} </v-card-text>
+                        
+                        <v-card-text> 
+                            <div class="mb-2">
+                                <cp-code class="cursor-pointer" @click="copy(command)" :command="command" />
+                            </div>
+                            <p>{{description}}</p> 
+                        </v-card-text>
                     </v-card>   
                 </v-col>    
-            </v-row>   
         </v-row>
+        
     </v-container>
 </template>
 
