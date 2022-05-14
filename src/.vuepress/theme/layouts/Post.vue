@@ -2,7 +2,7 @@
     <v-app>
         <top-nav />
         <v-main>
-            <v-fade-transition appear >
+            <v-fade-transition appear hide-on-leave>
                 <v-container class="pb-16">
                     <h1 class="text-center mt-16 mb-10">{{$frontmatter.title}}</h1>
                     <Content />

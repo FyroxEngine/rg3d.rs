@@ -2,7 +2,7 @@
     <v-app>
         <top-nav />
         <v-main>
-            <v-fade-transition appear>
+            <v-fade-transition appear hide-on-leave>
                 <blog-page v-if="$pagination" />
                 <Content v-else />
             </v-fade-transition>
