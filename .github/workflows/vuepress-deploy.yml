@@ -26,7 +26,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: webfactory/ssh-agent@v0.5.4
         with:
-            ssh-private-key: ${{ secrets.GITHUB_TOKEN }}
+            ssh-private-key: ${{ secrets.ACTIONS_SECRET }}
         
       - run: | 
           echo Installing dependencies for vuepress 
