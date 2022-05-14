@@ -5,15 +5,8 @@
                 <v-col cols="12">
                     <h2 class="text-center mb-2">Sponsors</h2>
                 </v-col>
-                <v-col
-                    cols="auto"
-                    md="auto"
-                    lg="auto"
-                    v-for="(name, key) in sponsors"
-                    :key="'sponsor' + key"
-                    class="d-flex mb-4"
-                >
-                    <div class="chip">
+                <v-col cols="12 d-flex flex-wrap justify-space-between">
+                    <div class="chip mb-3"  v-for="name in sponsors" :key="name">
                         <p class="chip-text"> {{name}} </p> 
                     </div>
                 </v-col>

@@ -1,9 +1,6 @@
 <template>
      <v-container class="pb-9">
         <v-row>
-            <v-col cols="12">
-                <h2 class="mb-2">Features</h2>
-            </v-col>
             <v-expansion-panels multiple>
                 <v-expansion-panel
                     v-for="({ title, properties }, key) in features"
@@ -14,24 +11,22 @@
                     </v-expansion-panel-header>
 
                     <v-expansion-panel-content>
-                        <v-container class="pb-9">
-                            <v-row>
-                                <v-col
-                                    cols="12"
-                                    md="6"
-                                    lg="4"
-                                    v-for="({ title, description, img }, key) in properties"
-                                    :key="'feature' + key"
-                                    class="d-flex mb-4"
-                                >
-                                    <v-card color="secondary">
-                                        <v-img v-bind:src="img"></v-img>
-                                        <v-card-title> <h3> {{title}} </h3> </v-card-title>
-                                        <v-card-text> {{description}} </v-card-text>
-                                    </v-card>   
-                                </v-col>    
-                            </v-row>                                               
-                        </v-container>
+                        <v-row  class="pb-9">
+                            <v-col
+                                cols="12"
+                                md="6"
+                                lg="4"
+                                v-for="({ title, description, img }, key) in properties"
+                                :key="'feature' + key"
+                                class="d-flex mb-4"
+                            >
+                                <v-card color="secondary">
+                                    <v-img v-bind:src="img"></v-img>
+                                    <v-card-title> <h3> {{title}} </h3> </v-card-title>
+                                    <v-card-text> {{description}} </v-card-text>
+                                </v-card>   
+                            </v-col>    
+                        </v-row>                                               
                     </v-expansion-panel-content>
 
                 </v-expansion-panel>

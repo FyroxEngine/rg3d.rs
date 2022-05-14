@@ -1,7 +1,8 @@
 ---
 home: true
-layout: LayoutFluid
+layout: CustomPage
 tagline: Examples of the Fyrox Engine
+title: Examples
 ---
 
 <ExamplesPage />

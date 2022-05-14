@@ -23,7 +23,7 @@
                             params: { name: article['path'] },
                         }"
                         :key="article['key']"
-                    ></blog-post-tile>
+                    />
                 </v-row>
                 <v-row>
                     <v-col cols="12">
@@ -42,7 +42,7 @@
                                         $router.push(this.nextLink);
                                     }
                                 "
-                            ></v-pagination>
+                            />
                         </div>
                     </v-col>
                 </v-row>

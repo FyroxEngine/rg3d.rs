@@ -2,7 +2,7 @@
      <v-container class="pb-9">
         <v-row>
             <v-col cols="12">
-                <h2 class="mb-2">Examples</h2>
+                <h2 class="mb-2">Source code</h2>
 
                 <p> Source code for all examples can be found <a href="https://github.com/FyroxEngine/Fyrox/blob/master/examples/">here</a></p>
             </v-col>

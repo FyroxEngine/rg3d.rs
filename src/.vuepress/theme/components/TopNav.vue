@@ -11,16 +11,15 @@
                 />
             </router-link>
 
-            <v-toolbar-title >
+            <v-toolbar-title>
                 <router-link
                     to="/"
                     class="text-decoration-none white--text"
                 >
                     Fyrox Game Engine
-                </router-link></v-toolbar-title
-            >
-
-            <v-spacer></v-spacer>
+                </router-link>
+            </v-toolbar-title>
+            <v-spacer />
             <v-app-bar-nav-icon
                 @click="drawer = !drawer"
                 v-if="$vuetify.breakpoint.mobile"
@@ -28,7 +27,7 @@
             </v-app-bar-nav-icon>
 
             <v-toolbar  elevation="0" v-if="!$vuetify.breakpoint.mobile" jsutify-end>
-                <v-spacer></v-spacer>
+                <v-spacer />
                 <v-btn
                     plain
                     class="mr-3"
@@ -40,13 +39,13 @@
                     >{{ text }}</v-btn
                 >
 
-                <v-divider inset vertical></v-divider>
+                <v-divider inset vertical />
                 
                 <social-buttons-list
                     :allow-follow-text="true"
                     as-plain
                     include-for="topnav"
-                ></social-buttons-list>
+                />
             </v-toolbar>
         </v-app-bar>
 
@@ -77,7 +76,7 @@
                     >
                     <social-buttons-vertical-nav
                         include-for="any"
-                    ></social-buttons-vertical-nav>
+                    />
                 </v-list-item-group>
             </v-list>
         </v-navigation-drawer>
