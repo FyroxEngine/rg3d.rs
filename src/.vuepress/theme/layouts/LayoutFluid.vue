@@ -2,8 +2,8 @@
     <v-app>
         <top-nav />
         <v-main>
-            <v-fade-transition appear>
-                <Content :key="new Date()" />
+            <v-fade-transition appear hide-on-leave duration="2000">
+                <Content :key="new Date().toString()" />
             </v-fade-transition>
         </v-main>
         <app-footer />

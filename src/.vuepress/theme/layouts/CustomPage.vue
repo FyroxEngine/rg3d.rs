@@ -2,7 +2,7 @@
     <v-app>
         <top-nav />
         <v-main>
-            <v-fade-transition appear>
+            <v-fade-transition appear hide-on-leave>
             <v-container :key="$frontmatter.title">
                 <page-title :text="$frontmatter.title" />
                 <Content />
