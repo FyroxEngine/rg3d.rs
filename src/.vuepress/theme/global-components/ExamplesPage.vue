@@ -26,7 +26,7 @@
                         
                         <v-card-text> 
                             <div class="mb-2">
-                                <cp-code class="cursor-pointer" @click="copy(command)" :command="command" />
+                                <cp-code class="cursor-pointer" :command="command" />
                             </div>
                             <p>{{description}}</p> 
                         </v-card-text>
