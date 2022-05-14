@@ -36,6 +36,9 @@ jobs:
          
           echo Push builded code to website repo
           cd src/.vuepress/dist
+          
+          echo 'fyrox.rs' > CNAME
+          
           git init
           
           echo Set git user
@@ -43,7 +46,7 @@ jobs:
           echo Set git mail
           git config user.email "<>"
           echo Set git url
-          git remote add origin git@github.com:FyroxEngine/rg3d.rs.git main:github-pages
+          git remote add origin git@github.com:FyroxEngine/rg3d.rs.git main
           echo Committing deploy
           git add -A
           git commit -m 'deploy'
