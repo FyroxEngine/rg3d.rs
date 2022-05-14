@@ -52,4 +52,4 @@ jobs:
           git commit -m 'deploy'
 
           echo Trying to push stuff
-          git push -f git@github.com:FyroxEngine/rg3d.rs.git main:gh-pages
+          git push -f git@github.com:FyroxEngine/rg3d.rs.git gh-pages
