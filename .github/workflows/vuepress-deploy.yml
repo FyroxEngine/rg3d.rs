@@ -5,10 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@main
 
     - name: vuepress-deploy
-      uses: jenkey2011/vuepress-deploy@master
+      uses: jenkey2011/vuepress-deploy@main
       env:
         ACCESS_TOKEN: ${{ secrets.ACTIONS_SECRET }}
         TARGET_REPO: FyroxEngine/rg3d.rs
