@@ -40,6 +40,16 @@
                         create games of tomorrow, today.
                     </p>
                 </v-col>
+
+                <v-row justify="center">
+                    <v-btn 
+                        color="primary"
+                        href="https://fyrox-book.github.io/fyroxed/introduction.html"
+                    >
+                        <span>Learn How To Use The Editor</span>
+                    </v-btn>
+                </v-row>        
+
             </v-row>
         </v-container>
         <v-sheet id="startMaking">
