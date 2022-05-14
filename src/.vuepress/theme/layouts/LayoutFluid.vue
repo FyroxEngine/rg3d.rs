@@ -1,12 +1,12 @@
 <template>
     <v-app>
-        <top-nav></top-nav>
+        <top-nav />
         <v-main>
             <transition name="fade">
                 <Content />
             </transition>
         </v-main>
-        <app-footer></app-footer>
+        <app-footer />
     </v-app>
 </template>
 

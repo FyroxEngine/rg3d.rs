@@ -2,8 +2,10 @@
     <v-app>
         <top-nav />
         <v-main>
-            <blog-page v-if="$pagination" />
-            <Content v-else />
+            <v-container>
+                <page-title :text="$frontmatter.title" />
+                <Content />
+            </v-container>
         </v-main>
         <app-footer />
     </v-app>
@@ -12,10 +14,9 @@
 <script>
 import AppFooter from "../components/AppFooter.vue";
 import TopNav from "../components/TopNav.vue";
-import BlogPage from "./BlogPage.vue";
 
 export default {
-    components: { AppFooter, TopNav, BlogPage },
+    components: { AppFooter, TopNav },
 };
 </script>
 
