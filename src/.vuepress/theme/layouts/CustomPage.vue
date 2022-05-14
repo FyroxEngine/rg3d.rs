@@ -3,8 +3,10 @@
         <top-nav />
         <v-main>
             <v-fade-transition appear>
-                <blog-page v-if="$pagination" />
-                <Content v-else />
+            <v-container :key="$frontmatter.title">
+                <page-title :text="$frontmatter.title" />
+                <Content />
+            </v-container>
             </v-fade-transition>
         </v-main>
         <app-footer />
@@ -14,10 +16,9 @@
 <script>
 import AppFooter from "../components/AppFooter.vue";
 import TopNav from "../components/TopNav.vue";
-import BlogPage from "./BlogPage.vue";
 
 export default {
-    components: { AppFooter, TopNav, BlogPage },
+    components: { AppFooter, TopNav },
 };
 </script>
 

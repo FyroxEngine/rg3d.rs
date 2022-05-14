@@ -1,15 +1,15 @@
 <template>
     <v-app>
-        <top-nav></top-nav>
+        <top-nav />
         <v-main>
-            <transition name="fade">
+            <v-fade-transition appear >
                 <v-container class="pb-16">
                     <h1 class="text-center mt-16 mb-10">{{$frontmatter.title}}</h1>
                     <Content />
                 </v-container>
-            </transition>
+            </v-fade-transition>
         </v-main>
-        <app-footer></app-footer>
+        <app-footer />
     </v-app>
 </template>
 

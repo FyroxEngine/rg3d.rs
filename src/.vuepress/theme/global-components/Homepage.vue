@@ -5,7 +5,7 @@
                 <span>Start creating games</span>
             </v-btn>
         </page-title>
-        <features-list src="features"></features-list>
+        <features-list src="features" />
         <v-container class="text-center pt-16 pb-16 mb-16">
             <h2 class="mt-3 mb-2">FyroxEd</h2>
             <v-row class="mt-5">
@@ -86,23 +86,21 @@
             </v-container>
         </v-sheet>
      
-        <v-sheet>
-            <v-container class="text-center pt-16 pb-16">
-                <h2 class="mt-3 mb-2">Examples</h2>
-                <p>The engine offers a large set of examples covering most aspects of game development.</p>
-               
-                <v-row justify="center">
-                    <v-btn 
-                        color="primary"
-                        href="/examples.html"
-                    >
-                        See Full List Of Examples
-                    </v-btn>
-                </v-row>
-            </v-container>
-        </v-sheet>
+        <v-container class="text-center pt-16 pb-16">
+            <h2 class="mt-3 mb-2">Examples</h2>
+            <p>The engine offers a large set of examples covering most aspects of game development.</p>
+            
+            <v-row justify="center">
+                <v-btn 
+                    color="primary"
+                    href="/examples.html"
+                >
+                    See Full List Of Examples
+                </v-btn>
+            </v-row>
+        </v-container>
 
-        <sponsors/>
+        <sponsors />
 
     </div>
 </template>
@@ -113,9 +111,6 @@ import Sponsors from "../components/Sponsors";
 
 export default {
     components: { FeaturesList, Sponsors },
-    data() {
-        return {};
-    },
 };
 </script>
 
