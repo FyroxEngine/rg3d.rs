@@ -25,9 +25,7 @@
                         </a>
                         
                         <v-card-text> 
-                            <div class="mb-2">
-                                <cp-code class="cursor-pointer" :command="command" />
-                            </div>
+                            <cp-code class="cursor-pointer" :command="command" />
                             <p>{{description}}</p> 
                         </v-card-text>
                     </v-card>   

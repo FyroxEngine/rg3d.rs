@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mb-2">
         <v-tooltip top>
             <template v-slot:activator="{ on, attrs }">
                 <code class="cursor-pointer" @click="copy(command)" v-bind="attrs" v-on="on">{{command}}</code>
