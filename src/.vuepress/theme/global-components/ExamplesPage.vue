@@ -25,7 +25,7 @@
                         </a>
                         
                         <v-card-text> 
-                            <cp-code-local class="cursor-pointer" :command="command" />
+                            <cp-code class="cursor-pointer" :command="command" />
                             <p>{{description}}</p> 
                         </v-card-text>
                     </v-card>   
@@ -36,10 +36,7 @@
 </template>
 
 <script>
-import {default as CpCodeLocal} from "../components/CpCodeNoneG.vue";
-
 export default {
-    components: {CpCodeLocal},
     data() {
         return {
             examples: [
