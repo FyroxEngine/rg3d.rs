@@ -64,7 +64,7 @@
 
                 <p  class="mt-6 mb-1">Add to your Cargo.toml</p>
                 <p>
-                    <code class="code-unstylled"> 
+                    <code class="code-unstyled"> 
                     [dependencies] <br />
                     fyrox = "^0.25"
                     </code>
