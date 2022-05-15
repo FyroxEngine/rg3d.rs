@@ -91,12 +91,14 @@
             <p>The engine offers a large set of examples covering most aspects of game development.</p>
             
             <v-row justify="center">
+                <v-col cols="12" class="text-center mb-16">
                 <v-btn 
                     color="primary"
                     href="/examples.html"
                 >
                     See Full List Of Examples
                 </v-btn>
+                </v-col>
             </v-row>
         </v-container>
 
