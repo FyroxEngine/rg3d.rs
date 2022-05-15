@@ -59,7 +59,7 @@
                 <p>Installation is easy as pie.</p>
                 <v-divider />
                 <p class="mt-6">
-                    <cp-code command="cargo new my-awesome-game" />
+                    <cp-code-local command="cargo new my-awesome-game" />
                 </p>
 
                 <p  class="mt-6 mb-1">Add to your Cargo.toml</p>
@@ -110,10 +110,10 @@
 <script>
 import FeaturesList from "../components/FeaturesList";
 import Sponsors from "../components/Sponsors";
-import CpCode from './CpCode.vue';
+import {default as CpCodeLocal} from "../components/CpCodeNoneG.vue";
 
 export default {
-    components: { FeaturesList, Sponsors, CpCode },
+    components: { FeaturesList, Sponsors, CpCodeLocal },
 };
 </script>
 
