@@ -52,7 +52,39 @@
 
             </v-row>
         </v-container>
-        
+        <v-sheet id="startMaking">
+            <v-container class="text-center pt-16 pb-16 mb-16">
+                <h2 class="mt-3 mb-2">Start Making Games</h2>
+
+                <p>Installation is easy as pie.</p>
+                <v-divider />
+                <p class="mt-6">
+                    <cp-code command="cargo new my-awesome-game" />
+                </p>
+
+                <p  class="mt-6 mb-1">Add to your Cargo.toml</p>
+                <p>
+                    <code class="code-unstyled"> 
+                    [dependencies] <br />
+                    fyrox = "^0.25"
+                    </code>
+                </p>
+
+                <p class="text-center">
+                    Start learning basics of the engine using the book
+                </p>
+                <p class="text-center">
+                    <v-btn
+                        href="https://fyrox-book.github.io/"
+                        class="mt-4"
+                        color="primary"
+                        depressed
+                    >
+                        <span>Read The Book</span>
+                    </v-btn>
+                </p>
+            </v-container>
+        </v-sheet>
      
         <v-container class="text-center pt-16 pb-16">
             <h2 class="mt-3 mb-2">Examples</h2>
@@ -78,9 +110,10 @@
 <script>
 import FeaturesList from "../components/FeaturesList";
 import Sponsors from "../components/Sponsors";
+import CpCode from './CpCode.vue';
 
 export default {
-    components: { FeaturesList, Sponsors },
+    components: { FeaturesList, Sponsors, CpCode },
 };
 </script>
 
