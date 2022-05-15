@@ -1,6 +1,8 @@
 <template>
     <v-app>
-        <top-nav />
+        <ClientOnly>
+            <top-nav />
+        </ClientOnly>
         <v-main>
             <v-fade-transition appear hide-on-leave>
                 <Content :key="new Date().toString()" />

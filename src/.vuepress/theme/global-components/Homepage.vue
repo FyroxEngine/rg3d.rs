@@ -59,7 +59,7 @@
                 <p>Installation is easy as pie.</p>
                 <v-divider />
                 <p class="mt-6">
-                    <code>cargo new my-awesome-game</code>
+                    <cp-code command="cargo new my-awesome-game" />
                 </p>
 
                 <p  class="mt-6 mb-1">Add to your Cargo.toml</p>
