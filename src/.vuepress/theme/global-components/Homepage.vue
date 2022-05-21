@@ -1,6 +1,6 @@
 <template>
     <div>
-        <page-title text="Fyrox Game Engine">
+        <page-title :typed="['Use rust to build games.', 'Deploy to multiple platfors.', 'Enjoy the full featured editor.']" text="Fyrox Game Engine">
             <v-btn @click="$vuetify.goTo('#startMaking', {duration: 1200, easing: 'easeInOutQuad'})" class="mt-4" color="primary" depressed>
                 <span>Start creating games</span>
             </v-btn>
@@ -59,7 +59,7 @@
                 <p>Installation is easy as pie.</p>
                 <v-divider />
                 <p class="mt-6">
-                    <code>cargo new my-awesome-game</code>
+                    <cp-code command="cargo new my-awesome-game" />
                 </p>
 
                 <p  class="mt-6 mb-1">Add to your Cargo.toml</p>

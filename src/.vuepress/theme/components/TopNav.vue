@@ -33,9 +33,9 @@
                     class="mr-3"
                     v-for="({ text, link, key }) in topNavLinks"
                     :key="key"
-                    :to="isExternal(link) ? '' : link"
-                    :href="isExternal(link) ? link : ''"
-                    :target="isExternal(link) ? '_blank': ''"
+                    :to="isExternal(link) ? undefined : link"
+                    :href="isExternal(link) ? link : undefined"
+                    :target="isExternal(link) ? '_blank': undefined"
                     >{{ text }}</v-btn
                 >
 
