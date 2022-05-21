@@ -1,6 +1,7 @@
 import Vuetify from "vuetify";
 import "vuetify/dist/vuetify.min.css";
 import '@mdi/font/css/materialdesignicons.css';
+import VueTypedJs from 'vue-typed-js';
 
 /**
  * Client app enhancement file.
@@ -16,7 +17,8 @@ export default ({
   siteData // site metadata
 }) => {
   Vue.use(Vuetify);
-
+  Vue.use(VueTypedJs);
+  
   Vue.filter('parseBlogSubtitle', function (value) {
     return value.replace(new RegExp('\\*{2}([^\\*]*)\\*{2}.+?', 'g'), "<strong>$1</strong>");
   })

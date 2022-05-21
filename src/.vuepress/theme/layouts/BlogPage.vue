@@ -1,11 +1,11 @@
 <template>
     <div>
-        <page-title text="Blog">
+        <page-title text="Blog" :typed="['Get familiar with release notes.', 'Stay informed with the latest news.', 'Learn about new engine features.']">
              <v-btn v-if="activePage !== 1" class="mt-4"  @click="
                         $vuetify.goTo('#posts', {
                             duration: 1200,
                             easing: 'easeInOutQuad',
-                        }) && latest(1)
+                        }) && latest()
                     " color="primary" depressed>
                 <span
                     >See latest posts</span
@@ -78,6 +78,7 @@ export default {
     methods: {
         latest() {
             this.$router.push(this.$pagination.getSpecificPageLink(0));
+            this.activePage = 1;
         },
         navigate(value) {
             this.$router.push(this.$pagination.getSpecificPageLink(value - 1));
