@@ -1,6 +1,6 @@
 <template>
     <div>
-        <page-title :typed="['Use rust to build games.', 'Deploy to multiple platfors.', 'Enjoy the full featured editor.']" text="Fyrox Game Engine">
+        <page-title :typed="['Use rust to build games.', 'Deploy to multiple platforms.', 'Enjoy the full featured editor.']" text="Fyrox Game Engine">
             <v-btn @click="$vuetify.goTo('#startMaking', {duration: 1200, easing: 'easeInOutQuad'})" class="mt-4" color="primary" depressed>
                 <span>Start creating games</span>
             </v-btn>
