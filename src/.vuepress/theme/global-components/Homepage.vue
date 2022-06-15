@@ -44,7 +44,7 @@
                 <v-row justify="center">
                     <v-btn 
                         color="primary"
-                        href="https://fyrox-book.github.io/fyroxed/introduction.html"
+                        href="https://fyrox-book.github.io/fyrox/beginning/scripting.html"
                     >
                         <span>Learn How To Use The Editor</span>
                     </v-btn>
