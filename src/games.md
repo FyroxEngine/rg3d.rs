@@ -15,6 +15,11 @@ The game is a Quake3-like arena shooter, it is a tech demo of the engine.
 
 <YtVideo url="https://www.youtube.com/embed/UDn8ymyXPcI" />
 
+## [soccer](https://github.com/64kramsystem/rust-game-ports#soccerfyrox) by [64kramsystem](https://github.com/64kramsystem)
+
+Fyrox port of "Soccer" (Sensible Soccer clone), from [Code the Classics - Vol. 1](https://store.rpipress.cc/products/code-the-classics).
+
+![soccer](https://github.com/64kramsystem/rust-game-ports/blob/master/images/readme/soccer.png?raw=true)
 
 ## [rustcycles](https://github.com/rustcycles/rustcycles) by [martin-t](https://github.com/martin-t)
 
