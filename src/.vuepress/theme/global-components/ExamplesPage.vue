@@ -45,21 +45,21 @@ export default {
                     img: "/assets/examples/2d.png",
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/2d.rs",
                     command: "cargo run --example 2d --release",
-                    description: "The example shows how to create 2D scene."
+                    description: "The example shows how to create a 2D scene."
                 },
                 {
                     title: "2D Scene",    
                     img: "/assets/examples/2d_scene.png",
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/2d_scene.rs",
                     command: "cargo run --example 2d_scene --release",
-                    description: "The example shows how to load 2D scene made in the FyroxEd."
+                    description: "The example shows how to load a 2D scene made in the FyroxEd."
                 },
                 {
                     title: "3rd Person",    
                     img: "/assets/examples/3rd_person.png",
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/3rd_person.rs",
                     command: "cargo run --example 3rd_person --release",
-                    description: "This is the most complex example in the engine, it show how to load a game level, create character with animations and basic controls."
+                    description: "This is the most complex example in the engine, it show how to load a game level, create a character with animations and basic controls."
                 },
                 {
                     title: "Async Scene Loading",    
@@ -67,28 +67,28 @@ export default {
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/async.rs",
                     command: "cargo run --example async --release",
                     description: "The example show how to load (or create) game scenes asynchronously, it is very useful if your game have a lot of assets and you don't \
-                    to 'hang' your game while assets are loading."
+                    want to 'hang' your game while the assets are loading."
                 },
                 {
                     title: "Button",    
                     img: "/assets/examples/button.png",
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/button.rs",
                     command: "cargo run --example button --release",
-                    description: "The example shows how to create simple button and handle its events. The button will jump to new position every time its clicked."
+                    description: "The example shows how to create a simple button and handle its events. The button will jump to new position every time its clicked."
                 },
                 {
                     title: "Compressed Textures",    
                     img: "/assets/examples/compressed_textures.png",
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/compressed_textures.rs",
                     command: "cargo run --example compressed_textures --release",
-                    description: "The example shows how to use texture compression options to reduce GPU memory consumption and to speed up rendering."
+                    description: "The example shows how to use texture compression options to reduce GPU memory consumption and speed up rendering."
                 },
                 {
                     title: "Custom Loop",    
                     img: "/assets/examples/custom_loop.png",
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/custom_loop.rs",
                     command: "cargo run --example custom_loop --release",
-                    description: "The example shows how to create custom game loop. It might be useful if you need deep control over update calls. \
+                    description: "The example shows how to create a custom game loop. It might be useful if you need deep control over update calls. \
                     It can only be used if the engine is used as a Framework."
                 },
                 {
@@ -103,7 +103,7 @@ export default {
                     img: "/assets/examples/grid.png",
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/grid.rs",
                     command: "cargo run --example grid --release",
-                    description: "The example shows how to use Grid widget to arrange UI elements in a grid."
+                    description: "The example shows how to use the Grid widget to arrange UI elements in a grid."
                 },
                 {
                     title: "Instancing",    
@@ -117,7 +117,7 @@ export default {
                     img: "/assets/examples/lightmap.png",
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/lightmap.rs",
                     command: "cargo run --example lightmap --release",
-                    description: "The example shows how to generate (or use generated) light map. Light map is a ''baked' lighting, that has almost no performance impact."
+                    description: "The example shows how to generate (or use generated) light maps. Light map is a ''baked' lighting, that has almost no performance impact."
                 },
                 {
                     title: "Level of Detail",    
@@ -131,7 +131,7 @@ export default {
                     img: "/assets/examples/material.png",
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/material.rs",
                     command: "cargo run --example material --release",
-                    description: "The example shows how to create custom shader and material and use it for rendering."
+                    description: "The example shows how to create custom shaders and materials and use them for rendering."
                 },
                 {
                     title: "Navigational Meshes",    
@@ -180,14 +180,14 @@ export default {
                     img: "/assets/examples/ui.png",
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/ui.rs",
                     command: "cargo run --example ui --release",
-                    description: "The example shows how create user interface and handle its events to perform some actions."
+                    description: "The example shows how create user interface and handle its events to perform actions."
                 },
                 {
                     title: "Scripting",    
                     img: "/assets/examples/scripting.png",
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/scripting",
                     command: "cd examples/scripting && cargo run --package [editor/executor] --release",
-                    description: "Scripting example shows how to create game plugin with custom scripts. It is possible to run it in two 'modes' - editor or executor."
+                    description: "Scripting example shows how to create game plugins with custom scripts. It is possible to run it in two 'modes' - editor or executor."
                 },
             ],
         };
