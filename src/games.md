@@ -5,13 +5,13 @@ layout: CustomPage
 
 ## [Station Iapetus](https://github.com/mrDIMAS/StationIapetus)
 
-The game is a sci-fi DeadSpace-like horror game, the action takes place on the spaceship that stays radio-silent near Saturn. The main character had crashed in the loading bay, he's the only survivor, he has no other option but to start exploring the main ship to find a way to escape (this is the main goal).
+A DeadSpace-like horror game. The action takes place on a spaceship that stays radio-silent near Saturn. The main character had crashed in the loading bay. He's the only survivor, and has no other option but to start exploring the main ship to find a way to escape (This is the main goal).
 
 <YtVideo url="https://www.youtube.com/embed/DgQXyCw3in4" />
 
 ## [rusty-shooter](https://github.com/mrDIMAS/rusty-shooter)
 
-The game is a Quake3-like arena shooter, it is a tech demo of the engine.
+ Nothing beats the classics! A Quake3-like arena shooter, it's a tech demo for the engine.
 
 <YtVideo url="https://www.youtube.com/embed/UDn8ymyXPcI" />
 
