@@ -11,6 +11,16 @@ you to create 2D and 3D games with low effort using native editor. This release 
 existing functionality that makes game development much more comfortable. The list of changes is quite big, so let's get
 started!
 
+## Fish Folly
+
+Before we start on "boring" text, take a look at this video, it captured from the new project based on the 
+engine - [Fish Folly](https://github.com/mrDIMAS/FishFolly):
+
+<YtVideo url="https://www.youtube.com/embed/RuoLInE34dM" />
+
+Fish Folly is a 3D platformer that uses latest engine features at full capacity, it may be very helpful to learn how to build
+relatively large game with scripts and plugins.
+
 ## Compile-Time Reflection
 
 [@toyboot4e](https://github.com/toyboot4e) and [@mrDIMAS](https://github.com/mrDIMAS) implemented compile time reflection.
