@@ -53,15 +53,10 @@ img {
     max-width: 100%;
 }
 
-.v-application .blog-post code {
+.v-application .blog-post .extra-class code {
     all: unset !important;
     color: #eee
 }
 
-/* Or with increased specificity */
-.v-application .blog-post code {
-  all: unset;
-  color: #eee
-}
 
 </style>
