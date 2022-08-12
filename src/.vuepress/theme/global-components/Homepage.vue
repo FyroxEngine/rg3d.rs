@@ -33,11 +33,11 @@
                     class="mt-md-n16 align-self-center text-justify"
                 >
                     <p>
-                        What would be a game engine without scene editor eh?
+                        What would a game engine be without a scene editor eh?
                         Don't worry. For this purpose We provide our own editor - 
-                        FyroxEd. It allows you to create your game scenes
-                        in no time. Supporting tons of features, you're ready to
-                        create games of tomorrow, today.
+                        FyroxEd. It allows you to create your own game scenes
+                        in no time. Supporting tons of features, you will be ready to
+                        create the games of tomorrow, today.
                     </p>
                 </v-col>
 

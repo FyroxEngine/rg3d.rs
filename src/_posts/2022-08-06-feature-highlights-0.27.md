@@ -7,18 +7,18 @@ categories:
 ---
 
 I'm happy to announce that Fyrox 0.27 has been released! Fyrox is a modern game engine written in Rust, it helps
-you to create 2D and 3D games with low effort using native editor. This release contains lots of improvements for 
+you to create your own 2D and 3D games with low effort using native editor. This release contains lots of improvements for 
 existing functionality that makes game development much more comfortable. The list of changes is quite big, so let's get
 started!
 
 ## Fish Folly
 
-Before we start on "boring" text, take a look at this video, it captured from the new project based on the 
+Before we start with the "boring" text, take a look at this video, it is captured from the new project based on the 
 engine - [Fish Folly](https://github.com/mrDIMAS/FishFolly):
 
 <YtVideo url="https://www.youtube.com/embed/RuoLInE34dM" />
 
-Fish Folly is a 3D platformer that uses latest engine features at full capacity, it may be very helpful to learn how to build
+Fish Folly is a 3D platformer that uses the latest engine features at full capacity, it may be very helpful to learn how to build
 relatively large game with scripts and plugins.
 
 ## Compile-Time Reflection
@@ -97,12 +97,12 @@ fn reflection() {
 }
 ```
 
-The feature is very powerful, it helped to refactor how the editor handles property modification of entities.
+This feature is very powerful, it helped to refactor how the editor handles property modification of entities.
 The editor uses Command pattern for undo/redo functionality, each action is encapsulated in an object and it 
-has standard methods like "execute", "revert", "finalize". Before reflection, to change a property you was forced 
+has standard methods like "execute", "revert", "finalize". Before reflection, to change a property you were forced 
 to create a command that will swap previous value with a new one. As you probably already understand, it resulted
-in tons of boilerplate code that was hard to maintain. Reflection helper to remove 90% of boilerplate code by
-adding universal command that simply gets new value, finds a field using its name and sets the value to it.
+in tons of boilerplate code (sections of code that are repeated in multiple places with little to no variation) that was hard to maintain. Reflection helps to remove 90% of boilerplate code by
+adding a universal command that simply gets new value, finds a field using its name and sets the value to it.
 
 Scripts were the second place where it was used - `ScriptTrait::on_property_changed` method was removed. There is
 no more manual handling of changed properties, reflection does everything for you.
@@ -128,8 +128,8 @@ The only viable solution for this is to run a game as a child process of the edi
 problems at once and significantly simplifies execution flow for plugins. Execution flow now is very straightforward:
 `initialization -> update loop -> destruction`.
 
-The only thing that is now a bit "weird" is plugin instantiation, it is now decoupled from the plugin itself. There
-is a separate trait called `PluginConstructor` for that purpose, so typical plugin skeleton looks like this:
+The only thing that is now a bit "weird" is plugin instantiation, now it's decoupled from the plugin itself. There
+is a separate trait called `PluginConstructor` for that purpose, so a typical plugin skeleton looks like this:
 
 ```rust
 struct Game { }
@@ -165,21 +165,21 @@ impl PluginConstructor for GameConstructor {
 }
 ```
 
-`PluginConstructor` is now responsible for script registration and plugin instantiation. Why this is needed? The editor
+`PluginConstructor` is now responsible for script registration and plugin instantiation. Why is this needed? The editor
 does not need an instance of a plugin, it only needs information about scripts. So the engine now does not create plugin
 instances, until internal call of the `engine.enable_plugin(..)` method which in its turn will call `create_instance`. The editor
-will just call `register` method from `PluginConstructor` and will get information about scripts.
+will just call `register` method from `PluginConstructor` and get information about scripts.
 
 ## Script Refactoring and Improvements
 
-Previous version (0.26) has major problems with scripts which are solved in 0.27:
+Previous version (0.26) had major problems with scripts which are solved in 0.27:
 
-- There was no ability to execute some code on script destruction. Well, there is standard `Drop` trait, but it does not have access
+- There was no ability to execute some code on script destruction. Well, there is the standard `Drop` trait, but it does not have access
 to engine and plugin contents, which prevents you from doing some additional actions in the engine when the script is
 destroying (like removing some entities, etc.). This is now fixed: `ScriptTrait` now has `on_deinit` method which is executed 
 right before script is destroyed.
 - Scripts of newly created nodes were not initialized. This was a huge problem, because it means that there is no ability
-to create entities with script at runtime. This is now fixed: all new script instances are correctly initialized.
+to create entities with scripts at runtime. This is now fixed: all new script instances are correctly initialized.
 - Script methods can be called before scene resources are fully loaded. This is a subtle problem, it means that you have
 to block main thread until resources are fully loaded. This is now fixed: engine waits until every resources are loaded
 and only then it is able to call script methods.
@@ -228,7 +228,7 @@ which makes it easier to switch separate bits. It is now used to show pair-wise 
 
 ![debug](/assets/0.27/bitfield.png)
 
-As you may have noticed already, Inspector widget is now much more compact. It now uses adaptive rows for each property,
+As you may have noticed already, the Inspector widget is now much more compact. It now uses adaptive rows for each property,
 which allows a row to "fit to content". This solved few issues when a row was clipped because of fixed row height.
 
 `NumericUpDown` widget is now supports "read-only" mode. It prevents editing values, but allows you to select and copy them.
@@ -283,7 +283,7 @@ restrict your project at some particular game style, it just creates a scene wit
 
 ### Script Generator
 
-Now it is able to generate script skeletons too, which makes adding new script much easier. Adding new script is very easy:
+Now it is able to generate script skeletons too, which makes adding new scripts much easier. Adding a new script is very easy:
 
 ```shell
 fyrox-template script --name my_script
@@ -446,5 +446,5 @@ the key to understand how the engine works and how a particular task can be solv
 will be also improved. There're quite a lot of functionality already implemented which is not easy to use, such as light 
 mapping, the next release will make sure that most of the features are good in terms of usability. 
 
-The engine still missing one important part - animation editor, now when reflection is added to the engine, it is possible
+The engine still missing one important part - animation editor, now that reflection is added to the engine, it is possible
 to implement the editor. Since it is a huge tool itself, it probably won't get in 0.28, but 0.29 will have it for sure.
