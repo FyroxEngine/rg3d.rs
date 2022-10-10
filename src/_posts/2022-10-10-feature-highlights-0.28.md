@@ -10,6 +10,8 @@ I'm happy to announce that Fyrox 0.28 has been released! Fyrox is a modern game 
 you to create 2D and 3D games with low effort using native editor. This release continues a series of improvements
 and fixes to make game development more convenient. 
 
+![Editor](/assets/0.28/editor.png)
+
 ## Improved Scripts Pipeline
 
 Scripts is the major part of the engine, it is keeps getting improvements and fixes. Fyrox 0.28 has lots of 
