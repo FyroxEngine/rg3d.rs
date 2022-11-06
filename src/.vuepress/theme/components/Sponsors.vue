@@ -14,7 +14,7 @@
             <v-row justify="center">
                 <v-btn 
                     color="primary"
-                    href="https://www.patreon.com/mrdimas"
+                    href="https://boosty.to/fyrox"
                 >
                     Become a Sponsor
                 </v-btn>
