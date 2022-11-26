@@ -8,7 +8,7 @@
                     <span  v-if="article.frontmatter.date">On: {{new Date(article.frontmatter.date).toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric'})}}</span>
                 </h5>
             </v-card-subtitle>
-            <v-card-subtitle class="pb-0" v-if="article.frontmatter.subtitle" v-html="$options.filters.parseBlogSubtitle(article.frontmatter.subtitle)"></v-card-subtitle>
+            <v-card-subtitle class="pb-0" v-if="article.frontmatter.description" v-html="$options.filters.parseBlogSubtitle(article.frontmatter.description)"></v-card-subtitle>
             
             <v-card-actions>
                 <v-btn :to="article.path" color="orange lighten-2" text> Read </v-btn>

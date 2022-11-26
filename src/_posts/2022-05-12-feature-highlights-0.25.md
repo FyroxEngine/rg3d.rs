@@ -1,7 +1,7 @@
 ---
 title: "Fyrox 0.25 Feature Highlights"
 date: "2022-05-12"
-subtitle: "I'm happy to announce that Fyrox 0.25 has been released! This release adds static plugins and scripting support,
+description: "I'm happy to announce that Fyrox 0.25 has been released! This release adds static plugins and scripting support,
 improves prefab property inheritance, adds animation blending state machine, integrates sound entities to the 
 scene graph."
 categories: 

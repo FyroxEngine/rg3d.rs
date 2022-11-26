@@ -4,7 +4,7 @@ author: "mrDIMAS"
 date: "2021-08-21"
 categories: 
 - General
-subtitle: "I'm happy to announce that rg3d 0.22 was released."
+description: "I'm happy to announce that rg3d 0.22 was released."
 ---
 
 I'm happy to announce that rg3d 0.22 was released.
