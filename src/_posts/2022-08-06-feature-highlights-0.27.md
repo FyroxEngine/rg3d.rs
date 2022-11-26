@@ -1,7 +1,7 @@
 ---
 title: "Fyrox 0.27 Feature Highlights"
 date: "2022-08-06"
-subtitle: "Fyrox 0.27 is a big release, that contains lots of improvements for existing functionality that makes game development much more comfortable."
+description: "Fyrox 0.27 is a big release, that contains lots of improvements for existing functionality that makes game development much more comfortable."
 categories: 
 - General
 ---

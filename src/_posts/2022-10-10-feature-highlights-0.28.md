@@ -1,7 +1,7 @@
 ---
 title: "Fyrox 0.28 Feature Highlights"
 date: "2022-10-10"
-subtitle: "Fyrox 0.28 continues a series of improvements and fixes to make game development much more convenient."
+description: "Fyrox 0.28 continues a series of improvements and fixes to make game development much more convenient."
 categories: 
 - General
 ---

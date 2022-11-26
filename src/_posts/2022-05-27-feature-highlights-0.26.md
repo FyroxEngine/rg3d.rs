@@ -1,7 +1,7 @@
 ---
 title: "Fyrox 0.26 Feature Highlights"
 date: "2022-05-12"
-subtitle: "Fyrox 0.26 is a small release that fixes few very annoying bugs and adds missing functionality."
+description: "Fyrox 0.26 is a small release that fixes few very annoying bugs and adds missing functionality."
 categories: 
 - General
 ---

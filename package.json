@@ -16,8 +16,9 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@vuepress/plugin-blog": "^1.9.4",
     "vuepress": "^1.5.3",
-    "@vuepress/plugin-blog": "^1.9.4"
+    "vuepress-plugin-rss-feed": "^1.0.2"
   },
   "dependencies": {
     "@mdi/font": "^6.6.96",

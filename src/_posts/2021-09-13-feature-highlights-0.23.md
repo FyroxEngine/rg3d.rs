@@ -2,7 +2,7 @@
 title: "rg3d 0.23 Feature Highlights"
 author: "mrDIMAS"
 date: "2021-09-13"
-subtitle: "I'm happy to announce that rg3d 0.23 has been released! This release is **HUGE**, it contains lots of new features
+description: "I'm happy to announce that rg3d 0.23 has been released! This release is **HUGE**, it contains lots of new features
 for the renderer and other parts of the engine. Check the video for feature highlights"
 categories: 
 - General

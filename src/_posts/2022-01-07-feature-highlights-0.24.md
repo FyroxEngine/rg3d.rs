@@ -1,7 +1,7 @@
 ---
 title: "rg3d 0.24 Feature Highlights"
 date: "2022-01-07"
-subtitle: "I'm happy to announce that rg3d 0.24 has been released! This release has major improvements in 2D support, 
+description: "I'm happy to announce that rg3d 0.24 has been released! This release has major improvements in 2D support, 
 physics, user interface, performance, resource system, book, etc. Let's briefly go over the most significant 
 changes and improvements."
 categories: 
