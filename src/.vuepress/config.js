@@ -47,6 +47,12 @@ module.exports = {
             sizes: '16x16',
             href: '/assets/favicon/favicon-16x16.png'
         }],
+        ['link', {
+            rel: 'alternate',
+            type: 'application/rss+xml',
+            title: 'RSS',
+            href: '/rss.xml',
+        }],
     ],
 
     /**
