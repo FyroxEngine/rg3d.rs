@@ -31,6 +31,8 @@ jobs:
       - run: | 
           echo Installing dependencies for vuepress 
           npm i
+          echo Updating
+          npm update
           echo Build the app
           npm run build
          
