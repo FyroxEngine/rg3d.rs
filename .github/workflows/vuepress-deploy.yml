@@ -30,9 +30,8 @@ jobs:
         
       - run: | 
           echo Installing dependencies for vuepress 
+          export NODE_OPTIONS=--openssl-legacy-provider
           npm i
-          echo Updating
-          npm update
           echo Build the app
           npm run build
          
