@@ -32,7 +32,7 @@ export default {
                 {
                     "icon": "mdi-discord",
                     "link": "https://discord.com/invite/xENF5Uh",
-                    "include": ["footer"],
+                    "include": ["topnav", "footer"],
                     "followText": "Join Discord"
                 },
                 {

@@ -1,7 +1,7 @@
 <template>
     <div>
         <page-title :typed="['Use rust to build games.', 'Deploy to multiple platforms.', 'Enjoy the full featured editor.']" text="Fyrox Game Engine">
-            <v-btn @click="$vuetify.goTo('#startMaking', {duration: 1200, easing: 'easeInOutQuad'})" class="mt-4" color="primary" depressed>
+            <v-btn class="mt-4" color="primary" depressed  href="https://fyrox-book.github.io/fyrox/beginning/scripting.html">
                 <span>Start creating games</span>
             </v-btn>
         </page-title>
@@ -44,7 +44,7 @@
                 <v-row justify="center">
                     <v-btn 
                         color="primary"
-                        href="https://fyrox-book.github.io/fyrox/beginning/scripting.html"
+                        href="https://fyrox-book.github.io/fyrox/beginning/editor_overview.html"
                     >
                         <span>Learn How To Use The Editor</span>
                     </v-btn>
@@ -52,39 +52,6 @@
 
             </v-row>
         </v-container>
-        <v-sheet id="startMaking">
-            <v-container class="text-center pt-16 pb-16 mb-16">
-                <h2 class="mt-3 mb-2">Start Making Games</h2>
-
-                <p>Installation is easy as pie.</p>
-                <v-divider />
-                <p class="mt-6">
-                    <cp-code command="cargo new my-awesome-game" />
-                </p>
-
-                <p  class="mt-6 mb-1">Add to your Cargo.toml</p>
-                <p>
-                    <code class="code-unstyled"> 
-                    [dependencies] <br />
-                    fyrox = "^0.25"
-                    </code>
-                </p>
-
-                <p class="text-center">
-                    Start learning basics of the engine using the book
-                </p>
-                <p class="text-center">
-                    <v-btn
-                        href="https://fyrox-book.github.io/"
-                        class="mt-4"
-                        color="primary"
-                        depressed
-                    >
-                        <span>Read The Book</span>
-                    </v-btn>
-                </p>
-            </v-container>
-        </v-sheet>
      
         <v-container class="text-center pt-16 pb-16">
             <h2 class="mt-3 mb-2">Examples</h2>
