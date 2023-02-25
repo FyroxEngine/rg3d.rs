@@ -19,6 +19,10 @@ module.exports = {
      */
     head: [
         ['meta', {
+            name: 'google-site-verification',
+            content: 'lgdTRRs1z7wcdVlcyCeUfrdz-U5vikw82_u9L8_Wkgs'
+        }],
+        ['meta', {
             name: 'keywords',
             content: 'rust, game engine, fyrox, production-ready, 3d, 2d, open-source, gamedev'
         }],
