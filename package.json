@@ -1,10 +1,10 @@
 {
   "name": "fyroxEngineSite",
   "version": "0.4",
-  "description": "Official webpage for Fyrox game engine.",
+  "description": "Fyrox is a feature-rich, production-ready, open-source game engine written in Rust.",
   "main": "index.js",
   "authors": {
-    "name": "mr. DIMAS",
+    "name": "mrDIMAS and Fyrox Contributors",
     "email": ""
   },
   "repository": "/Fyrox website",
