@@ -157,5 +157,11 @@ module.exports = {
                 filter: (page) => /^_posts/.test(page.relativePath),
             },
         ],
+        [
+            'sitemap',
+            {
+                hostname: 'https://fyrox.rs'
+            },
+        ]        
     ]
 }
