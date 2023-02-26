@@ -23,30 +23,6 @@ module.exports = {
             content: 'lgdTRRs1z7wcdVlcyCeUfrdz-U5vikw82_u9L8_Wkgs'
         }],
         ['meta', {
-            name: 'keywords',
-            content: 'rust, game engine, fyrox, production-ready, 3d, 2d, open-source, gamedev'
-        }],
-        ['meta', {
-            name: 'og:title',
-            content: 'Fyrox - A feature-rich game engine built in Rust'
-        }],
-        ['meta', {
-            name: 'og:type',
-            content: 'website'
-        }],
-        ['meta', {
-            name: 'og:description',
-            content: 'Fyrox is a feature-rich, production-ready, open-source game engine written in Rust.'
-        }],
-        ['meta', {
-            name: 'og:url',
-            content: 'https://fyrox.rs/'
-        }],
-        ['meta', {
-            name: 'og:image',
-            content: 'https://fyrox.rs/assets/logos/logo.png'
-        }],
-        ['meta', {
             name: 'theme-color',
             content: '#3eaf7c'
         }],
