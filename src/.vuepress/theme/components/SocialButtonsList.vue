@@ -1,17 +1,31 @@
 <template>
     <div>
-        <template v-for="{ icon, link, include, followText } in socials">
+        <template
+            v-for="{
+                icon,
+                link,
+                include,
+                followText,
+                id,
+                customIcon,
+            } in socials"
+        >
             <v-btn
-                :key="icon"
-                v-if="include.indexOf(includeFor) !== -1 || includeFor === 'any'"
+                :key="id"
+                v-if="
+                    include.indexOf(includeFor) !== -1 || includeFor === 'any'
+                "
                 class="me-4 white--text"
                 :href="link"
                 :icon="asIcons"
                 :plain="asPlain"
             >
-                <v-icon size="24px">
+                <v-icon v-if="icon" size="24px">
                     {{ icon }}
                 </v-icon>
+                <span v-else-if="customIcon" class="d-flex">
+                    <img class="custom-icon" :src="customIcon" />
+                </span>
                 <span v-if="allowFollowText"> {{ followText }} </span>
             </v-btn>
         </template>
@@ -24,38 +38,53 @@ export default {
         allowFollowText: { default: false },
         includeFor: { default: null },
         asIcons: { default: false },
-        asPlain: {default: false},
+        asPlain: { default: false },
     },
     data() {
         return {
             socials: [
                 {
-                    "icon": "mdi-discord",
-                    "link": "https://discord.com/invite/xENF5Uh",
-                    "include": ["topnav", "footer"],
-                    "followText": "Join Discord"
+                    id: "discord",
+                    customIcon: "assets/custom_icons/discord.svg",
+                    link: "https://discord.com/invite/xENF5Uh",
+                    include: ["topnav", "footer"],
+                    followText: "Join Discord",
                 },
                 {
-                    "icon": "mdi-github",
-                    "link": "https://github.com/FyroxEngine/Fyrox",
-                    "include": ["topnav", "footer"],
-                    "followText": "GitHub"
+                    id: "git",
+                    icon: "mdi-github",
+                    link: "https://github.com/FyroxEngine/Fyrox",
+                    include: ["topnav", "footer"],
+                    followText: "GitHub",
                 },
                 {
-                    "icon": "mdi-twitter",
-                    "link": "https://twitter.com/DmitryNStepanov",
-                    "include": ["footer"],
-                    "followText": "Follow on Twitter"
+                    id: "twitter",
+                    icon: "mdi-twitter",
+                    link: "https://twitter.com/DmitryNStepanov",
+                    include: ["footer"],
+                    followText: "Follow on Twitter",
                 },
 
                 {
-                    "icon": "mdi-patreon",
-                    "link": "https://www.patreon.com/mrdimas",
-                    "include": ["topnav", "footer"],
-                    "followText": "Patrons"
-                }
+                    id: "patreon",
+                    icon: "mdi-patreon",
+                    link: "https://www.patreon.com/mrdimas",
+                    include: ["topnav", "footer"],
+                    followText: "Patrons",
+                },
             ],
         };
     },
 };
 </script>
+
+<style scoped>
+.custom-icon {
+    height: 21px;
+}
+
+.custom-icon path {
+    fill: white;
+}
+</style>
+

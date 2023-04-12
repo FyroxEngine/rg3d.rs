@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "vuepress dev src",
     "dev-legacy": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress dev src",
+    "dev-legacy-linux": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress dev src",
     "build": "vuepress build src",
     "build-legacy": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress build src"
   },
