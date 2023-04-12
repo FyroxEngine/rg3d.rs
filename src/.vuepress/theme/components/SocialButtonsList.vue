@@ -45,7 +45,7 @@ export default {
             socials: [
                 {
                     id: "discord",
-                    customIcon: "assets/custom_icons/discord.svg",
+                    customIcon: "/assets/custom_icons/discord.svg",
                     link: "https://discord.com/invite/xENF5Uh",
                     include: ["topnav", "footer"],
                     followText: "Join Discord",
