@@ -4,6 +4,17 @@ date: "2023-06-07"
 description: "Fyrox 0.30 is a huge release, mostly focused on animation, editor, audio, quality-of-life improvements."
 categories: 
 - General
+meta:
+  - property: og:title
+    content: Fyrox Game Engine 0.30
+  - property: og:description
+    content: Fyrox 0.30 is a huge release, mostly focused on animation, editor, audio, quality-of-life improvements.
+  - property: og:type
+    content: article
+  - property: og:url
+    content: https://fyrox.rs/blog/post/fyrox-game-engine-0-30/
+  - property: og:image
+    content: https://fyrox.rs/assets/twif15/blend_space.gif
 ---
 
 I'm happy to announce that Fyrox 0.30 has been released! Fyrox is a modern game engine written in Rust, it helps
