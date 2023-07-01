@@ -84,7 +84,7 @@ module.exports = {
             },
             {
                 text: 'Blog',
-                link: '/blog.html'
+                link: '/blog/'
             },
             {
                 text: 'Features',
