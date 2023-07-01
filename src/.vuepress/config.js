@@ -80,19 +80,19 @@ module.exports = {
             },
             {
                 text: 'Games',
-                link: '/games',
+                link: '/games.html',
             },
             {
                 text: 'Blog',
-                link: '/blog/'
+                link: '/blog.html'
             },
             {
                 text: 'Features',
-                link: '/features/'
+                link: '/features.html'
             },
             {
                 text: 'Examples',
-                link: '/examples/'
+                link: '/examples.html'
             },
         ],
         sidebar: {
