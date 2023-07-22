@@ -142,7 +142,7 @@ lots of objects.
 ![multiscene](/assets/0.31/multiscene.gif)
 
 For a long time, the editor was able to open only one scene at a time, which slowed down the work if you use lots of 
-prefabs and switching between them very often. Not it is fixed, and you can open multiple scenes at once. Keep in mind, 
+prefabs and switching between them very often. Now it is fixed, and you can open multiple scenes at once. Keep in mind, 
 that only one scene can be edited at a time, you can't undock scene tabs and see/edit multiple scenes at once.
 
 ### Ability Save Docking Manager Layout
