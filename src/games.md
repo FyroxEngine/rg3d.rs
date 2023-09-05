@@ -11,7 +11,7 @@ A DeadSpace-like horror game. The action takes place on a spaceship that stays r
 
 ## [rusty-shooter](https://github.com/mrDIMAS/rusty-shooter)
 
- Nothing beats the classics! A Quake3-like arena shooter, it's a tech demo for the engine.
+Nothing beats the classics! A Quake3-like arena shooter, it's a tech demo for the engine.
 
 <YtVideo url="https://www.youtube.com/embed/UDn8ymyXPcI" />
 
@@ -23,9 +23,10 @@ Fyrox port of "Soccer" (Sensible Soccer clone), from [Code the Classics - Vol. 1
 
 ## [rustcycles](https://github.com/rustcycles/rustcycles) by [martin-t](https://github.com/martin-t)
 
-RustCycles is a third person shooter that's about movement, not aim. You have to be smart and think fast.
+RustCycles is a FOSS third person multiplayer shooter that's about movement, not aim. You have to be smart and think fast.
 
-![rustcycles](https://media.githubusercontent.com/media/rustcycles/rustcycles/master/media/screenshot.png)
+![rustcycles1](https://github.com/rustcycles/rustcycles/assets/4079823/f6ad566c-54f0-49c0-9a2a-5019e908f09e)
+![rustcycles2](https://github.com/rustcycles/rustcycles/assets/4079823/5411df7a-6d31-482b-b3a0-ab3256f5280e)
 
 ## Breakfloor by [wtblife](https://github.com/wtblife)
 
