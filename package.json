@@ -1,6 +1,6 @@
 {
   "name": "fyroxEngineSite",
-  "version": "0.4",
+  "version": "0.4.0",
   "description": "Fyrox is a feature-rich, production-ready, open-source game engine written in Rust.",
   "main": "index.js",
   "authors": {
