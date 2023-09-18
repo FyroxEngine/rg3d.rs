@@ -48,6 +48,13 @@ export default {
                     description: "2D Platformer"
                 },
                 {
+                    title: "Blend shapes",    
+                    img: "/assets/examples/blendshape.png",
+                    link: "/assets/demo/blendshape/index.html",
+                    command: "cargo run --package executor --release",
+                    description: "This project shows how to use blend shapes to create facial expressions for your game characters. Use the set of sliders to control each blend shape's weight."
+                },
+                {
                     title: "2D Scene",    
                     img: "/assets/examples/2d_scene.png",
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/2d_scene.rs",
