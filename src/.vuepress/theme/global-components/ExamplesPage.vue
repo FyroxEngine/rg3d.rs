@@ -41,11 +41,11 @@ export default {
         return {
             examples: [
                 {
-                    title: "2D",    
+                    title: "Platformer",    
                     img: "/assets/examples/2d.png",
-                    link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/2d.rs",
-                    command: "cargo run --example 2d --release",
-                    description: "The example shows how to create a 2D scene."
+                    link: "/assets/demo/platformer/index.html",
+                    command: "cargo run --package executor --release",
+                    description: "2D Platformer"
                 },
                 {
                     title: "2D Scene",    
