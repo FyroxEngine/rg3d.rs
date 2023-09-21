@@ -53,6 +53,13 @@ export default {
                     link: "/assets/demo/blendshape/index.html",
                     command: "cargo run --package executor --release",
                     description: "This project shows how to use blend shapes to create facial expressions for your game characters. Use the set of sliders to control each blend shape's weight."
+                },              
+                {
+                    title: "Sound",    
+                    img: "/assets/demo/sound/screenshot.jpg",
+                    link: "/assets/demo/sound/index.html",
+                    command: "cargo run --package executor --release",
+                    description: "This project shows sound capabilities of the engine - HRTF, reverb, audio buses."
                 },
                 {
                     title: "2D Scene",    
@@ -167,13 +174,6 @@ export default {
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/simple.rs",
                     command: "cargo run --example simple --release",
                     description: "The example shows how to create a simple procedural scene directly, without using FyroxEd."
-                },
-                {
-                    title: "Sound",    
-                    img: "/assets/examples/sound.png",
-                    link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/sound.rs",
-                    command: "cargo run --example sound --release",
-                    description: "The example shows how create sound sources and sound effects."
                 },
                 {
                     title: "Procedural Terrain",    
