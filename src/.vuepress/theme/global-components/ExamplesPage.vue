@@ -62,11 +62,11 @@ export default {
                     description: "This project shows sound capabilities of the engine - HRTF, reverb, audio buses."
                 },
                 {
-                    title: "2D Scene",    
-                    img: "/assets/examples/2d_scene.png",
-                    link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/2d_scene.rs",
-                    command: "cargo run --example 2d_scene --release",
-                    description: "The example shows how to load a 2D scene made in the FyroxEd."
+                    title: "Animation",    
+                    img: "/assets/demo/animation/screenshot.jpg",
+                    link: "/assets/demo/animation/index.html",
+                    command: "cargo run --package executor --release",
+                    description: "This project shows parts of the animation system of the engine, such as animation blending, root motion, etc."
                 },
                 {
                     title: "3rd Person",    
