@@ -69,6 +69,13 @@ export default {
                     description: "This project shows parts of the animation system of the engine, such as animation blending, root motion, etc."
                 },
                 {
+                    title: "User Interface",    
+                    img: "/assets/demo/ui/screenshot.jpg",
+                    link: "/assets/demo/ui/index.html",
+                    command: "cargo run --package executor --release",
+                    description: "This project is a showcase for the user interface system of the engine."
+                },
+                {
                     title: "3rd Person",    
                     img: "/assets/examples/3rd_person.png",
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/3rd_person.rs",
@@ -181,13 +188,6 @@ export default {
                     link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/terrain.rs",
                     command: "cargo run --example terrain --release",
                     description: "The example shows how create procedural terrain."
-                },
-                {
-                    title: "User Interface",    
-                    img: "/assets/examples/ui.png",
-                    link: "https://github.com/FyroxEngine/Fyrox/blob/master/examples/ui.rs",
-                    command: "cargo run --example ui --release",
-                    description: "The example shows how create user interface and handle its events to perform actions."
                 },
                 {
                     title: "Scripting",    
