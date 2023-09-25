@@ -1,7 +1,7 @@
 ---
 layout: CustomPage
-tagline: Examples of the Fyrox Engine
-title: Examples
+tagline: Demo Projects of the Fyrox Engine
+title: Demo Projects
 ---
 <ClientOnly>
 <ExamplesPage />

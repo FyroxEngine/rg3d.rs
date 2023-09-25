@@ -79,6 +79,10 @@ module.exports = {
                 link: 'https://fyrox-book.github.io/introduction.html'
             },
             {
+                text: 'Demo Projects',
+                link: '/examples.html'
+            },
+            {
                 text: 'Games',
                 link: '/games.html',
             },
@@ -89,10 +93,6 @@ module.exports = {
             {
                 text: 'Features',
                 link: '/features.html'
-            },
-            {
-                text: 'Examples',
-                link: '/examples.html'
             },
         ],
         sidebar: {
