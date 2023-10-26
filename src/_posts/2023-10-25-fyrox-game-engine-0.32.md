@@ -1,7 +1,7 @@
 ---
-title: "Fyrox Game Engine 0.32 includes lots of editor improvements, graphics improvements, quality-of-life improvements, documentation and book improvements, overall usability improvements, bug fixes and more. "
+title: "Fyrox Game Engine 0.32"
 date: "2023-10-25"
-description: "Fyrox 0.32 TODO"
+description: "Fyrox 0.32 includes lots of editor improvements, graphics improvements, quality-of-life improvements, documentation and book improvements, overall usability improvements, bug fixes and more."
 categories: 
 - General
 meta:
@@ -21,6 +21,11 @@ I'm happy to announce that Fyrox 0.32 has been released! Fyrox is a modern game 
 you to create 2D and 3D games with low effort using native editor; it is like Unity, but in Rust. This release includes
 lots of editor improvements, graphics improvements, quality-of-life improvements, documentation and book improvements, 
 overall usability improvements, bug fixes and more. 
+
+## How to Update
+
+At first, update the `fyrox-template` by using `cargo install fyrox-template --force` and then execute the following
+command in your project root directory: `fyrox-template upgrade --version=latest`.
 
 ## Scene Loading
 
