@@ -1,7 +1,7 @@
 <template>
     <div>
         <page-title :typed="['Use Rust to Build Games', 'Deploy to Multiple Platforms', 'Enjoy the Full Featured Editor']" text="Fyrox Game Engine">
-            <v-btn class="mt-4" color="primary" depressed  href="https://fyrox-book.github.io/fyrox/beginning/scripting.html">
+            <v-btn class="mt-4" color="primary" depressed  href="https://fyrox-book.github.io/beginning/scripting.html">
                 <span>Start Creating Games</span>
             </v-btn>
             <v-btn class="mt-4" color="primary" depressed  href="/examples.html">
@@ -45,7 +45,7 @@
                 <v-row justify="center">
                     <v-btn 
                         color="primary"
-                        href="https://fyrox-book.github.io/fyrox/beginning/editor_overview.html"
+                        href="https://fyrox-book.github.io/beginning/editor_overview.html"
                     >
                         <span>Learn How To Use The Editor</span>
                     </v-btn>

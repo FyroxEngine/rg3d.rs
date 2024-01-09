@@ -429,7 +429,7 @@ loading (since it may run on a separate CPU core).
 means that you don't need to use `fetch` API directly, if you're targeting WebAssembly platform, or use `AssetManager`
 on Android.
 
-For more info see the [respective chapter](https://fyrox-book.github.io/fyrox/resources/custom.html) in the book.
+For more info see the [respective chapter](https://fyrox-book.github.io/resources/custom.html) in the book.
 
 ### Resource Dependency Graph
 

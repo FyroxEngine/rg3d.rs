@@ -178,7 +178,7 @@ scene will be updated in preview mode.
 ## Saved Games
 
 Fyrox now has a "standard" way of managing saved games, which allows you to create save files in a few lines of code and
-load them in a single line. Check the [respective chapter](https://fyrox-book.github.io/fyrox/serialization/save.html) 
+load them in a single line. Check the [respective chapter](https://fyrox-book.github.io/serialization/save.html) 
 in the book to learn more.
 
 ## UI
@@ -207,7 +207,7 @@ Non-modified inheritable variables now do not save their info, which saves heaps
 
 This release contains major fixes for the rendering in the engine. For a long time, binormal vector of TBN basis 
 was calculated incorrectly, thus leading to some weird lighting artifacts. The book has a 
-[separate chapter](https://fyrox-book.github.io/fyrox/rendering/normal_maps.html) about normal maps used in the engine.
+[separate chapter](https://fyrox-book.github.io/rendering/normal_maps.html) about normal maps used in the engine.
 
 Parallax mapping is also fixed in this release, it includes two additional properties for standard materials -
 `parallaxCenter` and `parallaxScale`. `parallaxCenter` defines a baseline value that is used as zero and `parallaxScale`
@@ -250,7 +250,7 @@ proofreading, corrections, removal of outdated information and more.
 ## Tutorials
 
 RPG tutorial was updated to the latest version of the engine. You can find it 
-[here](https://fyrox-book.github.io/fyrox/tutorials/rpg/tutorial-1/tutorial-part-1.html).
+[here](https://fyrox-book.github.io/tutorials/rpg/tutorial-1/tutorial-part-1.html).
 
 ## Full List of Changes in Random Order
 

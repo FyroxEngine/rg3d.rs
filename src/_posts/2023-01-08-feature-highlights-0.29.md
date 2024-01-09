@@ -68,7 +68,7 @@ animation properties. Track list is used to bind to properties of scene nodes. C
 define how property values will change over time.
 
 This article is already quite big, so learn more how to use the editor 
-[here](https://fyrox-book.github.io/fyrox/animation/anim_editor.html).
+[here](https://fyrox-book.github.io/animation/anim_editor.html).
 
 ## Animation Blending State Machine Editor
 
@@ -82,7 +82,7 @@ instead it uses animations from some animation player. This is how it looks in a
 
 ![absm editor](/assets/0.29/absm_editor.gif)
 
-Learn more how to use the editor [here](https://fyrox-book.github.io/fyrox/animation/absm_editor.html)
+Learn more how to use the editor [here](https://fyrox-book.github.io/animation/absm_editor.html)
 
 ## Animation Layers
 
@@ -367,9 +367,9 @@ and it is advised to use the editor all the time to create animations and animat
 
 The [book](https://fyrox-book.github.io/) has some improvements too:
 
-1) [Animation Editor Overview](https://fyrox-book.github.io/fyrox/animation/anim_editor.html)
-2) [Animation Blending State Machine Overview](https://fyrox-book.github.io/fyrox/animation/absm_editor.html)
-3) [Camera Picking](https://fyrox-book.github.io/fyrox/scene/camera_node.html#picking) - a way to select an object
+1) [Animation Editor Overview](https://fyrox-book.github.io/animation/anim_editor.html)
+2) [Animation Blending State Machine Overview](https://fyrox-book.github.io/animation/absm_editor.html)
+3) [Camera Picking](https://fyrox-book.github.io/scene/camera_node.html#picking) - a way to select an object
 by mouse in a scene.
 
 ## Other

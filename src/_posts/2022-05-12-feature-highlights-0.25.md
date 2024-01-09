@@ -318,8 +318,7 @@ This is how the editor works:
 
 <YtVideo url="https://www.youtube.com/embed/sRicfb2uQz8" />
 
-The editor is meant to be used as a replacement for manual creation of ABSMs 
-(like [here](https://fyrox-book.github.io/fyrox/tutorials/fps/tutorial-3/tutorial-part-3.html#animations)). All you need to do is 
+The editor is meant to be used as a replacement for manual creation of ABSMs. All you need to do is 
 to create ABSM in the editor, save it, and then load it as a resource in your game and create its instance:
 
 ```rust
