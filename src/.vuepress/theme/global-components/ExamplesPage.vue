@@ -68,6 +68,12 @@ export default {
                     link: "/assets/demo/ui/index.html",
                     description: "This project is a showcase for the user interface system of the engine."
                 },
+                {
+                    title: "Fish Folly",
+                    img: "/assets/demo/fish_folly/screenshot.jpg",
+                    link: "/assets/demo/fish_folly/index.html",
+                    description: "FallGuys-like 3D platformer."
+                },
             ],
         };
     },
