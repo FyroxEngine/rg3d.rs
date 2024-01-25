@@ -379,6 +379,12 @@ search bar:
 
 You can create not just built-in asset types from this window, but also your own resource types.
 
+### Camera Visualization
+
+![camera frustum](/assets/0.33/camera_frustum.png)
+
+Camera frustum is now visualized in the editor which makes it easier to position and find it in the scene.
+
 ### Ability to Move Assets
 
 You can now move assets and folders with assets in the Asset Browser. This operation automatically fixes all the
