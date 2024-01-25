@@ -220,8 +220,8 @@ impl ScriptTrait for MyScript { }
 The new version significantly smaller: 5 lines of code vs 13 in the old version. This greatly reduces any
 distractions with insignificant portions of code and helps you to focus on your own code. What's previously was
 implemented using macros, now is implemented using `#[derive]` attribute. As you can see, `TypeUuidProvider` and
-`ComponentProvider` now implemented this way. Also, please note a new attribute at the top of the script declaration
-- `#[visit(optional)]` it marks all fields of the struct optional, and the deserializer won't complain if some field
+`ComponentProvider` now implemented this way. Also, please note a new attribute at the top of the script declaration:
+`#[visit(optional)]` it marks all fields of the struct optional, and the deserializer won't complain if some field
 is missing on load. This is very useful, to be able to add new fields freely to your script.
 
 Scripts now have access to current graphics context (which gives you access to the main window and renderer),
@@ -342,7 +342,8 @@ scenes, that were introduced in this release.
 
 ## IO Abstraction
 
-It is now possible to use new IO abstraction to add support for virtual file systems.
+It is now possible to use new IO abstraction to add support for virtual file systems. It could be used to provide
+access to assets located in ZIP-archives for example.
 
 ![resource io](/assets/0.33/resource_loader.png)
 
