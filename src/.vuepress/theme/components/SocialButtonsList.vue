@@ -48,7 +48,7 @@ export default {
                     customIcon: "/assets/custom_icons/discord.svg",
                     link: "https://discord.com/invite/xENF5Uh",
                     include: ["topnav", "footer"],
-                    followText: "Join Discord",
+                    followText: "Discord",
                 },
                 {
                     id: "git",
@@ -68,9 +68,9 @@ export default {
                 {
                     id: "patreon",
                     icon: "mdi-patreon",
-                    link: "https://www.patreon.com/mrdimas",
+                    link: "https://boosty.to/fyrox",
                     include: ["topnav", "footer"],
-                    followText: "Patrons",
+                    followText: "Sponsor",
                 },
             ],
         };
