@@ -407,10 +407,6 @@ which contains a thin abstraction layer, that allows you to establish connection
 and send various messages between them. You can see it in action in 
 [this project](https://github.com/mrDIMAS/FishFolly).
 
-## Documentation Improvements
-
-Documentation was significantly improved as well, it contain
-
 ## Book Improvements
 
 The book in this release has tons of improvements as well, there are the following changes:
