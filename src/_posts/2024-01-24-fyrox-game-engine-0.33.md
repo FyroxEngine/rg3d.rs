@@ -23,6 +23,12 @@ you to create 2D and 3D games with low effort using native editor; it is like Un
 new UI editor, rendering improvements, various editor improvements, script API improvements, async tasks, book improvements 
 and more.
 
+## Introduction
+
+Before we begin, check out [demo projects](https://fyrox.rs/examples.html) of the engine - it is a set of applications
+and games made with the engine. You can also check [games](https://fyrox.rs/games.html) section of the website to 
+see which games are made using the engine.
+
 ## How to Update
 
 At first, update the `fyrox-template` by using `cargo install fyrox-template --force` and then execute the following
