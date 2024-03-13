@@ -25,7 +25,7 @@ something like this:
 
 ## Idea and Assets
 
-The idea of the game was proposed by [@erlend](https://github.com/erlend) back in the April 2022 and it should be a FallGuys-like 3D 
+The idea of the game was proposed by [@erlend](https://github.com/erlend-sh) back in the April 2022 and it should be a FallGuys-like 3D 
 platformer with multiplayer support. I started working on it in May 2022. At first we thought about the visual style of the game 
 and decided it to be close to Fish Games series. Erlend purchased a 3D model for the main character:
 
