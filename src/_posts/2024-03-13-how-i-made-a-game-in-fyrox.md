@@ -1,12 +1,12 @@
 ---
-title: "How I Made a Game in Fyrox"
+title: "The making of a 3D platformer in Fish Folk Universe"
 date: "2024-03-13"
 description: "This article gives an overview of the development process of Fish Folly game."
 categories: 
 - General
 meta:
   - property: og:title
-    content: How I Made a Game in Fyrox
+    content: The making of a 3D platformer in Fish Folk Universe
   - property: og:description
     content: This article gives an overview of the development process of Fish Folly game.
   - property: og:type
