@@ -1,12 +1,12 @@
 ---
-title: "The making of a 3D platformer in Fish Folk Universe"
+title: "The making of a 3D platformer in Fish Folk's Universe"
 date: "2024-03-13"
 description: "This article gives an overview of the development process of Fish Folly game."
 categories: 
 - General
 meta:
   - property: og:title
-    content: The making of a 3D platformer in Fish Folk Universe
+    content: The making of a 3D platformer in Fish Folk's Universe
   - property: og:description
     content: This article gives an overview of the development process of Fish Folly game.
   - property: og:type
@@ -123,4 +123,5 @@ anything you want you can do it in the [game's repository](https://github.com/mr
 
 ![Tumble temple](/assets/fish-folly/tumble_temple.gif)
 
-This project was made by the effort of many people, and you can become one of them.
+You can also check the [issues](https://github.com/mrDIMAS/FishFolly/issues) page to see how you can contribute to the game. This project was made
+by the effort of many people, and you can become one of them.
