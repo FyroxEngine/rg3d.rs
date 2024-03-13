@@ -27,7 +27,7 @@ something like this:
 
 The idea of the game was proposed by [@erlend](https://github.com/erlend-sh) back in the April 2022 and it should be a FallGuys-like 3D 
 platformer with multiplayer support. I started working on it in May 2022. At first we thought about the visual style of the game 
-and decided it to be close to Fish Games series. Erlend purchased a 3D model for the main character:
+and decided it to be close to Fish Games series. Erlend commissioned a 3D model for the main character:
 
 ![fish](/assets/fish-folly/fish.gif)
 
@@ -108,5 +108,19 @@ It works kinda ok with rotating traps, but not for stationary spikes.
 ## Conclusion
 
 The development of this game was a lot of fun, I learned a lof of new stuff. If you want to add your map, some game mechanics, sounds, or
-anything you want you can do it in the [game's repository](https://github.com/mrDIMAS/FishFolly). This project was made by the effort of
-many people, and you can become one of them.
+anything you want you can do it in the [game's repository](https://github.com/mrDIMAS/FishFolly). For example, implement a minigame for which
+ we've already got assets prepared! Pick one from the list:
+
+### Burnstile
+
+[Burnstile](https://github.com/mrDIMAS/FishFolly/issues/2) - similar to the one from [Mario Party 6](https://www.youtube.com/watch?v=cYO9C8A7xfY)
+
+![burnstile](https://private-user-images.githubusercontent.com/583842/312416250-55c01954-711c-4241-8b85-f607d439a8c2.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTAzMjY0OTEsIm5iZiI6MTcxMDMyNjE5MSwicGF0aCI6Ii81ODM4NDIvMzEyNDE2MjUwLTU1YzAxOTU0LTcxMWMtNDI0MS04Yjg1LWY2MDdkNDM5YThjMi5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwMzEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDMxM1QxMDM2MzFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05MmZkNWZiMTY0NmIxYmNkZTM0ODE4ZDQ3MmExNTRiOTE0YzRmNDMwZTJlYmU5YTc1MzBmY2E1M2JkZDBmNWVmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.pZZAc88dMuhe49oHE8HSC4X9GhnQrxfRRdZc6lSXA44)
+
+### Tumble Temple
+
+[Tumble temple](https://github.com/mrDIMAS/FishFolly/issues/3) - similar to the one from [Mario Party 9](https://www.youtube.com/watch?v=Emb89socnb0)
+
+![tumble temple](https://private-user-images.githubusercontent.com/583842/312417710-51181d5f-c7cc-4f18-8b6f-32fa9da7c08f.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTAzMjY1ODUsIm5iZiI6MTcxMDMyNjI4NSwicGF0aCI6Ii81ODM4NDIvMzEyNDE3NzEwLTUxMTgxZDVmLWM3Y2MtNGYxOC04YjZmLTMyZmE5ZGE3YzA4Zi5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwMzEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDMxM1QxMDM4MDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zMmZkMDY3MTk5ZmJiOTRlNjRiYzA5MGRiMzk5MTY5YTk0Yzg5NjU3OGM5ZjY1Y2M5YjQ4M2NjN2Q2ODQ0MWQxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.t8zcksJwBg0GnoAq4rfg0WQwMhl2yJtB3TDXzQaNBaU)
+
+This project was made by the effort of many people, and you can become one of them.
