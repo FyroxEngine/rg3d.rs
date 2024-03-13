@@ -46,8 +46,6 @@ nowhere:
 
 <YtVideo url="https://www.youtube.com/embed/DrugAFKi-GQ" />
 
-https://www.youtube.com/watch?v=YRE5g57aZEg
-
 By the end of the June 2022, [@Hyeve](https://github.com/Hyeve-jrs) made a cool map using Quaternius tile set:
 
 ![fish](/assets/fish-folly/map.png)
