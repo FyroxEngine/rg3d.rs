@@ -47,7 +47,7 @@ export default {
 
                 {
                     "icon": "mdi-patreon",
-                    "link": "https://www.patreon.com/mrdimas",
+                    "link": "/sponsor.html",
                     "include": ["topnav", "footer"],
                     "followText": "Patrons"
                 }

@@ -68,7 +68,7 @@ export default {
                 {
                     id: "patreon",
                     icon: "mdi-patreon",
-                    link: "https://boosty.to/fyrox",
+                    link: "/sponsor.html",
                     include: ["topnav", "footer"],
                     followText: "Sponsor",
                 },
