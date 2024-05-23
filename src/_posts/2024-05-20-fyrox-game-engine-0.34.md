@@ -38,7 +38,7 @@ reloaded, all heavy assets remains loaded in the memory and there's no need do t
 -> write code -> compile -> run -> initialize -> load assets -> setup required conditions -> test", all you need to do 
 is to "write code -> compile -> test". In action it looks like this:
 
-<YtVideo url="https://www.youtube.com/watch?v=vq6P3Npydmw" />
+<YtVideo url="https://www.youtube.com/embed/vq6P3Npydmw" />
 
 This feature makes game development in Rust much more fun, because you can focus on the actual game development and not
 repeat all these redundant actions like a robot.
