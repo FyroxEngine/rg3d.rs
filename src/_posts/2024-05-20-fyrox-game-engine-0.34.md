@@ -44,7 +44,7 @@ This feature makes game development in Rust much more fun, because you can focus
 repeat all these redundant actions like a robot.
 
 Huge respect to [@zakarumych](https://github.com/zakarumych), who did awesome research job and also implemented hot reloading
-in his [game engine](https://github.com/zakarumych/nothing). 
+in his [game engine](https://github.com/zakarumych/nothing) prototype (?). 
 
 ### How To Use
 
