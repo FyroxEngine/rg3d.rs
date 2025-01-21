@@ -1,25 +1,32 @@
 ---
 title: "Fyrox Game Engine 0.36"
-date: "2024-05-20"
-description: "Fyrox 0.36 includes rich tile maps support, project manager, preview generation for assets, GLTF support, batching and many more"
+date: "2025-01-20"
+description: "Fyrox 0.36 includes rich tile maps support, project manager, ____"
 categories: 
 - General
 meta:
   - property: og:title
     content: Fyrox Game Engine 0.36
   - property: og:description
-    content: Fyrox 0.36 includes code hot reloading, project exporter, preview generation for assets, GLTF support, batching and many more.
+    content: Fyrox 0.36 includes rich tile maps support, project manager, ____
   - property: og:type
     content: article
   - property: og:url
     content: https://fyrox.rs/blog/post/fyrox-game-engine-0-36/
   - property: og:image
-    content: https://fyrox.rs/assets/0.36/absm.gif
+    content: https://fyrox.rs/assets/0.36/editor.png
 ---
 
 I'm happy to announce that Fyrox 0.36 has been released! Fyrox is a modern game engine written in Rust, it helps
 you to create 2D and 3D games with low effort using native editor; it is like Unity, but in Rust. This release includes
 _____
+
+## Version Unification
+
+Fyrox is a project with multiple crates and all these crates had different versions, which made it hard to understand which
+version of a crate belongs to which version of the engine. Now this is fixed and all crates in the project has the same version
+- 0.36. Why not 0.35, though? Turns out that `fyrox-sound` was already at version `0.35` when Fyrox 0.34 was released, so 
+this situation forced the team to switch to version 0.36 instead.
 
 ## How to Upgrade
 
@@ -33,11 +40,27 @@ it should be quite easy to migrate an existing project to the latest engine vers
 
 ## UI Styling
 
+![light style](light_style.png)
+
+`fyrox-ui` now supports styling. 
+
 - TODO
 
 ## Fonts
 
-Fixed blurry, added kerning
+![editor](editor.png)
+
+Fyrox 0.36 has finally fixed blurry fonts and it works good on Hi-DPI screens as well. Fonts are now also supports kerning, which makes font
+to look as it meant to look like.
+
+## Project Manager
+
+![project manager](project_manager.png)
+
+Project manager is a new part of the engine that allows you to manage multiple projects made with the at once. It allows you to create a new
+project or import an existing one, run the project or edit it in the editor, upgrade the project to selected version of the engine and many 
+more. Project manager also does all the heavy lifting for newcomers - it hides the complexity of using multiple console commands to run the
+engine in different modes and basically allows you to run the engine in a few clicks.
 
 ## Surface Resource
 
@@ -584,6 +607,12 @@ The list is split into four sections for ease of reading and finding particular 
     - Replaced with `SceneGraphNode::component_ref/mut`
 - Removed redundant boxing when applying animation values - makes animation of arbitrary numeric properies significantly
   faster
+
+## What's Next?
+
+The next major goal for the project is to release Fyrox 1.0, which is planned for this year. This will be a massive push in stability,
+documentation and book quality, existing features will be polished. The engine will be able to help in development from start to finish, 
+essentially providing an IDE for game development in Rust.
 
 ## Support
 
