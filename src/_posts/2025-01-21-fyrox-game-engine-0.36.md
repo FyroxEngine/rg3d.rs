@@ -62,13 +62,23 @@ project or import an existing one, run the project or edit it in the editor, upg
 more. Project manager also does all the heavy lifting for newcomers - it hides the complexity of using multiple console commands to run the
 engine in different modes and basically allows you to run the engine in a few clicks.
 
+The project manager is now the official, yet experimental, launcher for the engine. Its pre-built versions will be available
+on the website using "Download" button. For now only Windows and Linux versions are available, other platforms (such as 
+macOS) aren't yet available and manual installation should be used instead.
+
+Keep in mind, that the project manager is fully optional and is not required for the engine to run, it is just a 
+convenient tool for project management.
+
 ## Surface Resource
 
 - TODO
 
 ## Shape Editing for Colliders
 
-- TODO
+![collider shape editing](collider_shape_edit.png)
+
+Is is now possible to edit collider shapes directly in the scene using the new collider shape editing plugin. This plugin can be activated using either the interaction mode with "triangle" button or by simply clicking the "edit"
+button in the Collider Control Panel. This plugin supports pretty much every convex shape and also works in 2D mode.
 
 ## Graphics Server Abstraction
 
@@ -131,7 +141,12 @@ Improved performance of render data collection
 
 ## Asset Browser
 
-Added "refresh" button for asset browser. Added folders into asset browser. Ability to duplicate resources in asset browser
+![asset browser](asset_browser.png)
+
+Asset browser has got some major improvements as well. It is now able to duplicate existing resources, it also has got
+a "refresh" button to refresh its content. Asset browser also shows folders in the current directory:
+
+![asset browser folders](asset_browser_folders.png)
 
 ## NinePatch Improvements
 
@@ -163,8 +178,7 @@ The last tiny, yet useful, improvement is the ability to hide center segment:
 
 ## Terrain Improvements
 
-Ability to cut holes in terrain
-Improved terrain brush system
+- TODO: Ability to cut holes in terrain. Improved terrain brush system
 
 ## Experimental Light Occlusion Culling
 
