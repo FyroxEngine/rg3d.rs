@@ -31,8 +31,8 @@ it should be quite easy to migrate an existing project to the latest engine vers
 ## Version Unification
 
 Fyrox is a project with multiple crates and all these crates had different versions, which made it hard to understand which
-version of a crate belongs to which version of the engine. Now this is fixed and all crates in the project has the same version
-- 0.36. Why not 0.35, though? Turns out that `fyrox-sound` was already at version `0.35` when Fyrox 0.34 was released, so 
+version of a crate belongs to which version of the engine. Now this is fixed and all crates in the project has the same version: 0.36. 
+Why not 0.35, though? Turns out that `fyrox-sound` was already at version `0.35` when Fyrox 0.34 was released, so 
 this situation forced the team to switch to version 0.36 instead.
 
 ## Tile Maps
@@ -123,7 +123,7 @@ OpenGL-based graphics server. It will be changed closer to release of Fyrox 1.0,
 Renderer was significantly refactored to use the same approach used in modern graphics APIs. This change is very important for further replacement
 of OpenGL with its modern alternatives, such as Vulkan.
 
-## GPU Resources
+### GPU Resources
 
 Modern approach in GAPIs relies on the use of buffers of different kinds, such as vertex buffers, uniform buffers, textures, etc. The renderer
 architecture was changed to be as close as possible to the modern approach, but still remain relatively high level. Fyrox's shaders structure was 
@@ -179,7 +179,7 @@ The next important thing is explicit binding points for resources. These are jus
 expects a particular resource. Binding points must be unique on per resource kind basis. This means that textures will have their own set of
 binding points (0, 1, 2, 3, ...) and property groups too, so there could be a texture bound to point 0 and the property group as well.
 
-## Uniform Buffers
+### Uniform Buffers
 
 The renderer now heavily relies on uniform buffers to store data for rendering. Current architecture involves new uniform memory allocator 
 to speed up uniform data upload to GPU. Internally it allocates multiple large uniform buffers (the actual size depends on GPU, but
@@ -188,7 +188,7 @@ dumps all the incoming data in those buffers and returns offsets for each block.
 individually setting uniform values - it can save up to 15% of time. The platform that wins the most is WebAssembly, because it proxies
 GAPI calls through JS, which could be quite slow.
 
-## Materials Improvements
+### Materials Improvements
 
 All these changes dictates the required changes in the materials structure. Now materials store only changed properties and the values for the rest
 of the properties will be taken from the shader defaults when rendering. Texture bindings in materials now do not have fallback values, because 
@@ -201,13 +201,13 @@ Material editor was changed too to reflect these changes. For example, the follo
 As you can see, the "properties" buffer is the only one "uniform buffer" that can be edited from the material editor. Built-in buffers are hidden
 from it, because their data is supplied at runtime.
 
-## Shader Precompilation
+### Shader Precompilation
 
 Precompilation of all built-in shaders at once at start was removed, now all the shaders compiles on-demand. This is quite controversial change,
 but it is required on some platforms, such as WebAssembly. These platforms could spend tens of seconds at shaders compilation, leaving your
 game unresponsive during this stage.
 
-## Minor Improvements
+### Minor Improvements
 
 There's a new ability to enable/disable scissor test and to specify depth func in custom shaders. Graphics server can now provide its capabilities,
 which in their turn dictates which rendering techniques can be used. 
@@ -479,21 +479,37 @@ The content of `fyrox-texture` crate is re-exported from its previous module and
 
 ## Animation Improvements
 
-Hijack control over animations from animations container in absm - now absm itself updates the animations it uses,
-  and only those that are currently used either by a state or states of active transition
-- Added `AnimationResource` which decoupled animation tracks data into a shared resource
-    - Significantly reduces memory consumption when cloning animations, since it does not need to clone the tracks
-      anymore.
-    - Animation resource can be shared across multiple animations using the same tracks
-    - Significantly speeds up instantiation of animation player scene node
-    - Backward compatibility is preserved
-- Exclude samples buffer from a list of animatable properties
-Speed up access to animation curve data
-- Fixed root motion jitter on looping animations - - loop boundaries were handled incorrectly, thus leading to error
-  accumulation that led to annoying jitter after some iterations
-  Fixed crash when deleting multiple animation tracks at once
-- Removed redundant boxing when applying animation values - makes animation of arbitrary numeric properies significantly
-  faster
+Animation system of the engine has some nice improvements in this release. 
+
+### ABSM
+
+Animation Blending State Machines now "hijacks" control over animations from the animations container - now ABSM itself updates the 
+animations it uses, and only those that are currently used either by a state or states of active transition. This significantly
+improves performance, since there's no need to update unused animations.
+
+### Animation Resource
+
+For quite a while, the animation data (tracks and keys) was copied together with the animation. The main disadvantage of this approach
+is that when you have multiple instances of the same prefab, each prefab will have its own copy of animation tracks which is basically
+immutable and can be shared across multiple instances instead. The old approach led to increased memory usage and was very unoptimal
+in general. 
+
+This release solves this issue by addition of `AnimationResource`, which contains animation tracks with keys. This resource is basically
+a shared (mostly immutable) storage of animation data. So expect reduced memory consumption in this release.
+
+### Root Motion
+
+There was a nasty bug in the root motion implementation that led to annoying jitter on looping animations. The most annoying part in this
+bug was that it didn't occur immediately, instead it started to show up only after a few minutes. Now it is fixed an root motion works
+flawlessly. The root cause of the bug was that the loop boundaries were handled incorrectly, thus leading to error accumulation that led 
+to annoying jitter after large number iterations.
+
+### Performance
+
+As you may know, Fyrox uses reflection to animate arbitrary numeric properties. For a long time this system was using very unoptimal
+approach of applying values from animation to the entity being animated. The value from the animation was first boxed (essentially
+adding redundant memory allocation) and then fed into the reflection system where it was handled through `Any` trait. Now the engine
+uses very well optimized approach where is sets the value directly without additional boxing. 
 
 ## Tooltips
 
