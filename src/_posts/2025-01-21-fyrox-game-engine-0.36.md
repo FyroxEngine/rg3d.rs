@@ -18,8 +18,15 @@ meta:
 ---
 
 I'm happy to announce that Fyrox 0.36 has been released! Fyrox is a modern game engine written in Rust, it helps
-you to create 2D and 3D games with low effort using native editor; it is like Unity, but in Rust. This release includes
-_____
+you to create 2D and 3D games with low effort using native editor; it is like Unity, but in Rust. This release is the
+largest in the history of the engine so far. It includes major rendering improvements, feature-rich tile maps,
+UI styling support, project manager, nine patch improvements, animation improvements and a lot more.
+
+## How to Upgrade
+
+At first, install the latest `fyrox-template` by executing the following command: `cargo install fyrox-template --force`.
+Then execute this: `fyrox-template upgrade --version=latest`. The amount of breaking changes in the code is quite low and 
+it should be quite easy to migrate an existing project to the latest engine version.
 
 ## Version Unification
 
@@ -27,12 +34,6 @@ Fyrox is a project with multiple crates and all these crates had different versi
 version of a crate belongs to which version of the engine. Now this is fixed and all crates in the project has the same version
 - 0.36. Why not 0.35, though? Turns out that `fyrox-sound` was already at version `0.35` when Fyrox 0.34 was released, so 
 this situation forced the team to switch to version 0.36 instead.
-
-## How to Upgrade
-
-At first, install the latest `fyrox-template` by executing the following command: `cargo install fyrox-template --force`.
-Then execute this: `fyrox-template upgrade --version=latest`. The amount of breaking changes in the code is quite low and 
-it should be quite easy to migrate an existing project to the latest engine version.
 
 ## Tile Maps
 
@@ -50,7 +51,7 @@ it should be quite easy to migrate an existing project to the latest engine vers
 
 ![editor](editor.png)
 
-Fyrox 0.36 has finally fixed blurry fonts and it works good on Hi-DPI screens as well. Fonts are now also supports kerning, which makes font
+Fyrox 0.36 has finally fixed blurry fonts and it works good on Hi-DPI screens as well. Fonts are now also supports kerning, which makes fonts
 to look as it meant to look like.
 
 ## Project Manager
@@ -68,10 +69,6 @@ macOS) aren't yet available and manual installation should be used instead.
 
 Keep in mind, that the project manager is fully optional and is not required for the engine to run, it is just a 
 convenient tool for project management.
-
-## Surface Resource
-
-- TODO
 
 ## Shape Editing for Colliders
 
@@ -214,8 +211,62 @@ the material properties in the material editor.
 
 ## Early Return Macros
 
-Useful macros for early return statements - while let-else exists, it still takes more lines of code than it should.
-  these macros are much more compact and easier to read
+Useful macros for early return statements - while `let-else` exists, it still takes more lines of code than it should.
+These macros are much more compact and easier to read. The most commonly used macro is `some_or_return` and it is 
+very simple:
+
+```rust
+#[macro_export]
+macro_rules! some_or_return {
+    ($expr:expr) => {{
+        if let Some(v) = $expr {
+            v
+        } else {
+            return;
+        }
+    }};
+    ($expr:expr, $default:expr) => {{
+        if let Some(v) = $expr {
+            v
+        } else {
+            return $default;
+        }
+    }};
+}
+```
+
+And here's an example of why it exists. These are two equivalent functions, but the first one is written using 
+`let-else`, and the second one - with `some_or_return` macro:
+
+```rust
+fn no_macro(&mut self, message: &mut UiMessage, editor: &mut Editor) {
+    let ui = editor.engine.user_interfaces.first_mut();
+    let Some(wizard) = self.ragdoll_wizard.as_mut() else {
+        return;
+    };
+    let Some(current_scene) = editor.scenes.current_scene_entry_mut() else {
+        return;
+    };
+    let Some(game_scene) = current_scene.controller.downcast_mut::<GameScene>() else {
+        return;
+    };
+    let graph = &mut editor.engine.scenes[game_scene.scene].graph;
+    wizard.handle_ui_message(message, ui, graph, game_scene, &editor.message_sender);
+}
+
+fn with_macro(&mut self, message: &mut UiMessage, editor: &mut Editor) {
+    let ui = editor.engine.user_interfaces.first_mut();
+    let wizard = some_or_return!(self.ragdoll_wizard.as_mut());
+    let current_scene = some_or_return!(editor.scenes.current_scene_entry_mut());
+    let game_scene = some_or_return!(current_scene.controller.downcast_mut::<GameScene>());
+    let graph = &mut editor.engine.scenes[game_scene.scene].graph;
+    wizard.handle_ui_message(message, ui, graph, game_scene, &editor.message_sender);
+}
+```
+
+As you can see the version with the macro is much more compact and less verbose. There are also `ok_or_return` macro
+that works with `Result`s. The next group of macros is the ones that can alter control flow of loops: 
+`some_or_continue`, `ok_or_continue`, `some_or_break`, `ok_or_break`. These have self-descriptive names.
 
 ## Curve Editor
 
@@ -238,17 +289,17 @@ it down over time.
 
 This release added more settings for textures which include:
 
-- `Base Level` - specifies the index of the lowest defined mipmap level. Keep in mind, that the texture data should 
+- `Base Level` - the index of the lowest defined mipmap level. Keep in mind, that the texture data should 
 provide the actual mip map level defined by the provided value, otherwise the rendering will be incorrect (probably 
 just black on majority of implementations) and glitchy. 
-- `Max Level` - Sets the index of the highest defined mipmap level. Keep in mind, that the texture data should provide 
+- `Max Level` - the index of the highest defined mipmap level. Keep in mind, that the texture data should provide 
 the actual mip map level defined by the provided value, otherwise the rendering will be incorrect (probably just black 
 on majority of implementations) and glitchy.
-- `Min LOD` - Sets the minimum level-of-detail parameter. This floating-point value limits the selection of highest 
+- `Min LOD` - the minimum level-of-detail parameter. This floating-point value limits the selection of highest 
 resolution mipmap (lowest mipmap level). The initial value is -1000.0. 
-- `Max LOD` - Sets the maximum level-of-detail parameter. This floating-point value limits the selection of the lowest 
+- `Max LOD` - the maximum level-of-detail parameter. This floating-point value limits the selection of the lowest 
 resolution mipmap (highest mipmap level). The initial value is 1000.
-- `LOD Bias` - Specifies a fixed bias value that is to be added to the level-of-detail parameter for the texture before 
+- `LOD Bias` - a fixed bias value that is to be added to the level-of-detail parameter for the texture before 
 texture sampling. The specified value is added to the shader-supplied bias value (if any) and subsequently clamped into 
 the implementation-defined range `−bias_max..bias_max`, where `bias_max` is the value that can be fetched from the 
 current graphics server. The initial value is 0.0.
@@ -266,7 +317,8 @@ was changed to `./`.
 ![surface resource](surface_resource.png)
 
 Every use of `Arc<Mutex<SurfaceData>>` was turned into `Resource<SurfaceData>` which essentially almost the same, except
-it utilizes the standard asset management pipeline. 
+it utilizes the standard asset management pipeline. This allowed the editor to operate with such resource instances 
+as well.
 
 ## Node and Property Selector Improvements
 
