@@ -416,7 +416,47 @@ as well.
 
 ## Constructor Provider
 
-- TODO
+Creation of scene nodes and widgets was hardcoded in the editor for a long time and it is finally changed in this release.
+The engine now has a special trait `ConstructorProvider` which is used to define a standard way of creating an entity.
+This trait is used by the editor to fill `Create` menu and its submenus. Each entity can define multiple variants for it.
+For example a `Mesh` node could be in multiple "flavors": a cube, a cone, a cylinder, etc. Typical implementation of it 
+could look like this:
+
+```rust
+impl ConstructorProvider<Node, Graph> for Camera {
+    fn constructor() -> NodeConstructor {
+        NodeConstructor::new::<Self>().with_variant("Camera", |_| {
+            CameraBuilder::new(BaseBuilder::new().with_name("Camera"))
+                .build_node()
+                .into()
+        })
+    }
+}
+```
+
+One might ask why not just use `Default` trait for this? The answer is quite simple: most of `Default` trait implementations
+aren't suitable for this purpose, because for instance there's no need to pre-allocate a string for "Camera" name when it
+will be replaced with something else immediately after.
+
+This trait however is much more flexible and allows adding any desired way of constructing an entity. This can be highlighted
+even more when you look at a typical constructor of a UI widget:
+
+```rust
+impl ConstructorProvider<UiNode, UserInterface> for ScrollBar {
+    fn constructor() -> GraphNodeConstructor<UiNode, UserInterface> {
+        GraphNodeConstructor::new::<Self>()
+            .with_variant("Scroll Bar", |ui| {
+                ScrollBarBuilder::new(WidgetBuilder::new().with_name("Scroll Bar"))
+                    .build(&mut ui.build_ctx())
+                    .into()
+            })
+            .with_group("Input")
+    }
+}
+```
+
+`ScrollBarBuilder::build` creates not only the `ScrollBar` instance, but also a bunch of other widgets that is used internally
+in the scroll bar.
 
 ## Performance improvements
 
