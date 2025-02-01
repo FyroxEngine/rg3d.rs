@@ -180,18 +180,37 @@ The last tiny, yet useful, improvement is the ability to hide center segment:
 
 - TODO: Ability to cut holes in terrain. Improved terrain brush system
 
-## Experimental Light Occlusion Culling
+## Experimental Occlusion Culling
 
-- TODO
+This release adds an experimental tile-based occlusion culling system. The main idea is to split the screen into 
+multiple tiles, find which object belongs to which tile, render bounding boxes into a frame buffer with depth buffer 
+from previous frame, find bit index for every pixel in tile for every bounding box and merge them all using additive 
+blending. Downscale this "visibility buffer" and read it back on CPU and cache the visibility info for the next frame.
+The full algorithm description [can be found in this article](https://fyrox.rs/blog/post/tile-based-occlusion-culling/).
+
+There's also occlusion culling for light sources, which allows to skip light-specific render passes for lights that
+are fully hidden behind objects.
+
+Both of these features are disabled by default, because they still have some edge cases which aren't solved yet.
+The main one is the latency problem, which could lead to object popping out of nowhere if the camera or an object
+is moving too fast.
 
 ## Particle Systems
 
-- Added visible distance for particle systems
-    - Automatically excludes distant particle systems from rendering to improve performance
-    - Can be tweaked on per-system basis
- Lighting support for particle systems
-Configurable coordinate system for particle systems - allows to select coordinate system for generated particles -
-  local or world
+![particle system](particle_system.gif)
+
+Particle systems are now has an ability to change coordinate system to which the generated particles will belong
+to. There are two options - local (default) and world space. World space coordinate system is very useful for 
+particles that should remain in place where they were created, but still let the coordinate system to be attached
+to some other (potentially moving) objects.
+
+![particle system distance](particle_system_distance.gif)
+
+The next improvement in particle systems is the configurable visibility distance. It allows to automatically exclude
+distant particle systems from rendering to improve performance. This distance can be tweaked on per-system basis.
+
+The last, but not least improvement for particle systems is lighting support. Lighting can be enabled/disabled in
+the material properties in the material editor.
 
 ## Early Return Macros
 
@@ -285,12 +304,18 @@ Make tooltips invisible for hit test
 
 ## Toggle button widget
 
-- TODO
+![toggle button widget](toggle_button_widget.png)
+
+`ToggleButton` widget is somewhat similar to `CheckBox` widget in functionality, but it looks quite different. It is 
+useful to create control elements that has just two states - on and off. For example, the above screenshot shows the
+toggle button for selection tracking.
 
 ## Editor Settings Window
 
-- Shortcuts for groups in editor settings - allows to quickly jump to a particular settings group
-- Searching functionality for editor settings
+![editor settings](editor_settings_window.png)
+
+Editor settings window now has shortcuts for groups. It allows to quickly jump to a particular settings group, without
+wasting time on scrolling. The new searching functionality increased usability as well.
 
 ## Full List of Changes
 
@@ -665,7 +690,7 @@ The list is split into four sections for ease of reading and finding particular 
 ## What's Next?
 
 The next major goal for the project is to release Fyrox 1.0, which is planned for this year. This will be a massive push in stability,
-documentation and book quality, existing features will be polished. The engine will be able to help in development from start to finish, 
+documentation and book quality, existing features will be polished as well. The engine will be able to help in development from start to finish, 
 essentially providing an IDE for game development in Rust.
 
 ## Support
