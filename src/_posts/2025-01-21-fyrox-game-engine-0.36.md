@@ -458,21 +458,24 @@ impl ConstructorProvider<UiNode, UserInterface> for ScrollBar {
 `ScrollBarBuilder::build` creates not only the `ScrollBar` instance, but also a bunch of other widgets that is used internally
 in the scroll bar.
 
-## Performance improvements
+## Performance Improvements
 
-- Editor perf improvements
-- Detached perf of hierarchical properties propagation from graph size
-    - Graph now updates hierarchical properties only for ones that actually changed
-    - Significantly improves performance in static scenes
-    Prevent the editor to load the same texture over and over again - saves memory
-Fixed `MenuItem` performance issues
-Improved performance of render data collection
+This release contains quite a lot of performance improvements in various parts of the engine. The most significant performance
+improvement was achieved in the editor - it is now up to 70% faster than the previous version. 
+
+The next place where the performance was improved is hierarchical properties propagation in the scene graph. Performance of 
+this operation now does not depend on the size of the scene graph. Only moving objects forces an update iteration of 
+hierarchical properties, which significantly improves performance in mostly static scenes.
 
 ## `fyrox-texture` crate
 
-- Detached texture-related code to separate crate - allows to attach it to `fyrox-ui` to use textures directly without
-  using hacky `UntypedResource`
-- Use TextureResource directly in ui code where possible - removes redundant juggling with untyped<->typed conversions
+Textures-related code is now detached in a separate crate called `fyrox-texture`. The main reason why it was done is to
+be able to use textures in `fyrox-ui` crate, which used "abstract" textures for a long time and this prevented a lot of
+widgets from being implemented properly. For example, abstract texture was an `UntypedResource` which don't have any way
+of extracting is actual size (width, height) and the `Image` widget required width and height to be set explicitly. Otherwise
+is just collapses into a point. 
+
+The content of `fyrox-texture` crate is re-exported from its previous module and no change in user code is required.
 
 ## Animation Improvements
 
