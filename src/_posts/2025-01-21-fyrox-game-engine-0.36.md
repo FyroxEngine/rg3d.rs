@@ -43,9 +43,41 @@ this situation forced the team to switch to version 0.36 instead.
 
 ![light style](light_style.png)
 
-`fyrox-ui` now supports styling. 
+`fyrox-ui` now supports styling. This is a crucial feature needed for flexible user interface designs. Styling works quite simple:
+a property that needs to support styling should be wrapped into `StyledProperty<T>` and that's pretty much it. Styled variable 
+stores the value of `T` and also a name of the respective property it may be bound to. This mixed approach allows to override styled
+properties with custom values and still have an ability apply styles later on.
 
-- TODO
+To apply a style all that is needed is to send `WidgetMessage::Style` to it with an appropriate `StyleResource` instance. The widget
+is then will try to find a property by the name specified in each `StyledProperty` and override its value with the one from the style.
+
+It is also possible to apply a style to all widgets at once - just call `ui.set_style(..)` and it will automagically apply the style to
+all widgets.
+
+Every `UserInterface` instance stores its own style, which is then supplied to `BuildContext`, which in its turn is used at the building
+stage by every widget. This way all new widgets created after the call to `set_style` will still have the right style.
+
+For example, a `Decorator` widget that is used in `Button` widget could be created like this:
+
+```rust
+DecoratorBuilder::new(
+    BorderBuilder::new(
+        WidgetBuilder::new()
+            .with_foreground(ctx.style.property(Style::BRUSH_DARKER))
+            .with_child(content),
+    )
+    .with_pad_by_corner_radius(false)
+    .with_corner_radius(ctx.style.property(Button::CORNER_RADIUS))
+    .with_stroke_thickness(ctx.style.property(Button::BORDER_THICKNESS)),
+)
+.with_normal_brush(ctx.style.property(Style::BRUSH_LIGHT))
+.with_hover_brush(ctx.style.property(Style::BRUSH_LIGHTER))
+.with_pressed_brush(ctx.style.property(Style::BRUSH_LIGHTEST))
+.build(ctx)
+```
+
+As you can see, most of its properties are actually style-bound properties. If the user then decides to call `ui.set_style` then all these
+properties will fetch the right values from the given style.
 
 ## Fonts
 
