@@ -236,17 +236,37 @@ it down over time.
 
 ## Texture Settings
 
-base level, max level, min lod, max lod, lod bias
+This release added more settings for textures which include:
+
+- `Base Level` - specifies the index of the lowest defined mipmap level. Keep in mind, that the texture data should 
+provide the actual mip map level defined by the provided value, otherwise the rendering will be incorrect (probably 
+just black on majority of implementations) and glitchy. 
+- `Max Level` - Sets the index of the highest defined mipmap level. Keep in mind, that the texture data should provide 
+the actual mip map level defined by the provided value, otherwise the rendering will be incorrect (probably just black 
+on majority of implementations) and glitchy.
+- `Min LOD` - Sets the minimum level-of-detail parameter. This floating-point value limits the selection of highest 
+resolution mipmap (lowest mipmap level). The initial value is -1000.0. 
+- `Max LOD` - Sets the maximum level-of-detail parameter. This floating-point value limits the selection of the lowest 
+resolution mipmap (highest mipmap level). The initial value is 1000.
+- `LOD Bias` - Specifies a fixed bias value that is to be added to the level-of-detail parameter for the texture before 
+texture sampling. The specified value is added to the shader-supplied bias value (if any) and subsequently clamped into 
+the implementation-defined range `−bias_max..bias_max`, where `bias_max` is the value that can be fetched from the 
+current graphics server. The initial value is 0.0.
 
 ## File Browser Improvements
 
-Added home/desktop directories shortcut buttons for file browser widget
-Ability to focus current path in the file browser widgets
-Change default path of file browser to `./`
+![file browser](file_browser.png)
+
+File browser was improved in this release as well. This released added home/desktop directories shortcut buttons for 
+faster navigation. It is now possible to focus current path of the file browser. The default path of file browser 
+was changed to `./`.
 
 ## Surface Resource
 
-- TODO
+![surface resource](surface_resource.png)
+
+Every use of `Arc<Mutex<SurfaceData>>` was turned into `Resource<SurfaceData>` which essentially almost the same, except
+it utilizes the standard asset management pipeline. 
 
 ## Node and Property Selector Improvements
 
