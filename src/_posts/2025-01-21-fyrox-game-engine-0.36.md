@@ -209,12 +209,8 @@ game unresponsive during this stage.
 
 ## Minor Improvements
 
-- Ability to enable/disable scissor test from custom shaders
-- Ability to specify depth func in custom shaders
-- Ability to fetch graphics server capabilities
-- Do not reallocate gpu buffer if there's enough space for data already
-- Discard scaling from rotation matrix before passing it to bounding shape - fixes clipping issues of light sources
-- Do not skip light scatter rendering even if there's no fragments lit - fixes flashing of light scattering
+There's a new ability to enable/disable scissor test and to specify depth func in custom shaders. Graphics server can now provide its capabilities,
+which in their turn dictates which rendering techniques can be used. 
 
 ## Multi-selection in ListView Widget
 
