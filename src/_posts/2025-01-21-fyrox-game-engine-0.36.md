@@ -219,12 +219,20 @@ Useful macros for early return statements - while let-else exists, it still take
 
 ## Curve Editor
 
-Ability to copy/paste selection in the curve editor widget. Ability to add keys on multiple curves at once.
-Hotkey for `zoom to fit` for curve editor widget
+![curve editor](curve_editor.png)
+
+Curve editor has got some improvements as well. It is now possible to copy/paste selection. There's also a new ability 
+to add keys on multiple curves at once. Hotkey for `Zoom to Fit` was also added (`F` key by default). 
 
 ## Editor ui statistics plugin
 
-- TODO
+![editor ui statistics](editor_ui_statistics.png)
+
+Editor UI statistics plugin allows you to debug the editor UI itself. It shows total number of allocated widgets,
+used memory (rough estimate), the number of issued drawing commands and the number of processed UI messages on the
+current frame. This information could be quite useful for when something goes wrong, for example widget counter
+could be helpful to track non-deleted widgets, that might pile up while the editor is working and thus slowing
+it down over time.
 
 ## Texture Settings
 
@@ -293,14 +301,15 @@ Speed up access to animation curve data
 
 ## Tooltips
 
-Make tooltips invisible for hit test
+Tooltips now behaves the same as in many other desktop applications. Previously, tooltips appeared immediately after
+the cursor was hover over a widget, now it has configurable interval which is 0.5 seconds by default. Tooltips are 
+now invisible for hit test, which allows to click-through them and they do not get in the way as it was before.
 
 ## Logging
 
-`info! + warn! + err!` log macros
-- Disable log file by default - - log file could be undesirable in some cases and now it is off by default and can be
-  enabled by `Log::set_file_name/set_file` in `fn main`
-- Explicit api to change log file
+Logging was improved as well. There are three new macros: `info!`, `warn!`, `err!` which are just shortcuts for 
+`Log::info(format!(..))` and other respective functions. Logging is now disabled by default and every game must 
+enable it manually using `Log::set_file_name` or `Log::set_file` functions.
 
 ## Toggle button widget
 
