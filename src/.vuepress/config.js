@@ -71,8 +71,8 @@ module.exports = {
         editLinkText: '',
         lastUpdated: false,
         nav: [{
-                text: 'Homepage',
-                link: '/',
+                text: 'Download',
+                link: '/download.html',
             },
             {
                 text: 'Book',
