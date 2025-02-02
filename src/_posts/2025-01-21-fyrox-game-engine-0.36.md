@@ -1,20 +1,20 @@
 ---
 title: "Fyrox Game Engine 0.36"
 date: "2025-01-20"
-description: "Fyrox 0.36 includes rich tile maps support, project manager, ____"
+description: "Fyrox 0.36 includes feature-rich tile maps, project manager, UI styling, animation improvements and many more."
 categories: 
 - General
 meta:
   - property: og:title
     content: Fyrox Game Engine 0.36
   - property: og:description
-    content: Fyrox 0.36 includes rich tile maps support, project manager, ____
+    content: Fyrox 0.36 includes feature-rich tile maps, project manager, UI styling, animation improvements and many more.
   - property: og:type
     content: article
   - property: og:url
     content: https://fyrox.rs/blog/post/fyrox-game-engine-0-36/
   - property: og:image
-    content: https://fyrox.rs/assets/0.36/editor.png
+    content: https://fyrox.rs/assets/0.36/particle_system.gif
 ---
 
 I'm happy to announce that Fyrox 0.36 has been released! Fyrox is a modern game engine written in Rust, it helps
@@ -41,7 +41,7 @@ this situation forced the team to switch to version 0.36 instead.
 
 ## UI Styling
 
-![light style](light_style.png)
+![light style](/assets/0.36/light_style.png)
 
 `fyrox-ui` now supports styling. This is a crucial feature needed for flexible user interface designs. Styling works quite simple:
 a property that needs to support styling should be wrapped into `StyledProperty<T>` and that's pretty much it. Styled variable 
@@ -81,14 +81,14 @@ properties will fetch the right values from the given style.
 
 ## Fonts
 
-![editor](editor.png)
+![editor](/assets/0.36/editor.png)
 
 Fyrox 0.36 has finally fixed blurry fonts and it works good on Hi-DPI screens as well. Fonts are now also supports kerning, which makes fonts
 to look as it meant to look like.
 
 ## Project Manager
 
-![project manager](project_manager.png)
+![project manager](/assets/0.36/project_manager.png)
 
 Project manager is a new part of the engine that allows you to manage multiple projects made with the at once. It allows you to create a new
 project or import an existing one, run the project or edit it in the editor, upgrade the project to selected version of the engine and many 
@@ -104,7 +104,7 @@ convenient tool for project management.
 
 ## Shape Editing for Colliders
 
-![collider shape editing](collider_shape_edit.png)
+![collider shape editing](/assets/0.36/collider_shape_edit.png)
 
 Is is now possible to edit collider shapes directly in the scene using the new collider shape editing plugin. This plugin can be activated using either the interaction mode with "triangle" button or by simply clicking the "edit"
 button in the Collider Control Panel. This plugin supports pretty much every convex shape and also works in 2D mode.
@@ -196,7 +196,7 @@ the shader definition supplies them already
 
 Material editor was changed too to reflect these changes. For example, the following screenshot shows the structure of the standard PBR shader:
 
-![material editor](material_editor.png)
+![material editor](/assets/0.36/material_editor.png)
 
 As you can see, the "properties" buffer is the only one "uniform buffer" that can be edited from the material editor. Built-in buffers are hidden
 from it, because their data is supplied at runtime.
@@ -212,18 +212,14 @@ game unresponsive during this stage.
 There's a new ability to enable/disable scissor test and to specify depth func in custom shaders. Graphics server can now provide its capabilities,
 which in their turn dictates which rendering techniques can be used. 
 
-## Multi-selection in ListView Widget
-
-- TODO
-
 ## Asset Browser
 
-![asset browser](asset_browser.png)
+![asset browser](/assets/0.36/asset_browser.png)
 
 Asset browser has got some major improvements as well. It is now able to duplicate existing resources, it also has got
 a "refresh" button to refresh its content. Asset browser also shows folders in the current directory:
 
-![asset browser folders](asset_browser_folders.png)
+![asset browser folders](/assets/0.36/asset_browser_folders.png)
 
 ## NinePatch Improvements
 
@@ -241,26 +237,26 @@ used for slicing.
 
 All this functionality is also backed by the new texture slice editor, which allows you to specify the region and margins and adjust them as you need:
 
-![texture slice](texture_slice.png)
+![texture slice](/assets/0.36/texture_slice.png)
 
 The next improvement is the support of configurable tiling modes. There are two modes supported: stretch and tiled.
 The following image shows the difference between two. The upper one uses tiling and the bottom one just stretches the 
 middle sections.
 
-![nine slice tiling mode](nine_slice_tiling_mode.png)
+![nine slice tiling mode](/assets/0.36/nine_slice_tiling_mode.png)
 
 The last tiny, yet useful, improvement is the ability to hide center segment:
 
-![nine slice no center segment](nine_slice_no_center_segment.png)
+![nine slice no center segment](/assets/0.36/nine_slice_no_center_segment.png)
 
 ## Terrain Improvements
 
-![terrain holes](terrain_holes.png)
+![terrain holes](/assets/0.36/terrain_holes.png)
 
 Terrains now supports an ability to cut holes, which could bee useful if you need to add cave entrance in your terrain,
 or simply remove a part of the terrain. This hole cutting mechanism is not only visual, it also affects physics:
 
-![terrain holes physics](terrain_holes_physics.png)
+![terrain holes physics](/assets/0.36/terrain_holes_physics.png)
 
 As you can see, the physical collider (which is visualized as the red mesh) is also having holes in it. 
 
@@ -285,14 +281,14 @@ is moving too fast.
 
 ## Particle Systems
 
-![particle system](particle_system.gif)
+![particle system](/assets/0.36/particle_system.gif)
 
 Particle systems are now has an ability to change coordinate system to which the generated particles will belong
 to. There are two options - local (default) and world space. World space coordinate system is very useful for 
 particles that should remain in place where they were created, but still let the coordinate system to be attached
 to some other (potentially moving) objects.
 
-![particle system distance](particle_system_distance.gif)
+![particle system distance](/assets/0.36/particle_system_distance.gif)
 
 The next improvement in particle systems is the configurable visibility distance. It allows to automatically exclude
 distant particle systems from rendering to improve performance. This distance can be tweaked on per-system basis.
@@ -361,14 +357,14 @@ that works with `Result`s. The next group of macros is the ones that can alter c
 
 ## Curve Editor
 
-![curve editor](curve_editor.png)
+![curve editor](/assets/0.36/curve_editor.png)
 
 Curve editor has got some improvements as well. It is now possible to copy/paste selection. There's also a new ability 
 to add keys on multiple curves at once. Hotkey for `Zoom to Fit` was also added (`F` key by default). 
 
 ## Editor UI Statistics Plugin
 
-![editor ui statistics](editor_ui_statistics.png)
+![editor ui statistics](/assets/0.36/editor_ui_statistics.png)
 
 Editor UI statistics plugin allows you to debug the editor UI itself. It shows total number of allocated widgets,
 used memory (rough estimate), the number of issued drawing commands and the number of processed UI messages on the
@@ -397,7 +393,7 @@ current graphics server. The initial value is 0.0.
 
 ## File Browser Improvements
 
-![file browser](file_browser.png)
+![file browser](/assets/0.36/file_browser.png)
 
 File browser was improved in this release as well. This released added home/desktop directories shortcut buttons for 
 faster navigation. It is now possible to focus current path of the file browser. The default path of file browser 
@@ -405,7 +401,7 @@ was changed to `./`.
 
 ## Surface Resource
 
-![surface resource](surface_resource.png)
+![surface resource](/assets/0.36/surface_resource.png)
 
 Every use of `Arc<Mutex<SurfaceData>>` was turned into `Resource<SurfaceData>` which essentially almost the same, except
 it utilizes the standard asset management pipeline. This allowed the editor to operate with such resource instances 
@@ -413,17 +409,11 @@ as well.
 
 ## Node and Property Selector Improvements
 
-- Node selector usability improvements
-    - Focus search bar on open
-    - Ability to confirm selection by enter key
-    - Bring first selected item into view on open
-    - Added tab navigation
+![property selector](/assets/0.36/property_selector.png)
 
-  - Improved property selector
-    - Focus search bar on opening
-    - Tab navigation
-    - Highlight selected properties on rebinding
-    - Ability to confirm selection by hitting enter key  
+Node and property selectors got some QoL improvements as well. The search bar is now focused immediately after opening,
+which allows you to quickly start searching for a property or a scene node. Selection can now be confirmed using "Enter"
+key. Overall navigation can now be done entirely from keyboard, making it very fast for keyboard users.
 
 ## Constructor Provider
 
@@ -536,7 +526,7 @@ enable it manually using `Log::set_file_name` or `Log::set_file` functions.
 
 ## Toggle button widget
 
-![toggle button widget](toggle_button_widget.png)
+![toggle button widget](/assets/0.36/toggle_button_widget.png)
 
 `ToggleButton` widget is somewhat similar to `CheckBox` widget in functionality, but it looks quite different. It is 
 useful to create control elements that has just two states - on and off. For example, the above screenshot shows the
@@ -544,7 +534,7 @@ toggle button for selection tracking.
 
 ## Editor Settings Window
 
-![editor settings](editor_settings_window.png)
+![editor settings](/assets/0.36/editor_settings_window.png)
 
 Editor settings window now has shortcuts for groups. It allows to quickly jump to a particular settings group, without
 wasting time on scrolling. The new searching functionality increased usability as well.
