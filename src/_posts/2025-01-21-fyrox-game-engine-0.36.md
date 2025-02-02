@@ -255,7 +255,18 @@ The last tiny, yet useful, improvement is the ability to hide center segment:
 
 ## Terrain Improvements
 
-- TODO: Ability to cut holes in terrain. Improved terrain brush system
+![terrain holes](terrain_holes.png)
+
+Terrains now supports an ability to cut holes, which could bee useful if you need to add cave entrance in your terrain,
+or simply remove a part of the terrain. This hole cutting mechanism is not only visual, it also affects physics:
+
+![terrain holes physics](terrain_holes_physics.png)
+
+As you can see, the physical collider (which is visualized as the red mesh) is also having holes in it. 
+
+The next major improvement is the brush system improvement, which includes arbitrary transform for the brush, configurable
+hardness, ability to assign specific height value. The overall performance of drawing on terrains is also improved by 
+off-threading the heavy work.
 
 ## Experimental Occlusion Culling
 
@@ -355,7 +366,7 @@ that works with `Result`s. The next group of macros is the ones that can alter c
 Curve editor has got some improvements as well. It is now possible to copy/paste selection. There's also a new ability 
 to add keys on multiple curves at once. Hotkey for `Zoom to Fit` was also added (`F` key by default). 
 
-## Editor ui statistics plugin
+## Editor UI Statistics Plugin
 
 ![editor ui statistics](editor_ui_statistics.png)
 
