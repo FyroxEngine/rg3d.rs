@@ -19,8 +19,8 @@ meta:
 
 I'm happy to announce that Fyrox 0.36 has been released! Fyrox is a modern game engine written in Rust, it helps
 you to create 2D and 3D games with low effort using native editor; it is like Unity, but in Rust. This release is the
-largest in the history of the engine so far. It includes major rendering improvements, feature-rich tile maps,
-UI styling support, project manager, nine patch improvements, animation improvements and a lot more.
+largest in history of the engine so far. It includes major rendering improvements, feature-rich tile maps,
+UI styling support, project manager, nine patch improvements, collider shape editing, terrain improvements, animation improvements, particle system improvements, huge amount of bugfixes and a lot more.
 
 ## How to Upgrade
 
