@@ -37,7 +37,42 @@ this situation forced the team to switch to version 0.36 instead.
 
 ## Tile Maps
 
-- TODO
+Fyrox now supports tile maps for rendering 2D environments. A tile map is an object that stores an automatically resizing 2D array
+of 64-bit handles, and a resource that defines how each cell with a particular handle should be rendered. The resource is called
+the tile set, and FyroxEd now has a tile set editor which allows any material to be turned into a tile atlas of tile rendering data.
+
+Each tile set can contain multiple pages of tiles, and thereby allow the user to keep their tile data organized in as many or as few
+pages as they like. Each tile handle in the tile map stores the position of a page and the position within the page where it should find
+its tile data. Pages also come in several varieties for storing different types of data.
+
+* Atlas pages allow a single material to be automatically split into multiple tiles based on their position within the material.
+
+* Freeform pages allow the user total freedom to create any tile at any position on the page, with each tile individually specifying
+its material and UV coordinates.
+
+* Transform pages store rotation and flip relationships between tile handles, which allows Fyrox to take a tile handle and automatically
+convert it into the handle of a flipped or rotated version of the same tile.
+
+* Animation pages store sequences of handles which represent animations to play within a tile map. Each cell on the page represents a frame
+of animation, and consequitive horizontal runs of cells are animated at the frame rate specified for the page.
+
+In addition to storing rendering information, a tile set may optionally contain collision shapes for each tile, and collision shapes may
+be organized into multiple kinds to allow collision shapes to be distinguished based on what sort of collision is expected.
+For example, tiles with ice physics may be distinguished from tiles that allow the player to pass through and tiles with bouncy physics,
+and so on.
+
+Tiles may also contain additional data to be used in whatever way some application might need. A tile may have any number of property fields
+that can be identified by name or by UUID, and each field can allow each tile to store an integer, a float, a string, or a 3x3 grid of bytes
+that could be used for Wang tiling or other effects.
+
+FyroxEd now contains a tile map editor that provides various drawing tools to an artist wishing to populate a tile map with tile handles.
+Tiles can be selected, move, copied, rotated, flipped, or deleted. Rectangles can be filled with repeating patterns of tiles, and a flood
+fill tool allows any arbitrary shape to be filled by any selected pattern of tiles.
+
+A new resource called a *tile map brush* provides a space for artists to organize the available tiles into any arrangements that make tile map
+editing fastest and easiest. Tiles that are often used together may be stored nearby to each other for easy access, even if those tiles
+come from different tile atlas materials. This is possible because the brush resource does not store tile data; it only stores handles for the
+tile data in some tile set.
 
 ## UI Styling
 
