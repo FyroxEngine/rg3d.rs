@@ -37,9 +37,12 @@ this situation forced the team to switch to version 0.36 instead.
 
 ## Tile Maps
 
-Fyrox now supports tile maps for rendering 2D environments. A tile map is an object that stores an automatically resizing 2D array
-of 64-bit handles, and a resource that defines how each cell with a particular handle should be rendered. The resource is called
-the tile set, and FyroxEd now has a tile set editor which allows any material to be turned into a tile atlas of tile rendering data.
+![tile maps](https://fyrox-book.github.io/scene/tile_map.png)
+
+Fyrox now supports tile maps for rendering 2D environments. Tile map is an object that allows drawing on a grid with pre-defined 
+"pixels" called tiles, which are essentially just a texture. Tiles are stored in a special resource, that allows sharing it across 
+multiple tile maps. The resource is called the tile set, and FyroxEd now has a tile set editor which allows any material to be turned 
+into a tile atlas of tile rendering data.
 
 Each tile set can contain multiple pages of tiles, and thereby allow the user to keep their tile data organized in as many or as few
 pages as they like. Each tile handle in the tile map stores the position of a page and the position within the page where it should find
@@ -54,12 +57,16 @@ its material and UV coordinates.
 convert it into the handle of a flipped or rotated version of the same tile.
 
 * Animation pages store sequences of handles which represent animations to play within a tile map. Each cell on the page represents a frame
-of animation, and consequitive horizontal runs of cells are animated at the frame rate specified for the page.
+of animation, and consecutive horizontal runs of cells are animated at the frame rate specified for the page.
+
+![tile maps animations](https://fyrox-book.github.io/scene/tile_map_animation.png)
 
 In addition to storing rendering information, a tile set may optionally contain collision shapes for each tile, and collision shapes may
 be organized into multiple kinds to allow collision shapes to be distinguished based on what sort of collision is expected.
 For example, tiles with ice physics may be distinguished from tiles that allow the player to pass through and tiles with bouncy physics,
 and so on.
+
+![tile maps properties](https://fyrox-book.github.io/scene/tile_map_properties.png)
 
 Tiles may also contain additional data to be used in whatever way some application might need. A tile may have any number of property fields
 that can be identified by name or by UUID, and each field can allow each tile to store an integer, a float, a string, or a 3x3 grid of bytes
@@ -73,6 +80,8 @@ A new resource called a *tile map brush* provides a space for artists to organiz
 editing fastest and easiest. Tiles that are often used together may be stored nearby to each other for easy access, even if those tiles
 come from different tile atlas materials. This is possible because the brush resource does not store tile data; it only stores handles for the
 tile data in some tile set.
+
+Comprehensive documentation for tile maps [can be found here](https://fyrox-book.github.io/scene/tilemap.html)
 
 ## UI Styling
 
