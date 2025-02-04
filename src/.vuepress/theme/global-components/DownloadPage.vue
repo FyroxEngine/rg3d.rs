@@ -1,22 +1,22 @@
 <template>
     <v-container class="pb-9">
         <v-row v-if="preBuilt">
-            <v-col align="center">
-                <h1> Download Fyrox 0.36 for {{ name }} </h1>
+            <v-col align="center">               
+                <h1 class="top_margin"> Download Fyrox {{ version }} for {{ name }} </h1>
             </v-col>
         </v-row>    
 
         <v-row v-if="!preBuilt">
             <v-col align="center">
-                <h1> {{ name }} OS doesn't have pre-built binaries</h1>
+                <h1 class="top_margin"> {{ name }} OS doesn't have pre-built binaries</h1>
             </v-col>
         </v-row>
 
         <v-row v-if="preBuilt">
             <v-col align="center">
-                <v-btn color="blue"  size="x-large" :href="link"> 
+                <v-btn color="blue"  size="x-large" class="top_margin" :href="link"> 
                     <v-icon> {{ icon }} </v-icon>
-                    Fyrox Engine 0.36                    
+                    Fyrox Engine {{ version }}                
                     <v-icon>mdi-download</v-icon>
                 </v-btn> 
             </v-col>
@@ -24,16 +24,14 @@
 
         <v-row>
             <v-col align="center">
-                <v-card width="100%" height="200px">
-                    <v-divider></v-divider>
-                    
+                <v-card outlined width="100%" height="200px">
                     <v-card-text>
                         <h2>Requirements</h2>
                     </v-card-text>
 
                     <v-divider></v-divider>
 
-                    <v-card-text class="white--text">
+                    <v-card-text>
                         <h4>OpenGL 3.3 or OpenGL ES 3.0 compatible hardware </h4>
                         <h4>RAM - 512 Mb or more </h4>
                         <h4>VRAM - 256 Mb or more </h4>
@@ -41,16 +39,14 @@
                 </v-card>
             </v-col>
             <v-col align="center">
-                <v-card width="100%" height="200px">
-                    <v-divider></v-divider>
-                    
+                <v-card outlined width="100%" height="200px">                    
                     <v-card-text>
                         <h2>Instructions</h2>
                     </v-card-text>
 
                     <v-divider></v-divider>
 
-                    <v-card-text class="white--text">
+                    <v-card-text>
                        <h4> {{ instructions }}</h4>
                        <h4> You may need to install Rust toolchain to be able to build projects.</h4>  
                        <a href = "https://rustup.rs/">Download Rust Toolchain.</a>
@@ -58,6 +54,9 @@
                 </v-card>
             </v-col>
         </v-row>
+
+
+        <v-divider class="top_margin"></v-divider>
 
         <v-row>
             <v-col align="center">
@@ -96,7 +95,7 @@ export default {
         var instructions = "None";
         var link = "";
         var icon = "";
-        
+        var version = "0.36";
         var windows = "https://fyrox.rs/assets/releases/0.36/fyrox-project-manager-win-x86_64.zip";
         var mac = "https://fyrox.rs/assets/releases/0.36/fyrox-project-manager-mac-x86_64.zip";
         var linux = "https://fyrox.rs/assets/releases/0.36/fyrox-project-manager-linux-x86_64.zip";
@@ -133,12 +132,17 @@ export default {
             windows,
             mac,
             linux,
-            icon
+            icon,
+            version
         };
     },
 }
 </script>
 
 <style>
+
+.top_margin {
+    margin: 40px 0px 40px 0px
+};
 
 </style>
