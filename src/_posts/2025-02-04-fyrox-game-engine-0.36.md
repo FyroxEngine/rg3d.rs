@@ -583,6 +583,18 @@ toggle button for selection tracking.
 Editor settings window now has shortcuts for groups. It allows to quickly jump to a particular settings group, without
 wasting time on scrolling. The new searching functionality increased usability as well.
 
+## What's Next?
+
+The next major goal for the project is to release Fyrox 1.0, which is planned for this year. This will be a massive push in stability,
+documentation and book quality, existing features will be polished as well. The engine will be able to help in development from start to finish, 
+essentially providing an IDE for game development in Rust.
+
+## Support
+
+If you want to support the development of the project, click [this link](https://fyrox.rs/sponsor.html). Also, you can help by 
+fixing one of the ["good first issues" ](https://github.com/FyroxEngine/Fyrox/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22),
+adding a desired feature to the engine, or making a contribution to the [book](https://github.com/fyrox-book)
+
 ## Full List of Changes
 
 The list is split into four sections for ease of reading and finding particular information.
@@ -953,14 +965,4 @@ The list is split into four sections for ease of reading and finding particular 
 - Removed redundant boxing when applying animation values - makes animation of arbitrary numeric properies significantly
   faster.
 
-## What's Next?
 
-The next major goal for the project is to release Fyrox 1.0, which is planned for this year. This will be a massive push in stability,
-documentation and book quality, existing features will be polished as well. The engine will be able to help in development from start to finish, 
-essentially providing an IDE for game development in Rust.
-
-## Support
-
-If you want to support the development of the project, click [this link](https://fyrox.rs/sponsor.html). Also, you can help by 
-fixing one of the ["good first issues" ](https://github.com/FyroxEngine/Fyrox/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22),
-adding a desired feature to the engine, or making a contribution to the [book](https://github.com/fyrox-book)
