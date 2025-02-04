@@ -1,8 +1,8 @@
 <template>
     <div>
         <page-title :typed="['Use Rust to Build Games', 'Deploy to Multiple Platforms', 'Enjoy the Full Featured Editor']" text="Fyrox Game Engine">
-            <v-btn class="mt-4" color="primary" depressed  href="https://fyrox-book.github.io/beginning/scripting.html">
-                <span>Start Creating Games</span>
+            <v-btn class="mt-4" color="primary" depressed  href="/download.html">
+                <span>Download Latest Build</span>
             </v-btn>
             <v-btn class="mt-4" color="primary" depressed  href="/examples.html">
                 <span>Play Demo Projects</span>

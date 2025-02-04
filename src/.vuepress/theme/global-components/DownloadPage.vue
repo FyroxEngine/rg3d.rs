@@ -2,7 +2,7 @@
     <v-container class="pb-9">
         <v-row v-if="preBuilt">
             <v-col align="center">
-                <h1> Download Fyrox for {{ name }} </h1>
+                <h1> Download Fyrox 0.36 for {{ name }} </h1>
             </v-col>
         </v-row>    
 
@@ -15,8 +15,9 @@
         <v-row v-if="preBuilt">
             <v-col align="center">
                 <v-btn color="blue"  size="x-large" :href="link"> 
-                    <v-icon>mdi-download</v-icon>
+                    <v-icon> {{ icon }} </v-icon>
                     Fyrox Engine 0.36                    
+                    <v-icon>mdi-download</v-icon>
                 </v-btn> 
             </v-col>
         </v-row>  
@@ -33,7 +34,7 @@
                     <v-divider></v-divider>
 
                     <v-card-text class="white--text">
-                        <h4>OpenGL 3.3 / OpenGL ES 3.0 compatible hardware </h4>
+                        <h4>OpenGL 3.3 or OpenGL ES 3.0 compatible hardware </h4>
                         <h4>RAM - 512 Mb or more </h4>
                         <h4>VRAM - 256 Mb or more </h4>
                     </v-card-text>
@@ -51,7 +52,8 @@
 
                     <v-card-text class="white--text">
                        <h4> {{ instructions }}</h4>
-                       <h4> You may need to install Rust toolchain to be able to build projects.</h4>                       
+                       <h4> You may need to install Rust toolchain to be able to build projects.</h4>  
+                       <a href = "https://rustup.rs/">Download Rust Toolchain.</a>
                     </v-card-text>
                 </v-card>
             </v-col>
@@ -65,15 +67,15 @@
       
         <v-row>
             <v-col align="center">
-                <v-btn color="blue" size="x-large" :href="link"> 
+                <v-btn color="blue" size="x-large" :href="windows"> 
                     <v-icon>mdi-microsoft-windows</v-icon>
                     Windows                 
                 </v-btn> 
-                <v-btn color="blue" size="x-large" :href="link"> 
+                <v-btn color="blue" size="x-large" :href="linux"> 
                     <v-icon>mdi-linux</v-icon>
                     Linux                 
                 </v-btn> 
-                <v-btn color="blue" size="x-large" :href="link"> 
+                <v-btn color="blue" size="x-large" :href="mac"> 
                     <v-icon>mdi-apple</v-icon>
                     macOS                 
                 </v-btn> 
@@ -93,21 +95,30 @@ export default {
         var preBuilt = false;
         var instructions = "None";
         var link = "";
+        var icon = "";
+        
+        var windows = "https://fyrox.rs/assets/releases/0.36/fyrox-project-manager-win-x86_64.zip";
+        var mac = "https://fyrox.rs/assets/releases/0.36/fyrox-project-manager-mac-x86_64.zip";
+        var linux = "https://fyrox.rs/assets/releases/0.36/fyrox-project-manager-linux-x86_64.zip";
+
         if (navigator.userAgent.includes("win") != -1)  {
             name = "Windows";
             preBuilt = true;
-            link = "https://fyrox.rs/assets/releases/0.36/fyrox-project-manager-win-x86_64.zip"
+            link = windows;
             instructions = "Extract and run."
+            icon = "mdi-microsoft-windows";
         } else if (navigator.userAgent.includes("Mac") != -1) {
             name = "Mac";         
             preBuilt = true;   
-            link = "https://fyrox.rs/assets/releases/0.36/fyrox-project-manager-mac-x86_64.zip"
-            instructions = "Extract and run."
+            link = mac;
+            instructions = "Extract and run. The application is unsigned, so you need to give your permissions to run it."
+            icon = "mdi-apple";
         } else if (navigator.userAgent.includes("Linux") != -1) {
             name = "Linux"; 
             preBuilt = true;
-            link = "https://fyrox.rs/assets/releases/0.36/fyrox-project-manager-linux-x86_64.zip"
+            link = linux;
             instructions = "Extract and run."
+            icon = "mdi-linux";
         } else if (navigator.userAgent.includes("Android") != -1) {
             name = "Android OS"; 
         } else if (navigator.userAgent.includes("like Mac") != -1)  {
@@ -118,7 +129,11 @@ export default {
             name,
             preBuilt,
             instructions,
-            link
+            link,
+            windows,
+            mac,
+            linux,
+            icon
         };
     },
 }
