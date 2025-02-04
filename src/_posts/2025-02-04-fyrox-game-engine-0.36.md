@@ -1,6 +1,6 @@
 ---
 title: "Fyrox Game Engine 0.36"
-date: "2025-01-20"
+date: "2025-02-04"
 description: "Fyrox 0.36 includes feature-rich tile maps, project manager, UI styling, animation improvements and many more."
 categories: 
 - General
