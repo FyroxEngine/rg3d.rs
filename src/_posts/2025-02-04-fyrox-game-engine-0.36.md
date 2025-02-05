@@ -22,12 +22,6 @@ you to create 2D and 3D games with low effort using native editor; it is like Un
 largest in history of the engine so far. It includes major rendering improvements, feature-rich tile maps,
 UI styling support, project manager, nine patch improvements, collider shape editing, terrain improvements, animation improvements, particle system improvements, huge amount of bugfixes and a lot more.
 
-## How to Upgrade
-
-At first, install the latest `fyrox-template` by executing the following command: `cargo install fyrox-template --force`.
-Then execute this: `fyrox-template upgrade --version=latest`. The amount of breaking changes in the code is quite low and 
-it should be quite easy to migrate an existing project to the latest engine version.
-
 ## Version Unification
 
 Fyrox is a project with multiple crates and all these crates had different versions, which made it hard to understand which
@@ -45,10 +39,20 @@ more. Project manager also does all the heavy lifting for newcomers - it hides t
 engine in different modes and basically allows you to run the engine in a few clicks.
 
 The project manager is now the official, yet experimental, launcher for the engine. Its pre-built versions will be available
-on the website using "Download" button.
+on the website using "Download" button. It can also be compiled locally using `cargo install fyrox-project-manager`, these are 
+for those devs who don't trust running pre-built binaries.
 
 Keep in mind, that the project manager is fully optional and is not required for the engine to run, it is just a 
 convenient tool for project management.
+
+## How to Upgrade
+
+Download the project manager, import your project using "Import" button, select it in the list and click "Upgrade" button, 
+select "Latest" and click "Upgrade".
+
+Alternatively, this can be done using console commands. At first, install the latest `fyrox-template` by executing the following 
+command: `cargo install fyrox-template --force`. Then execute this: `fyrox-template upgrade --version=latest`. The amount of 
+breaking changes in the code is quite low and it should be quite easy to migrate an existing project to the latest engine version.
 
 ## Tile Maps
 
