@@ -1,6 +1,6 @@
 <template>
     <div>
-        <page-title text="Blog" :typed="['Get familiar with release notes.', 'Stay informed with the latest news.', 'Learn about new engine features.']">
+        <page-title text="Blog" >
              <v-btn v-if="activePage !== 1" class="mt-4"  @click="
                         $vuetify.goTo('#posts', {
                             duration: 1200,

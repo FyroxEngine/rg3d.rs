@@ -1,58 +1,18 @@
 <template>
     <div>
-        <page-title :typed="['Use Rust to Build Games', 'Deploy to Multiple Platforms', 'Enjoy the Full Featured Editor']" text="Fyrox Game Engine">
-            <v-btn class="mt-4" color="primary" depressed  href="https://fyrox-book.github.io/beginning/scripting.html">
-                <span>Start Creating Games</span>
+        <page-title text="Fyrox Game Engine" class="page_title_background">
+            <h3 >Feature-rich Game Engine Written in Rust</h3>
+            <v-btn class="mt-16 mb-16" color="primary" depressed href="/download.html">
+                <v-icon>mdi-download</v-icon>
+                <span>Download Latest Build</span>
             </v-btn>
-            <v-btn class="mt-4" color="primary" depressed  href="/examples.html">
+            <v-btn class="mt-16 mb-16" color="primary" depressed href="/examples.html">
+                <v-icon>mdi-play</v-icon>
                 <span>Play Demo Projects</span>
             </v-btn>
         </page-title>
         <features-list src="features" />
-        <v-container class="text-center pt-16 pb-16 mb-16">
-            <h2 class="mt-3 mb-2">Fyrox Editor</h2>
-            <v-row class="mt-5">
-                <v-col cols="12" md="6" class="mb-sm-16">
-                    <v-img
-                        width="80%"
-                        max-width="450px"
-                        class="rusty-editor__image rusty-editor__image-1"
-                        lazy-src="/assets/rusty_editor_ll.jpg"
-                        src="/assets/rusty_editor.jpg"
-                        :eager="true"
-                    />
-                    <v-img
-                        width="80%"
-                        max-width="450px"
-                        class="rusty-editor__image rusty-editor__image-2"
-                        lazy-src="/assets/rusty_editor_2_ll.jpg"
-                        src="/assets/rusty_editor_2.jpg"
-                        :eager="true"
-                    />
-                </v-col>
-                <v-col
-                    cols="12"
-                    md="6"
-                    class="mt-md-n16 align-self-center text-justify"
-                >
-                    <p>
-                        What would be a game engine without an editor? Fyrox has its own, native editor, that helps you to create 
-                        your games by saving dozens of work hours. Supporting tons of features, you're ready to create games of 
-                        tomorrow, today.
-                    </p>
-                </v-col>
-
-                <v-row justify="center">
-                    <v-btn 
-                        color="primary"
-                        href="https://fyrox-book.github.io/beginning/editor_overview.html"
-                    >
-                        <span>Learn How To Use The Editor</span>
-                    </v-btn>
-                </v-row>        
-
-            </v-row>
-        </v-container>
+       
      
         <sponsors />
 
@@ -87,4 +47,15 @@ export default {
     justify-content: center;
     box-sizing: border-box;
 }
+
+.page_title_background {
+    overflow-y: hidden ! important;
+    overflow-x: hidden ! important;
+    background-size:     cover;
+    background-image: url("/assets/logos/editor.jpg");
+    background-repeat:   no-repeat;
+    background-position: center center;
+    height: 600px;
+} 
+
 </style>
