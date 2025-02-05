@@ -52,12 +52,12 @@ export default {
             features: [
                 {
                     title: "Editor",
-                    icon: "lightbulb-on-outline",
+                    icon: "pencil",
                     desc: "Use fully featured editor to develop games from start to finish.",
                 },
                 {
                     title: "Hot Reloading",
-                    icon: "lightbulb-on-outline",
+                    icon: "run-fast",
                     desc: "Use hot reloading of native code and assets for rapid prototyping.",
                 },           
                 {
@@ -72,22 +72,22 @@ export default {
                 },
                 {
                     title: "High Quality Binaural Sound",
-                    icon: "lightbulb-on-outline",
+                    icon: "volume-high",
                     desc: "Use powerful sound system to create rich sound environment.",
                 },
                 {
                     title: "Powerful 2D/3D Physics",
-                    icon: "lightbulb-on-outline",
+                    icon: "cube-outline",
                     desc: "Rigid bodies, various colliders, joints, ray casting, etc.",
                 },
                 {
                     title: "Powerful User Interface",
-                    icon: "lightbulb-on-outline",
+                    icon: "view-quilt",
                     desc: "Use powerful UI system to create interfaces limited by your imagination.",
                 },
                 {
                     title: "Powerful Animation System",
-                    icon: "lightbulb-on-outline",
+                    icon: "animation-play",
                     desc: "Use built-in animation system to create complex animations.",
                 },
                 {
@@ -106,9 +106,9 @@ export default {
                     desc: "Full-featured, with various nodes (pivot, camera, mesh, light, particle system, sprite), including your own.",
                 },
                 {
-                    title: "Rust",
-                    icon: "language-rust",
-                    desc: "Built with Rust, which offers high reliability, less bugs than other languages.",
+                    title: "Documentation",
+                    icon: "book-open",
+                    desc: "Read high-quality documentation to learn how to use the engine.",
                 },
             ],
         };
