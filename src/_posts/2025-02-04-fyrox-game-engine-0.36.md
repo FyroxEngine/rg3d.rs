@@ -35,6 +35,21 @@ version of a crate belongs to which version of the engine. Now this is fixed and
 Why not 0.35, though? Turns out that `fyrox-sound` was already at version `0.35` when Fyrox 0.34 was released, so 
 this situation forced the team to switch to version 0.36 instead.
 
+## Project Manager
+
+![project manager](/assets/0.36/project_manager.png)
+
+Project manager is a new part of the engine that allows you to manage multiple projects made with the at once. It allows you to create a new
+project or import an existing one, run the project or edit it in the editor, upgrade the project to selected version of the engine and many 
+more. Project manager also does all the heavy lifting for newcomers - it hides the complexity of using multiple console commands to run the
+engine in different modes and basically allows you to run the engine in a few clicks.
+
+The project manager is now the official, yet experimental, launcher for the engine. Its pre-built versions will be available
+on the website using "Download" button.
+
+Keep in mind, that the project manager is fully optional and is not required for the engine to run, it is just a 
+convenient tool for project management.
+
 ## Tile Maps
 
 ![tile maps](https://fyrox-book.github.io/scene/tile_map.png)
@@ -129,22 +144,6 @@ properties will fetch the right values from the given style.
 
 Fyrox 0.36 has finally fixed blurry fonts and it works good on Hi-DPI screens as well. Fonts are now also supports kerning, which makes fonts
 to look as it meant to look like.
-
-## Project Manager
-
-![project manager](/assets/0.36/project_manager.png)
-
-Project manager is a new part of the engine that allows you to manage multiple projects made with the at once. It allows you to create a new
-project or import an existing one, run the project or edit it in the editor, upgrade the project to selected version of the engine and many 
-more. Project manager also does all the heavy lifting for newcomers - it hides the complexity of using multiple console commands to run the
-engine in different modes and basically allows you to run the engine in a few clicks.
-
-The project manager is now the official, yet experimental, launcher for the engine. Its pre-built versions will be available
-on the website using "Download" button. For now only Windows and Linux versions are available, other platforms (such as 
-macOS) aren't yet available and manual installation should be used instead.
-
-Keep in mind, that the project manager is fully optional and is not required for the engine to run, it is just a 
-convenient tool for project management.
 
 ## Shape Editing for Colliders
 
