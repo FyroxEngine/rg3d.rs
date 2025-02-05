@@ -30,7 +30,7 @@
                 <v-spacer />
                 <v-btn
                     plain
-                    class="mr-3"
+                    class="mr-0"
                     v-for="({ text, link, key }) in topNavLinks"
                     :key="key"
                     :to="isExternal(link) ? undefined : link"

@@ -15,15 +15,15 @@
                 v-if="
                     include.indexOf(includeFor) !== -1 || includeFor === 'any'
                 "
-                class="me-4 white--text"
+                class="white--text"
                 :href="link"
                 :icon="asIcons"
                 :plain="asPlain"
             >
-                <v-icon v-if="icon" size="24px">
+                <v-icon v-if="icon" size="24px" class="mr-1">
                     {{ icon }}
                 </v-icon>
-                <span v-else-if="customIcon" class="d-flex">
+                <span v-else-if="customIcon" class="d-flex mr-1">
                     <img class="custom-icon" :src="customIcon" />
                 </span>
                 <span v-if="allowFollowText"> {{ followText }} </span>
