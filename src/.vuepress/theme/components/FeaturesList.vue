@@ -51,27 +51,37 @@ export default {
         return {
             features: [
                 {
-                    title: "First Class 2D and 3D Support",
+                    title: "Editor",
+                    icon: "lightbulb-on-outline",
+                    desc: "Use fully featured editor to develop games from start to finish.",
+                },
+                {
+                    title: "Hot Reloading",
+                    icon: "lightbulb-on-outline",
+                    desc: "Use hot reloading of native code and assets for rapid prototyping.",
+                },           
+                {
+                    title: "First Class 2D/3D Support",
                     icon: "lightbulb-on-outline",
                     desc: "Create 2D or 3D games, or even mix 2D and 3D.",
                 },
                 {
-                    title: "High Quality Flexible Renderer",
+                    title: "Flexible PBR Renderer",
                     icon: "lightbulb-on-outline",
-                    desc: "Powerful and extensible renderer will cover most of your needs.",
+                    desc: "Powerful and extensible PBR renderer will cover most of your needs.",
                 },
                 {
-                    title: "High Quality Binaural Sound System",
+                    title: "High Quality Binaural Sound",
                     icon: "lightbulb-on-outline",
                     desc: "Use powerful sound system to create rich sound environment.",
                 },
                 {
-                    title: "Advanced 2D/3D Physics",
+                    title: "Powerful 2D/3D Physics",
                     icon: "lightbulb-on-outline",
                     desc: "Rigid bodies, various colliders, joints, ray casting, etc.",
                 },
                 {
-                    title: "Advanced User Interface",
+                    title: "Powerful User Interface",
                     icon: "lightbulb-on-outline",
                     desc: "Use powerful UI system to create interfaces limited by your imagination.",
                 },
@@ -82,8 +92,8 @@ export default {
                 },
                 {
                     title: "Multiplatform",
-                    icon: "desktop-mac",
-                    desc: "Make your games for PC (Windows, Linux, macOS) and Web (WebAssembly)",
+                    icon: "apple",
+                    desc: "Make your games for PC (Windows, Linux, macOS) and Web (WebAssembly).",
                 },
                 {
                     title: "Plugins & Scripting",
@@ -94,6 +104,11 @@ export default {
                     title: "Scene Graph",
                     icon: "chart-timeline",
                     desc: "Full-featured, with various nodes (pivot, camera, mesh, light, particle system, sprite), including your own.",
+                },
+                {
+                    title: "Rust",
+                    icon: "language-rust",
+                    desc: "Built with Rust, which offers high reliability, less bugs than other languages.",
                 },
             ],
         };

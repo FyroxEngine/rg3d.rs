@@ -1,11 +1,12 @@
 <template>
     <div>
-        <page-title text="Fyrox Game Engine">
-            <v-btn class="mt-4" color="primary" depressed href="/download.html">
+        <page-title text="Fyrox Game Engine" class="page_title_background">
+            <h3 >Feature-rich Game Engine Written in Rust</h3>
+            <v-btn class="mt-16 mb-16" color="primary" depressed href="/download.html">
                 <v-icon>mdi-download</v-icon>
                 <span>Download Latest Build</span>
             </v-btn>
-            <v-btn class="mt-4" color="primary" depressed href="/examples.html">
+            <v-btn class="mt-16 mb-16" color="primary" depressed href="/examples.html">
                 <v-icon>mdi-play</v-icon>
                 <span>Play Demo Projects</span>
             </v-btn>
@@ -38,7 +39,7 @@
                     class="mt-md-n16 align-self-center text-justify"
                 >
                     <p>
-                        What would be a game engine without an editor? Fyrox has its own, native editor, that helps you to create 
+                        Fyrox has its own, native editor, that helps you to create 
                         your games by saving dozens of work hours. Supporting tons of features, you're ready to create games of 
                         tomorrow, today.
                     </p>
@@ -89,4 +90,15 @@ export default {
     justify-content: center;
     box-sizing: border-box;
 }
+
+.page_title_background {
+    overflow-y: hidden ! important;
+    overflow-x: hidden ! important;
+    background-size:     cover;
+    background-image: url("/assets/logos/editor.jpg");
+    background-repeat:   no-repeat;
+    background-position: center center;
+    height: 600px;
+} 
+
 </style>
