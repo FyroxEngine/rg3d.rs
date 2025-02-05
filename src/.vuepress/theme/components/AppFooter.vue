@@ -4,7 +4,7 @@
             flat
             tile
             width="100%"
-            class="grey darken-4 white--text text-center"
+            class="darken-4 white--text text-center"
         >
             <v-divider></v-divider>
             <v-card-text>

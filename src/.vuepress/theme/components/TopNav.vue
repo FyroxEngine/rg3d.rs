@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-app-bar app flat dark>
+        <v-app-bar app dark>
             <router-link to="/" class="v-toolbar__title">
                 <v-img
                     src="/assets/logos/logo.png"
@@ -26,11 +26,10 @@
             >
             </v-app-bar-nav-icon>
 
-            <v-toolbar  elevation="0" v-if="!$vuetify.breakpoint.mobile" jsutify-end>
+            <v-toolbar elevation="10" v-if="!$vuetify.breakpoint.mobile" jsutify-end>
                 <v-spacer />
                 <v-btn
                     plain
-                    class="mr-0"
                     v-for="({ text, link, key }) in topNavLinks"
                     :key="key"
                     :to="isExternal(link) ? undefined : link"
