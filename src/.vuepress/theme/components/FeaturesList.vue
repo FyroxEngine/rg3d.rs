@@ -53,7 +53,7 @@ export default {
                 {
                     title: "Editor",
                     icon: "pencil",
-                    desc: "Use fully featured editor to develop games from start to finish.",
+                    desc: "Use the full-featured editor to develop games from start to finish.",
                 },
                 {
                     title: "Hot Reloading",
@@ -71,7 +71,7 @@ export default {
                     desc: "Powerful and extensible PBR renderer will cover most of your needs.",
                 },
                 {
-                    title: "High Quality Binaural Sound",
+                    title: "High Quality Audio System",
                     icon: "volume-high",
                     desc: "Use powerful sound system to create rich sound environment.",
                 },
@@ -81,7 +81,7 @@ export default {
                     desc: "Rigid bodies, various colliders, joints, ray casting, etc.",
                 },
                 {
-                    title: "Powerful User Interface",
+                    title: "Advanced User Interface",
                     icon: "view-quilt",
                     desc: "Use powerful UI system to create interfaces limited by your imagination.",
                 },
