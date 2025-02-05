@@ -1,10 +1,12 @@
 <template>
     <div>
-        <page-title :typed="['Use Rust to Build Games', 'Deploy to Multiple Platforms', 'Enjoy the Full Featured Editor']" text="Fyrox Game Engine">
-            <v-btn class="mt-4" color="primary" depressed  href="/download.html">
+        <page-title text="Fyrox Game Engine">
+            <v-btn class="mt-4" color="primary" depressed href="/download.html">
+                <v-icon>mdi-download</v-icon>
                 <span>Download Latest Build</span>
             </v-btn>
-            <v-btn class="mt-4" color="primary" depressed  href="/examples.html">
+            <v-btn class="mt-4" color="primary" depressed href="/examples.html">
+                <v-icon>mdi-play</v-icon>
                 <span>Play Demo Projects</span>
             </v-btn>
         </page-title>
