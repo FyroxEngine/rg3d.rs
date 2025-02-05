@@ -79,10 +79,26 @@
                     macOS                 
                 </v-btn> 
                 <v-btn color="blue" size="x-large" href="https://fyrox-book.github.io/beginning/scripting.html"> 
+                    <v-icon>mdi-code-braces</v-icon>                    
                     Manual Installation                 
                 </v-btn> 
             </v-col>
         </v-row>
+
+        <v-divider class="top_margin"></v-divider>
+
+        <v-row>
+            <v-col align="center">
+                <h3> Learn How To Use Fyrox </h3>
+            </v-col>
+        </v-row>
+
+        <v-col align="center">
+                <v-btn color="blue" size="x-large" href="https://fyrox-book.github.io/introduction.html"> 
+                    <v-icon>book-open-variant-outline</v-icon>
+                    Open The Book                 
+                </v-btn> 
+        </v-col>
 
     </v-container>
 </template>
