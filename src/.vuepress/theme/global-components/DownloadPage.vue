@@ -24,7 +24,7 @@
 
         <v-row>
             <v-col align="center">
-                <v-card outlined width="100%" height="200px">
+                <v-card outlined width="100%" min-height="250px">
                     <v-card-text>
                         <h2>Requirements</h2>
                     </v-card-text>
@@ -39,7 +39,7 @@
                 </v-card>
             </v-col>
             <v-col align="center">
-                <v-card outlined width="100%" height="200px">                    
+                <v-card outlined width="100%" min-height="250px">                    
                     <v-card-text>
                         <h2>Instructions</h2>
                     </v-card-text>
