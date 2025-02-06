@@ -85,6 +85,18 @@
             </v-col>
         </v-row>
 
+        <v-row>
+            <v-col align="center">
+                <h3> or </h3>
+            </v-col>
+        </v-row>
+
+        <v-row>
+            <v-col align="center">
+                <CpCode command="cargo install fyrox-project-manager"> </CpCode>
+            </v-col>
+        </v-row>
+
         <v-divider class="top_margin"></v-divider>
 
         <v-row>
@@ -104,6 +116,8 @@
 </template>
 
 <script>
+import CpCode from './CpCode.vue';
+
 export default {
     data() {
         var name = "Unknown OS"; 

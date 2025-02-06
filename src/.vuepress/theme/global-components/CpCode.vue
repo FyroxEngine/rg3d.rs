@@ -2,7 +2,10 @@
     <div class="mb-2">
         <v-tooltip top>
             <template v-slot:activator="{ on, attrs }">
-                <code class="cursor-pointer" @click="copy(command)" v-bind="attrs" v-on="on">{{command}}</code>
+                <code class="cursor-pointer" @click="copy(command)" v-bind="attrs" v-on="on">
+                    <v-icon>mdi-clipboard-text-outline</v-icon>
+                    {{command}}
+                </code>
             </template>
             <span>Click the code to copy</span>
         </v-tooltip>
