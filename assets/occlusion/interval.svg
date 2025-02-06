@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="112.50548mm"
+   height="117.57004mm"
+   viewBox="0 0 112.50547 117.57004"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="interval.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:clip-to-page="false"
+     inkscape:zoom="1.4627806"
+     inkscape:cx="165.43834"
+     inkscape:cy="215.68511"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-43.777065,-12.166862)">
+    <rect
+       style="fill:#ffffff;stroke-width:0.499999"
+       id="rect1"
+       width="112.50548"
+       height="117.57004"
+       x="43.777065"
+       y="12.166862" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.35;stroke-dasharray:none;stroke-opacity:1"
+       id="rect31"
+       width="99.656876"
+       height="99.656876"
+       x="50.171562"
+       y="25.17156" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.345491;stroke-dasharray:none;stroke-opacity:1"
+       id="rect32"
+       width="99.800743"
+       height="34.193565"
+       x="50.099628"
+       y="59.17625" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.35;stroke-dasharray:none;stroke-opacity:1"
+       id="rect33"
+       width="33.238964"
+       height="99.801689"
+       x="83.923149"
+       y="25.099152" />
+    <rect
+       style="fill:#008000;stroke:#000000;stroke-width:0.349999;stroke-dasharray:none;stroke-opacity:1"
+       id="rect34"
+       width="67.105362"
+       height="34.185749"
+       x="66.020096"
+       y="42.686966" />
+    <circle
+       style="fill:#ffff00;stroke:#000000;stroke-width:0.349999;stroke-dasharray:none;stroke-opacity:1"
+       id="path34"
+       cx="65.65834"
+       cy="42.686966"
+       r="1.6278927" />
+    <circle
+       style="fill:#00ffff;stroke:#000000;stroke-width:0.349999;stroke-dasharray:none;stroke-opacity:1"
+       id="circle34"
+       cx="133.12546"
+       cy="76.691841"
+       r="1.6278927" />
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;fill:#000000;stroke:none;stroke-width:0.349999;stroke-dasharray:none;stroke-opacity:1"
+       x="49.922047"
+       y="21.162607"
+       id="text34"><tspan
+         sodipodi:role="line"
+         id="tspan34"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;stroke:none;stroke-width:0.35"
+         x="49.922047"
+         y="21.162607">Origin</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;fill:#000000;stroke:none;stroke-width:0.349999;stroke-dasharray:none;stroke-opacity:1"
+       x="64.573082"
+       y="39.069427"
+       id="text35"><tspan
+         sodipodi:role="line"
+         id="tspan35"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;stroke:none;stroke-width:0.35"
+         x="64.573082"
+         y="39.069427">Min</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;stroke:none;stroke-width:0.35"
+         x="64.573082"
+         y="46.17646"
+         id="tspan36" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;stroke:none;stroke-width:0.349999;stroke-dasharray:none;stroke-opacity:1"
+       x="136.20036"
+       y="77.596222"
+       id="text37"><tspan
+         sodipodi:role="line"
+         id="tspan37"
+         style="stroke-width:0.35"
+         x="136.20036"
+         y="77.596222">Max</tspan></text>
+  </g>
+</svg>
