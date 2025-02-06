@@ -113,7 +113,7 @@ export default {
         var icon = "";
         var version = "0.36";
         var windows = "https://fyrox.rs/assets/releases/0.36/fyrox-project-manager-win-x86_64.zip";
-        var mac = "https://fyrox.rs/assets/releases/0.36/fyrox-project-manager-mac-x86_64.zip";
+        var mac = "https://fyrox.rs/assets/releases/0.36/fyrox-project-manager-macos-x86_64.zip";
         var linux = "https://fyrox.rs/assets/releases/0.36/fyrox-project-manager-linux-x86_64.zip";
 
         if (navigator.userAgent.includes("win") != -1)  {
