@@ -93,7 +93,7 @@ export default {
                 {
                     title: "Multiplatform",
                     icon: "apple",
-                    desc: "Make your games for PC (Windows, Linux, macOS) and Web (WebAssembly).",
+                    desc: "Make your games for PC (Windows, Linux, macOS), Web (WebAssembly), Mobile (Android and iOS).",
                 },
                 {
                     title: "Plugins & Scripting",
