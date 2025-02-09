@@ -48,8 +48,10 @@
 
                     <v-card-text>
                        <h4> {{ instructions }}</h4>
+                       <h4 v-if="additionalCommand.length>0">You might also need to install the following list of development dependencies:</h4>                       
+                       <CpCode v-if="additionalCommand.length>0" :command="additionalCommand"> </CpCode>
                        <h4> You may need to install Rust toolchain to be able to build projects.</h4>  
-                       <a href = "https://rustup.rs/">Download Rust Toolchain.</a>
+                       <a href = "https://rustup.rs/">Download Rust Toolchain.</a>                       
                     </v-card-text>
                 </v-card>
             </v-col>
@@ -129,6 +131,7 @@ export default {
         var windows = "https://fyrox.rs/assets/releases/0.36/fyrox-project-manager-win-x86_64.zip";
         var mac = "https://fyrox.rs/assets/releases/0.36/fyrox-project-manager-macos-x86_64.zip";
         var linux = "https://fyrox.rs/assets/releases/0.36/fyrox-project-manager-linux-x86_64.zip";
+        var additionalCommand = "";
 
         if (navigator.userAgent.includes("win") != -1)  {
             name = "Windows";
@@ -146,7 +149,8 @@ export default {
             name = "Linux"; 
             preBuilt = true;
             link = linux;
-            instructions = "Extract and run.  Fyrox is self-contained engine and does not require installation."
+            instructions = "Extract and run. Fyrox is self-contained engine and does not require installation.";
+            additionalCommand = "sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev libxcb1-dev libxkbcommon-dev libasound2-dev libegl-mesa0 build-essential";
             icon = "mdi-linux";
         } else if (navigator.userAgent.includes("Android") != -1) {
             name = "Android OS"; 
@@ -163,7 +167,8 @@ export default {
             mac,
             linux,
             icon,
-            version
+            version,
+            additionalCommand
         };
     },
 }
