@@ -108,7 +108,7 @@ export default {
                         {
                             img: "/assets/navmesh.png",
                             title: "Navigation Mesh Editor",
-                            description: "Create and editor navigational meshes for path finding."
+                            description: "Create and edit navigational meshes for path finding."
                         },
                         {
                             img: "/assets/inspector_small.png",
