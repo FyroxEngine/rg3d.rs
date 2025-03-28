@@ -33,7 +33,7 @@ this situation forced the team to switch to version 0.36 instead.
 
 ![project manager](/assets/0.36/project_manager.png)
 
-Project manager is a new part of the engine that allows you to manage multiple projects made with the at once. It allows you to create a new
+Project manager is a new part of the engine that allows you to manage multiple projects made with the engine at once. It allows you to create a new
 project or import an existing one, run the project or edit it in the editor, upgrade the project to selected version of the engine and many 
 more. Project manager also does all the heavy lifting for newcomers - it hides the complexity of using multiple console commands to run the
 engine in different modes and basically allows you to run the engine in a few clicks.
