@@ -17,27 +17,208 @@ meta:
     content: https://fyrox.rs/assets/1.0.0-rc.1/particle_system.gif
 ---
 
-I'm happy to announce that Fyrox 1.0.0-rc.1 was released! Fyrox is a modern game engine written in Rust, it helps you to create 2D and 3D games with 
-low effort using native editor; it is like Unity, but in Rust. 
+I'm happy to announce that Fyrox 1.0.0-rc.1 was released! Fyrox is a modern game engine written in Rust, it
+helps you to create 2D and 3D games with low effort using native editor; it is like Unity, but in Rust. 
 
-This is an intermediate release intended for beta testing before releasing stable 1.0. The testing includes the engine, the editor, the docs and 
-the book. If you find a bug, confusing or incomplete documentation please file an issue or propose a solution by creating a pull request.
+This is an intermediate release intended for beta testing before releasing the stable 1.0. The testing includes 
+the engine, the editor, the docs and the book. If you find a bug, confusing or incomplete documentation please 
+file an issue or propose a solution by creating a pull request.
 
-The list of changes in this release is huge, there's a ton of fixes and new functionality.
+The list of changes in this release is huge, it is mostly focused on bugfixes and quality-of-life improvements, 
+but there's a new functionality as well.
+
+# Type Safety
+
+For a long time Fyrox supported only "untyped" handles (such as `Handle<Node>` or `Handle<UiNode>`), this 
+approach was bug-prone because it effectively erased all the useful type information. This release adds
+strongly typed handles for all the scene and UI entities. It is now possible to store `camera: Handle<Camera>`
+in a script and access the camera by it using a simple `graph[camera].projection_matrix()`. There's no need 
+to do a manual type casting. Typed handle improved the editor side as well - the handle selector will show 
+only the objects of the right type.
+
+# Resource Management
+
+Resource system is now UUID-based and resource references are now stored as a simple UUID, instead of paths
+as it was before. This allows to rename the resource source files without a need to scan the entire project
+for path-based links and fix them. 
+
+Such transition comes with a price - every resource now must have a `.metadata` file beside it that stores 
+its UUID.
+
+This refactoring also added a concept of a resource registry. In short - it is a map `UUID -> Path` that
+holds information about all the resources in the project. Resource registry tracks the file system changes
+and automatically updates itself. 
+
+# Asset Format
+
+Fyrox now uses text-based format for its native assets. This adds an ability to merge changes from collaborative
+work. Text format is then converted to binary form for production builds (can be disabled), which improves 
+loading times.
+
+# Rendering
+
+Physically-based rendering pipeline is now fully complete and supports image-based lighting (IBL), environment
+mapping, reflection probes. 
+
+Ability to select environment light source for scenes
+Use ambient occlusion from material info in ambient lighting shader
+
+## Render target for cameras  (TODO)
+
+It is now possible to specify render targets for cameras.
+
+## Particle System  (TODO)
+
+- Configurable fadeout margin for particle systems
+
+## Skybox (TODO)
+
+Skybox was moved from camera to scene
+
+## Improved Debugging
+
+Fyrox now tries to assign meaningful names for GPU objects to simplify debugging via various graphics
+debuggers. This option is off by default, but it can be enabled pretty easily:
+
+```rust
+fn main() {
+    let executor = Executor::from_params(
+        EventLoop::new().ok(),
+        GraphicsContextParams {
+            // This option forces the engine to use meaningful names for
+            // GPU objects (textures, buffers, shaders, etc.)
+            named_objects: true,
+            window_attributes: WindowAttributes::default(),
+            vsync: true,
+            msaa_sample_count: None,
+            graphics_server_constructor: Default::default(),
+        },
+    );
+    // ...
+}
+```
+
+Accurate GPU profiling is a hard task, because GPUs work independently of CPUs and any attempt to measure how 
+much time is spent on GPU from the CPU side will only measure how much time was spent to prepare and issue
+commands for a GPU. That being said, profiling requires specialized tools for target GPUs. Use  
+[NVIDIA Nsight](https://developer.nvidia.com/nsight-systems) or 
+[AMD Radeon GPU Profiler](https://gpuopen.com/rgp/), depending on the GPU you're using.
+[RenderDoc](https://renderdoc.org/) also has _some_ ability to measure GPU times, but its precision is not 
+very high.
+
+Ability to fetch memory usage by the graphics server
+ Track vertex/fragment shader line location
+
+## OpenGL Isolation
+
+Fyrox used OpenGL from the very beginning (2019), because it was the easiest way to get crossplatform
+graphics on a wide variety of platforms (remember, wgpu didn't even exist at that time). While it still
+works ok, it is quite messy and has lots of bugs. This release isolated OpenGL in a separate crate and 
+exposed public API for a graphics server that will be used in the future releases to transition to 
+modern GAPIs.
+
+# Scene  (TODO)
+
+Ability to flip sprite/rectangle nodes
+
+# Input  (TODO)
+
+Simplified interaction with keyboard and mouse.
+Simplified way of getting input state
+
+# Physics  (TODO)
+
+- Joint motors
+
+# User Interface  (TODO)
+
+## Performance  (TODO)
+
+This release contains a lot of performance improvements for the user interface system. Overall
+performance increase is about 50%.
+
+## Text Runs  (TODO)
+
+
+- Added runs to FormattedText
+
+## Widget Materials  (TODO)
+
+- Ability to specify custom shaders for widgets
+
+## Docking  (TODO)
+
+Introducing multi-window docking tiles
+Movable scene tabs
+
+# Editor  (TODO)
 
 
 
-## What's Next?
+ Async loading for game and ui scenes in the editor
+
+
+ Ability to reset editor layout
+Movable scene tabs
+- Ability to copy/paste values in the editor setting's inspector
+- Ability to copy/paste values in inspector
+- `Copy Value` + `Paste Value` options in context menu of `Inspector`
+
+## Asset browser  (TODO)
+
+Asset browser got lots of improvements in this release.
+
+Show selected path in the main window of the asset browser
+ Placeholder icon for resources without preview generator
+  Added placeholder icon for asset items whose preview is being generated
+Ability to inspect and edit supported assets in inspector
+Ability to move a folder with resource in the resource manager
+Highlight asset item when it accepts drop
+
+Asset preview tooltips
+Added confirmation dialog for asset deletion
+Ability to rename assets in the asset browser 
+ Asset rename dialog improvements
+
+ Asset selector
+
+## Settings  (TODO)
+
+- Added a setting to modify editor camera's mouse sensitivity
+
+## 2D Grid
+
+![2d grid](2d_grid.png)
+
+The editor now shows grid in 2D mode. The grid's cell size can be configured in the editor settings.
+
+# Reflection
+
+Reflection system was improved as well. The most significant feature is an ability to clone an object through 
+`&dyn Reflect`. This ability is used in the editor to copy/paste values in the inspector. Since not all objects
+that implement `Reflect` trait are cloneable, it is possible to mark such a type via `#[reflect(non_cloneable)]`
+attribute.
+
+Field metadata fetching was also changed, instead of six separate methods there are only two now: 
+`Reflect::fields_ref` + `Reflect::fields_mut`. These methods returns an array of references to fields and 
+their metadata.
+
+# Documentation
+
+This release contains significant improvements in the API documentation and the book. The book
+now covers around 80% of the engine. This number will be 100% with the stable release.
+
+# What's Next?
 
 The next major goal for the project is to release Fyrox 1.0, which is planned for December 2025. 
 
-## Support
+# Support
 
 If you want to support the development of the project, click [this link](https://fyrox.rs/sponsor.html). Also, you can help by 
 fixing one of the ["good first issues" ](https://github.com/FyroxEngine/Fyrox/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22),
 adding a desired feature to the engine, or making a contribution to the [book](https://github.com/fyrox-book)
 
-## Full List of Changes
+# Full List of Changes
 
 The list is split into four sections for ease of reading and finding particular information.
 
@@ -169,6 +350,13 @@ The list is split into four sections for ease of reading and finding particular 
 - Fixed incorrect ambient lighting calculation
 - Reduced memory usage when generating asset previews
 - Clamp anisotropy in `[1.0; 16.0]` range to prevent video driver errors
+- Fixed `uuid_provider` macro
+- Correcting InheritableVariable::visit and physics integration parameters dt
+- Fixed selection button being clipped on material property editor
+- Fixed gimbal lock in GLTF animations
+- Prevent crash on empty uniform blocks
+- Update the material editor when hot-reloading a shader
+- Fixed crash on material hot-reloading when a property was removed
 
 ## Added
 
@@ -233,7 +421,7 @@ The list is split into four sections for ease of reading and finding particular 
 - Allow user to change editor icon and customize window title
 - Tooltip for material resources in the material editor
 - Ability to fetch memory usage by the graphics server
-- Ability to disable asset convertion when exporting a project
+- Ability to disable asset conversion when exporting a project
 - Convert ui scenes to binary format when exporting a project
 - Print warning messages in the log when setting terrain height map
 - Resource registry `ResourceManager::register` + `ResourceManager::uuid_to_path` methods
@@ -308,9 +496,28 @@ The list is split into four sections for ease of reading and finding particular 
 - Ability to re-bind styled properties of widgets in the editor
 - Joint motors
 - Show graphics server memory usage in the editor's rendering statistics
+- Simplified interaction with keyboard and mouse.
+- Added flake.nix for generated projects
+- Simplified way of getting input state
+- Ability to flip sprite/rectangle nodes
+- Show id of materials/surfaces in the editor
+- Added TypeUuidProvider impl for VectorN types
+- Property editors for Run + RunSet
+- Property editor for `char` + editors for mask char in formatted text
+- Named constants for mouse buttons + helper methods for mouse input
+- Ability to set runs via respective message
+- Added srgba8/srgb8 texture formats
+- Added pure color texture
+- Added non-euler-angles-based rotation track
 
 ## Changed
 
+- Preventing deadlocks by replacing `lock` with `safe_lock`
+- Automatically destroy dead senders in resource event broadcasters
+- Renamed pool method typed_ref to try_get
+- Configurable render mode for ui
+- UI rendering api improvements
+- do not alter already loaded resource state when reloading it
 - Use scene skybox if there's no specific environment map
 - Do not prevent building without the opened scene
 - Remove dependency on status code 101 (which is cargo specific, while built-tool has tool-agnostic design)
@@ -324,7 +531,7 @@ The list is split into four sections for ease of reading and finding particular 
 - Increased window size and inspector name column width in settings
 - Smart selection of corner arc subdivision when drawing borders
 - Recalculate clip bounds only for changed widgets
-- Allow engine user control default editor settings
+- Allow the engine user to control the default editor settings
 - Use `MaterialResource` in widgets instead of `UntypedResource`
 - Refactored ui renderer to use materials
 - Documented keyboard focus
@@ -409,17 +616,18 @@ The list is split into four sections for ease of reading and finding particular 
 - Removed redundant empty impls of InteractionMode trait
 - Share fbx materials as much as possible
 - Store a style handle in the widget
+- Pass ui handle in `Plugin::on_ui_message`
 
 ## Removed
 
-- removed resource duplicates
-- removed invalid assertions
-- removed redundant `ResourceLoaderAsAny` trait
-- removed wasm-unsupported `set_border_color` of gpu texture
-- removed `get_image+read_pixels` methods from gpu texture
-- removed impls for `field/field_mut`
-- removed redundant codegen for field/field_mut methods
-- removed `Relfect::fields/fields_mut` methods
-- removed `owner_type_id` field from `FieldInfo`
-- removed redundant `type_name` field from `FieldInfo`
-- removed `Downcast` trait, replaced with `define_as_any_trait` macro
+- Removed resource duplicates
+- Removed invalid assertions
+- Removed redundant `ResourceLoaderAsAny` trait
+- Removed wasm-unsupported `set_border_color` of gpu texture
+- Removed `get_image+read_pixels` methods from gpu texture
+- Removed impls for `field/field_mut`
+- Removed redundant codegen for field/field_mut methods
+- Removed `Relfect::fields/fields_mut` methods
+- Removed `owner_type_id` field from `FieldInfo`
+- Removed redundant `type_name` field from `FieldInfo`
+- Removed `Downcast` trait, replaced with `define_as_any_trait` macro
