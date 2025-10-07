@@ -38,22 +38,64 @@ only the objects of the right type.
 
 # Resource Management
 
-Resource system is now UUID-based and resource references are now stored as a simple UUID, instead of paths
-as it was before. This allows to rename the resource source files without a need to scan the entire project
+Resource system is now UUID-based and resource references are now stored as a simple UUID instead of paths
+as it was before. This allows renaming the source files of resources without a need to scan the entire project
 for path-based links and fix them. 
 
 Such transition comes with a price - every resource now must have a `.metadata` file beside it that stores 
-its UUID.
+its UUID. This file must not be deleted, it also must be moved together with the source file of a resource.
+This fact complicates the implementation of the resource manager quite significantly.
 
 This refactoring also added a concept of a resource registry. In short - it is a map `UUID -> Path` that
 holds information about all the resources in the project. Resource registry tracks the file system changes
-and automatically updates itself. 
+and automatically updates itself (on PC only). It can be considered as a custom file system. It is very
+useful for platforms where no file system is available (WebAssembly).
+
+The resource manager was improved significantly as well, it now offers more consistent API with some new 
+features. One of the most significant features is an ability to move a folder with resources.  
 
 # Asset Format
 
 Fyrox now uses text-based format for its native assets. This adds an ability to merge changes from collaborative
 work. Text format is then converted to binary form for production builds (can be disabled), which improves 
-loading times.
+loading times. The syntax is very simple:
+
+```text
+Item32[Generation<u32:1>]
+{
+	Payload[IsSome<u8:1>]
+	{
+		Data[TypeUuid<uuid:caaf9d7b-bd74-48ce-b7cc-57e9dc65c2e6>]
+		{
+			NodeData[BlendShapesPropertyName<str:"blendShapesStorage">]
+			{
+				Common[Name<str:"Cube">IsResourceInstance<bool:false>InstanceId<uuid:e11239e5-5243-40bd-a66e-5f79fd6f88b5>]
+				{
+					Transform[]
+					{
+						LocalScale[Value<vec3f32:2.2868934; 1.699784; 0.1647437>Flags<u8:1>]{}
+						LocalPosition[Value<vec3f32:0; 0; 0>Flags<u8:1>]{}
+						LocalRotation[Value<quat:0; 0; 0; 1>Flags<u8:1>]{}
+					}
+					Visibility[Value<bool:true>Flags<u8:1>]{}
+					Parent[Index<u32:30>Generation<u32:1>]{}
+					Children[Length<u32:0>]{}
+					Resource[IsSome<u8:0>]{}
+					FrustumCulling[Value<bool:true>Flags<u8:1>]{}
+					CastShadows[Value<bool:true>Flags<u8:1>]{}
+					Enabled[Value<bool:true>Flags<u8:1>]{}
+					RenderMask[Value<u32:4294967295>Flags<u8:1>]{}
+					Scripts[Length<u32:0>]{}
+				}
+			}
+		}
+	}
+}
+```
+
+This is a custom format that was designed for better mergeability and type safety. An object starts with a name that
+followed by `[attributes]` which is then followed by `{children objects}`. Each attribute starts from a name and followed
+by a body `<type:value>`.
 
 # Rendering
 
@@ -63,13 +105,21 @@ mapping, reflection probes.
 Ability to select environment light source for scenes
 Use ambient occlusion from material info in ambient lighting shader
 
-## Render target for cameras  (TODO)
+By default, every scene uses skybox as a source of lighting (if there's no reflection probe). This may be undesirable in
+some cases (for example - in stylized graphics) and a flat color can be used instead. It could be specified either in 
+scene settings in the editor, or in scene rendering settings from code.
 
-It is now possible to specify render targets for cameras.
+## Render target for cameras 
+
+It is now possible to specify render targets for cameras. It could be useful to create virtual in-game cameras that 
+show some other areas are in the game. 
 
 ## Particle System  (TODO)
 
-- Configurable fadeout margin for particle systems
+![particle system fadeout](ps_fadeout.gif)
+
+Particle systems now have a built-in ability to fadeout when far away from the camera. It is a very useful optimization
+that allows disabling distant particle system and free GPU resources.
 
 ## Skybox (TODO)
 
@@ -119,7 +169,17 @@ modern GAPIs.
 
 # Scene  (TODO)
 
-Ability to flip sprite/rectangle nodes
+
+## Flipping for Sprite/Rectangle Nodes
+
+![Flipping for Sprite/Rectangle Nodes](flip_rect.gif)
+
+Sprite (3D) and Rectangle (2D) scene nodes now have an ability to flip in both vertical and horizontal directions.
+It was possible to flip these nodes before by setting its scale to negative values for desired axes, but this approach
+has undesired effects. When a node is flipped by its scaling, all its children nodes will be flipped as well. This may
+ruin some hierarchies where flipping shouldn't affect descendant nodes. For example if there's an NPC with a name strip
+above it, flipping it by negative scaling will result in flipped text, while `Flip X/Y` options will flip only the 
+sprite/rectangle.
 
 # Input  (TODO)
 
