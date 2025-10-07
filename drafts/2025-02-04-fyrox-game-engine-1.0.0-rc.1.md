@@ -21,7 +21,7 @@ I'm happy to announce that Fyrox 1.0.0-rc.1 was released! Fyrox is a modern game
 helps you to create 2D and 3D games with low effort using native editor; it is like Unity, but in Rust. 
 
 This is an intermediate release intended for beta testing before releasing the stable 1.0. The testing includes 
-the engine, the editor, the docs and the book. If you find a bug, confusing or incomplete documentation please 
+the engine, the editor, the docs and the book. If you find a bug, confusing or incomplete documentation, please 
 file an issue or propose a solution by creating a pull request.
 
 The list of changes in this release is huge, it is mostly focused on bugfixes and quality-of-life improvements, 
@@ -100,7 +100,7 @@ by a body `<type:value>`.
 # Rendering
 
 Physically-based rendering pipeline is now fully complete and supports image-based lighting (IBL), environment
-mapping, reflection probes. 
+mapping, and reflection probes. 
 
 Ability to select environment light source for scenes
 Use ambient occlusion from material info in ambient lighting shader
@@ -192,15 +192,31 @@ Simplified way of getting input state
 
 # User Interface  (TODO)
 
-## Performance  (TODO)
+The user interface system has gotten tons of useful improvements and fixes in this release.
 
-This release contains a lot of performance improvements for the user interface system. Overall
-performance increase is about 50%.
+## Performance
 
-## Text Runs  (TODO)
+This release contains a lot of performance improvements for the user interface system. The overall performance increase 
+is about 50%. The main source of performance increase is layout system improvements. Previously, the UI updated screen
+space information on every frame for every widget. Now it does this only for the widgets that actually changed. This
+includes screen position calculation, clipping bounds calculation, visibility flags calculation, etc. 
 
+This optimization increased overall editor performance by 50% as well. The editor has a huge number of widgets alive
+at the same time (15k+) and updating this huge pile of data was redundant, because 99.99% of widgets in the editor are
+static and moved only if a user decides to move them. 
 
-- Added runs to FormattedText
+This change didn't affect the public API, and didn't break backward compatibility.
+
+## Text Runs
+
+![text runs](runs.png)
+
+Text now supports so-called runs which allows you to change the appearance of individual portions of the text. Each run
+can modify font, its size, brush, and shadow properties. It can be used to stylize the text, for example, in some games, 
+the description of items may use runs to highlight damage, armor, level, etc.
+
+Each run is defined by a pair of indices of letters in the text and a bunch of properties. The ranges can overlap, the
+last one on the overlapping set has the top priority.
 
 ## Widget Materials  (TODO)
 
@@ -259,9 +275,8 @@ Reflection system was improved as well. The most significant feature is an abili
 that implement `Reflect` trait are cloneable, it is possible to mark such a type via `#[reflect(non_cloneable)]`
 attribute.
 
-Field metadata fetching was also changed, instead of six separate methods there are only two now: 
-`Reflect::fields_ref` + `Reflect::fields_mut`. These methods returns an array of references to fields and 
-their metadata.
+Field metadata fetching was also changed, instead of six separate methods there are only two now: `Reflect::fields_ref` 
++ `Reflect::fields_mut`. These methods return an array of references to fields and their metadata.
 
 # Documentation
 
@@ -291,7 +306,7 @@ The list is split into four sections for ease of reading and finding particular 
 - Fixed ssao rendering
 - Exit build mode after successful build
 - Prevent loss of piped data due to BufReader dropping
-- Fixed cube texture to use only one size parameter instead width+height
+- Fixed cube texture to use only one size parameter instead of width+height
 - Fixed layout of resource property editor
 - Fixed reflection probe rendering with fxaa enabled
 - Add details to FieldTypeDoesNotMatch error to improve warnings
@@ -303,7 +318,7 @@ The list is split into four sections for ease of reading and finding particular 
 - Fixed grid blending issues
 - Fail-safe shader/material handling when rendering
 - Fixed incorrect sampler params
-- Prevent clamping for infinite available size in UI
+- Prevent clamping for infinite available size in the UI
 - Fixed axes colors for grid shader
 - Adjust grid cell size to match grid snapping options
 - Support all three major plane orientations (oXZ,oXY,oYZ) in grid shader
@@ -356,7 +371,7 @@ The list is split into four sections for ease of reading and finding particular 
 - Correcting terrain hole mask bug
 - Fixed asset item context menu not showing on rmb click
 - Do not try to reload unsupported resources.
-- Moving plugin and script handling to before node handling, to fix teleportation glitch
+- Moving plugin and script handling to before node handling to fix teleportation glitch
 - Print error message instead of silently writing an error to the resource
 - Use trait upcasting and remove `as_any` for `ResourceData`
 - Fixed usages of ResourceKind
@@ -366,8 +381,8 @@ The list is split into four sections for ease of reading and finding particular 
 - Proper headless mode
 - Hide asset preview if there's no actual preview data for it
 - Fixed gltf shader
-- Fixed incorrect syncing of modified flag in property editor
-- Prevent annoying message spam when import options is missing for asset
+- Fixed incorrect syncing of modified flag in the property editor
+- Prevent annoying message spam when import options are missing for asset
 - Fixed ambient lighting in case of non-skybox lighting
 - Render overlay icons only in the scene preview
 - Hide "revert" button for inheritable properties when no parent object
@@ -375,7 +390,7 @@ The list is split into four sections for ease of reading and finding particular 
 - Improved ui performance
 - Fixed blending issues when batching multiple rectangles
 - Fixed fitting for asset preview
-- Fixed visual glitch for scaling, rotation, movement gizmos
+- Fixed visual glitch for scaling, rotation, and movement gizmos
 - Fixed update loop state in the editor
 - Fixed deletion of gl vao/gpu programs/textures
 - Fixed incorrect caching/binding of gl framebuffer
@@ -384,7 +399,7 @@ The list is split into four sections for ease of reading and finding particular 
 - Reset visual state of a selected option in the dropdown list on select
 - Fixed asset preview update when a resource changes
 - Significantly reduced annoying visual lag when generating asset previews
-- Correctly detach content of control panels of various entities
+- Correctly detach the content of control panels of various entities
 - Fixed text alignment in various places in the editor
 - Fixed asset preview
 - Do not stop deserialization on invalid resource refs
@@ -452,7 +467,7 @@ The list is split into four sections for ease of reading and finding particular 
 - Debug impl for NodeHandleMap
 - Movable scene tabs
 - `GraphicsServer::generate_mipmap`
-- `RendererResources` with pre-loaded resources
+- `RendererResources` with preloaded resources
 - Ability to specify the face of the cube map in frame buffer attachment
 - Environment cube map prefilter shader
 - Blanket impl for ScriptMessagePayload replaced with derive macro
@@ -539,7 +554,7 @@ The list is split into four sections for ease of reading and finding particular 
 - Direct immutable access to underlying container for ResourceRegistry
 - `ResourceManager::can_resource_be_moved`
 - Highlight asset item when it accepts drop
-- Check for drop content in the file browser to show correct cursor icon
+- Check for drop content in the file browser to show the correct cursor icon
 - Custom `accepts_drop` for `AssetItem` that checks if drop is possible
 - Allow to define custom drop response method on ui widgets
 - Improved visual style of `AssetItem`
@@ -550,8 +565,8 @@ The list is split into four sections for ease of reading and finding particular 
 - `ResourceRegistry::remove_metadata`
 - `ResourceIo::delete_file+delete_file_sync`
 - `UntypedResource::type_uuid_non_blocking`
-- Ability to specify pre and post visit method calls for visitor codegen
-- Ability to try get resource manager state lock for the given time period
+- Ability to specify pre- and post-visit method calls for visitor codegen
+- Ability to try to get resource manager state lock for the given time period
 - Style api improvements
 - Ability to re-bind styled properties of widgets in the editor
 - Joint motors
@@ -585,7 +600,7 @@ The list is split into four sections for ease of reading and finding particular 
 - Moved sky box to scene from camera
 - Enable seamless cube map filtering by default
 - Include breadcrumb into VisitError:RegionDoesNotExist
-- Moved all shaders into a centralized storage
+- Move all shaders into a centralized storage
 - Moved opengl-specific code to `fyrox-graphics-gl`
 - Build tool now streams both stdout and stderr
 - Increased window size and inspector name column width in settings
@@ -599,7 +614,7 @@ The list is split into four sections for ease of reading and finding particular 
 - Prevent selection of asset items while holding alt
 - Moved material/shaders to `fyrox-material` crate
 - Use separate struct for args for `InspectorContext::from_object` func
-- Include all nodes that produces render data in camera picking in editor
+- Include all nodes that produce render data in camera picking in the editor
 - Convert assets to their most efficient version when exporting a project
 - Reducing dependencies of fyrox-autotile
 - Use sampler+texture pair instead of old-fashioned combined texture
@@ -648,10 +663,10 @@ The list is split into four sections for ease of reading and finding particular 
 - Only show folders that in the registry in the asset browser's dir viewer
 - Show only content from the resource registry in the asset browser
 - Use command-based approach when editing resources in the inspector
-- Use respective command to change selection in the asset browser
+- Use the respective command to change selection in the asset browser
 - Save the resource data on change in the inspector
 - Hide asset previewer for assets without a preview
-- Moved asset preview to the inspector
+- Move asset preview to the inspector
 - Moved selection-specific code to selection itself
 - Show pretty type name in resource creator
 - Search in resource registry when searching in the asset browser
