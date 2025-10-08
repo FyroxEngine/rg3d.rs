@@ -229,16 +229,27 @@ Movable scene tabs
 
 # Editor  (TODO)
 
+## Async scene loading
 
+The editor now loads the scenes (both game and UI) asynchronously, not just blocks like it was before. This is much
+better in terms of user experience, because it leaves the editor responsive.
 
- Async loading for game and ui scenes in the editor
+## Ability to reset editor layout
 
+![reset layout](reset_layout.gif)
 
- Ability to reset editor layout
-Movable scene tabs
-- Ability to copy/paste values in the editor setting's inspector
-- Ability to copy/paste values in inspector
-- `Copy Value` + `Paste Value` options in context menu of `Inspector`
+It is now possible to reset the editor layout to its defaults. It wasn't possible before, and in some situations it
+leads to corrupted layout that isn't usable at all. The only way to reset the editor's layout before was to delete 
+the editor settings file. Now all you need is to press `View -> Reset Layout`.
+
+## Copy/Paste for Inspector
+
+![copy/paste inspector](copy_paste.gif)
+
+It is now possible to copy and paste the values of object properties in the inspector. This feature was missing for a
+long time and added a lot of headache when there was a need to copy complex values from one object to another. In this
+release, it is finally added. This functionality works on multiple selected objects as well, thus allowing bulk pasting
+of properties.
 
 ## Asset browser  (TODO)
 
