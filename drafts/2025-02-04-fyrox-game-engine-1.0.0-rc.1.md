@@ -253,23 +253,34 @@ long time and added a lot of headache when there was a need to copy complex valu
 release, it is finally added. This functionality works on multiple selected objects as well, thus allowing bulk pasting
 of properties.
 
-## Asset browser  (TODO)
+## Asset browser
 
-Asset browser got lots of improvements in this release.
+![asset browser](asset_browser.png)
 
-Show selected path in the main window of the asset browser
- Placeholder icon for resources without preview generator
-  Added placeholder icon for asset items whose preview is being generated
-Ability to inspect and edit supported assets in inspector
-Ability to move a folder with resource in the resource manager
-Highlight asset item when it accepts drop
+The asset browser got lots of improvements in this release. Editing of the assets is now done via the same inspector as 
+for game objects. The inspector shows either import options (for foreign resources, such as texture in the picture
+above) or the resource data itself (for native resources, including custom ones). This feature gives an ability to 
+create and edit custom resources in the editor. Such resource can contain pretty much any data.
 
-Asset preview tooltips
-Added confirmation dialog for asset deletion
-Ability to rename assets in the asset browser 
- Asset rename dialog improvements
+The asset browser now gives visual indication whether it is possible to move a resource or not while dragging: 
 
- Asset selector
+![dragging](am_dragging.gif)
+
+Asset preview generation is now multithreaded and works a lot faster than before, it is also a visual indication that
+shows that the preview is being generated:
+
+![preview gen](preview_gen.gif)
+
+## Asset selector
+
+It is now possible to select assets via the new asset selector tool. Previously, an asset could be assigned only by
+dragging it from the asset browser and dropping at a respective field in the inspector. This was quite confusing, 
+and now it is much more convenient:
+
+![asset selector](asset_selector.gif)
+
+This selector has searching functionality and loads only the assets that are currently in the view, so there's no 
+lagging during the search.
 
 ## Settings  (TODO)
 
