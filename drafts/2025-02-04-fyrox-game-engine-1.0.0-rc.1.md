@@ -114,7 +114,7 @@ scene settings in the editor, or in scene rendering settings from code.
 It is now possible to specify render targets for cameras. It could be useful to create virtual in-game cameras that 
 show some other areas are in the game. 
 
-## Particle System  (TODO)
+## Particle System
 
 ![particle system fadeout](ps_fadeout.gif)
 
@@ -148,13 +148,13 @@ fn main() {
 }
 ```
 
-Accurate GPU profiling is a hard task, because GPUs work independently of CPUs and any attempt to measure how 
-much time is spent on GPU from the CPU side will only measure how much time was spent to prepare and issue
-commands for a GPU. That being said, profiling requires specialized tools for target GPUs. Use  
-[NVIDIA Nsight](https://developer.nvidia.com/nsight-systems) or 
-[AMD Radeon GPU Profiler](https://gpuopen.com/rgp/), depending on the GPU you're using.
-[RenderDoc](https://renderdoc.org/) also has _some_ ability to measure GPU times, but its precision is not 
-very high.
+After that, the list of GPU resource can be observed in a graphics debugger, such as [RenderDoc](https://renderdoc.org/)
+or similar ([NVIDIA Nsight](https://developer.nvidia.com/nsight-systems) or [AMD Radeon GPU Profiler](https://gpuopen.com/rgp/)):
+
+![gpu resources](gpu_resources.png)
+
+Not every resource can have a meaningful name, for example, the engine packs uniform data into a small number
+of buffers and such buffers will be called `UniformBuffer0/1/2/etc`. 
 
 Ability to fetch memory usage by the graphics server
  Track vertex/fragment shader line location
