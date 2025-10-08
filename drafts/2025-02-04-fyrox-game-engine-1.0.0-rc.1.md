@@ -222,10 +222,12 @@ last one on the overlapping set has the top priority.
 
 - Ability to specify custom shaders for widgets
 
-## Docking  (TODO)
+## Improved Docking
 
-Introducing multi-window docking tiles
-Movable scene tabs
+![docking](docking.gif)
+
+Docking manager now supports any number of windows in a tile, this means that you can now put multiple windows in a
+tile and switch between them. It is also possible to rearrange them by dragging.
 
 # Editor  (TODO)
 
