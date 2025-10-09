@@ -307,6 +307,26 @@ Field metadata fetching was also changed, instead of six separate methods there 
 This release contains significant improvements in the API documentation and the book. The book
 now covers around 80% of the engine. This number will be 100% with the stable release.
 
+The new chapters of the book:
+
+- [Network Basics](https://fyrox-book.github.io/net/basics.html)
+- [Network Sync](https://fyrox-book.github.io/net/sync.html)
+- [Network Games Host](https://fyrox-book.github.io/net/hosting.html)
+- [Autotiling in Tile Maps](https://fyrox-book.github.io/scene/autotiling.html)
+- [Graphics Server](https://fyrox-book.github.io/rendering/server.html)
+- [Sound Listener](https://fyrox-book.github.io/sound/listener.html)
+- [Graphics Debugging](https://fyrox-book.github.io/rendering/debug.html)
+- [Dropdown List Widget](https://fyrox-book.github.io/ui/dropdown_list.html)
+- [Tree Widget](https://fyrox-book.github.io/ui/tree.html)
+- [List View Widget](https://fyrox-book.github.io/ui/list_view.html)
+- [Docking Manager Widget](https://fyrox-book.github.io/ui/dock.html)
+- [Progress Bar Widget](https://fyrox-book.github.io/ui/progress_bar.html)
+- [Popup Widget](https://fyrox-book.github.io/ui/popup.html)
+- [Reflection](https://fyrox-book.github.io/reflection/index.html)
+- [IDE Setup](https://fyrox-book.github.io/beginning/ide.html)
+
+Lots of chapters in the book were corrected and restructured for better read.
+
 # What's Next?
 
 The next major goal for the project is to release Fyrox 1.0, which is planned for December 2025. 
