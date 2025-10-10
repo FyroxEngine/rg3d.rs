@@ -167,8 +167,9 @@ works ok, it is quite messy and has lots of bugs. This release isolated OpenGL i
 exposed public API for a graphics server that will be used in the future releases to transition to 
 modern GAPIs.
 
-# Scene  (TODO)
+# Scene
 
+Game scene and its nodes have quite a lot of improvements in this release. 
 
 ## Flipping for Sprite/Rectangle Nodes
 
@@ -181,6 +182,8 @@ ruin some hierarchies where flipping shouldn't affect descendant nodes. For exam
 above it, flipping it by negative scaling will result in flipped text, while `Flip X/Y` options will flip only the 
 sprite/rectangle.
 
+## Reflection Probe (TODO)
+
 # Input  (TODO)
 
 Simplified interaction with keyboard and mouse.
@@ -190,7 +193,7 @@ Simplified way of getting input state
 
 - Joint motors
 
-# User Interface  (TODO)
+# User Interface
 
 The user interface system has gotten tons of useful improvements and fixes in this release.
 
@@ -218,9 +221,31 @@ the description of items may use runs to highlight damage, armor, level, etc.
 Each run is defined by a pair of indices of letters in the text and a bunch of properties. The ranges can overlap, the
 last one on the overlapping set has the top priority.
 
-## Widget Materials  (TODO)
+## Widget Materials
 
-- Ability to specify custom shaders for widgets
+![widget material](widget_material.gif)
+
+For a long time, UI widgets didn't have an ability to assign custom materials and shaders, in this release this limitation
+is finally dropped. UI shaders have a built-in property group (`fyrox_widgetData`) that contains all useful properties that can be used
+for rendering:
+
+| Name                | Type        | Description                                                |
+|---------------------|-------------|------------------------------------------------------------|
+| worldViewProjection | `mat4`      | World-to-clip-space transformation matrix.                 |
+| solidColor          | `vec4`      | RGBA color.                                                |
+| gradientColors      | `vec4[16]`  | A set of gradient colors.                                  |
+| gradientStops       | `float[16]` | A set of normalized (0.0-1.0) stops along the axis.        |
+| gradientOrigin      | `vec2`      | Origin position of the gradient (local coordinates).       |
+| gradientEnd         | `vec2`      | End position of the gradient (local coordinates).          |
+| gradientPointCount  | `int`       | Total number of gradient points.                           |
+| resolution          | `vec2`      | Frame buffer size to which the widget is drawn to.         |
+| boundsMin           | `vec2`      | Top-left point of the screen space bounding rectangle.     |
+| boundsMax           | `vec2`      | Right-bottom point of the screen space bounding rectangle. |
+| isFont              | `bool`      | `true` if the widget is a text, `false` - otherwise.       |
+| opacity             | `float`     | Opacity (0.0-1.0 range).                                   |
+| brushType           | `int`       | Brush type (0 solid, 1-linear gradient, 2-radial gradient  |
+
+As usual, any additional data can be passed via custom property group and a custom material.
 
 ## Improved Docking
 
@@ -229,7 +254,9 @@ last one on the overlapping set has the top priority.
 Docking manager now supports any number of windows in a tile, this means that you can now put multiple windows in a
 tile and switch between them. It is also possible to rearrange them by dragging.
 
-# Editor  (TODO)
+# Editor
+
+FyroxEd is an important part of the engine, it has gotten a lot of improvements and new features as well.
 
 ## Async scene loading
 
@@ -281,10 +308,6 @@ and now it is much more convenient:
 
 This selector has searching functionality and loads only the assets that are currently in the view, so there's no 
 lagging during the search.
-
-## Settings  (TODO)
-
-- Added a setting to modify editor camera's mouse sensitivity
 
 ## 2D Grid
 
