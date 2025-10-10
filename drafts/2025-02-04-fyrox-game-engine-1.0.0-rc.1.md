@@ -184,10 +184,78 @@ sprite/rectangle.
 
 ## Reflection Probe (TODO)
 
-# Input  (TODO)
+# Input
 
-Simplified interaction with keyboard and mouse.
-Simplified way of getting input state
+Until this release, the only way to check if a key or mouse button was pressed was only to listen to various input 
+events. This worked fine, but for some simple cases looked like an overkill. Now there are much simpler way of 
+getting the input state.
+
+## Keyboard 
+
+The simplest way to check if a key was pressed/released or if it is still down is three methods of `InputState`:
+
+- `is_key_down` - returns `true` if the specified key is pressed, `false` - otherwise.
+- `is_key_pressed` - returns `true` if the specified key was pressed in the current frame, `false` - otherwise.
+  This method will return `false` if the key is still pressed in the next frame. This is useful to check if a key
+  was pressed and some action, but do not repeat the same action over and over until the key is released.
+- `is_key_released` - returns `true` if the specified key was released in the current frame, `false` - otherwise.
+  This method will return `false` if the key is still released in the next frame. This is useful to check if a
+  key was released and some action, but do not repeat the same action over and over until the key is pressed.
+
+Typical usage of these methods is the following:
+
+```rust
+pub struct Player {}
+
+impl ScriptTrait for Player {
+    fn on_update(&mut self, ctx: &mut ScriptContext) {
+        let node = &mut ctx.scene.graph[ctx.handle];
+        let transform = node.local_transform_mut();
+
+        // Check if the keys are down and move the player accordingly.
+        if ctx.input_state.is_key_down(KeyCode::KeyA) {
+            transform.offset(Vector3::new(-1.0, 0.0, 0.0));
+        }
+        if ctx.input_state.is_key_down(KeyCode::KeyD) {
+            transform.offset(Vector3::new(1.0, 0.0, 0.0));
+        }
+
+        // It is also possible to check if a key was pressed or released on this frame. This
+        // could be useful to do something only once per each press or release. For example,
+        // jump could be performed on a key press.
+        if ctx.input_state.is_key_pressed(KeyCode::Space) {
+            transform.offset(Vector3::new(0.0, 1.0, 0.0));
+        }
+    }
+}
+```
+
+## Mouse
+
+Mouse input fetching now also has a simplified version: 
+
+```rust
+pub struct Player {
+    yaw: f32,
+    pitch: f32,
+    counter: i32,
+}
+
+impl ScriptTrait for Player {
+    fn on_update(&mut self, ctx: &mut ScriptContext) {
+        let mouse_speed = ctx.input_state.mouse_speed();
+ 
+        self.pitch += mouse_speed.y;
+        self.yaw += mouse_speed.x;
+
+        if ctx.input_state.is_left_mouse_button_pressed() {
+            self.counter += 1;
+        } else if ctx.input_state.is_left_mouse_button_released() {
+            self.counter -= 1;
+        }
+    }
+}
+```
 
 # Physics  (TODO)
 
