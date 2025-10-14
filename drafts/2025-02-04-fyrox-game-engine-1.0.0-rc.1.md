@@ -99,15 +99,14 @@ by a body `<type:value>`.
 
 # Rendering
 
+![pbr ibl](prb_ibl.png)
+
 Physically-based rendering pipeline is now fully complete and supports image-based lighting (IBL), environment
 mapping, and reflection probes. 
 
-Ability to select environment light source for scenes
-Use ambient occlusion from material info in ambient lighting shader
+![img.png](pbr_ibl_2.png)
 
-By default, every scene uses skybox as a source of lighting (if there's no reflection probe). This may be undesirable in
-some cases (for example - in stylized graphics) and a flat color can be used instead. It could be specified either in 
-scene settings in the editor, or in scene rendering settings from code.
+The renderer still lacks any global illumination, but that's planned for the future releases (most likely for Fyrox 2.0).
 
 ## Render target for cameras 
 
@@ -121,9 +120,14 @@ show some other areas are in the game.
 Particle systems now have a built-in ability to fadeout when far away from the camera. It is a very useful optimization
 that allows disabling distant particle system and free GPU resources.
 
-## Skybox (TODO)
+## Skybox
 
-Skybox was moved from camera to scene
+![skybox](skybox.png)
+
+Skybox was moved from camera node to scene itself, and sky boxes are now used in IBL as a source of indirect lighting.
+By default, every scene uses skybox as a source of lighting (if there's no reflection probe). This may be undesirable in
+some cases (for example - in stylized graphics) and a flat color can be used instead. It could be specified either in
+scene settings in the editor, or in scene rendering settings from code.
 
 ## Improved Debugging
 
@@ -182,7 +186,20 @@ ruin some hierarchies where flipping shouldn't affect descendant nodes. For exam
 above it, flipping it by negative scaling will result in flipped text, while `Flip X/Y` options will flip only the 
 sprite/rectangle.
 
-## Reflection Probe (TODO)
+## Reflection Probe
+
+![Reflection Probe](reflection_probe.png)
+
+Reflection probe is a special scene node that "captures" surroundings into a cube texture which is then used as a source
+of ambient lighting (with IBL) and reflections. This scene node is used only in PBR pipeline. Reflection probes can be
+either static or dynamic. Static reflection probes are updated only once and can include all the objects in the scene.
+Dynamic reflection probes are updating every frame, this mode is quite heavy and not every object should be drawn in
+the probe. You can use render mask to prevent objects from being rendered in the reflection probe to improve the 
+performance of dynamic reflection probes.
+
+This release does not contain one very important part - there's no blending between the probes, it means that when the
+camera enters a new reflection probe, the sudden change of lighting and reflections may occur. Blending will be added in
+the stable release of Fyrox 1.0.
 
 # Input
 
