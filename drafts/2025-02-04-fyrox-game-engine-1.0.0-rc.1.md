@@ -27,7 +27,84 @@ file an issue or propose a solution by creating a pull request.
 The list of changes in this release is huge, it is mostly focused on bugfixes and quality-of-life improvements, 
 but there's a new functionality as well.
 
-# Type Safety
+# Rendering
+
+![pbr ibl](prb_ibl.png)
+
+Physically-based rendering pipeline is now fully complete and supports image-based lighting (IBL), environment
+mapping, and reflection probes.
+
+![img.png](pbr_ibl_2.png)
+
+The renderer still lacks any global illumination, but that's planned for the future releases (most likely for Fyrox 2.0).
+
+## Render target for cameras
+
+![camera rt](camera_rt.gif)
+
+It is now possible to specify render targets for cameras. It could be useful to create virtual in-game cameras that
+show some other areas are in the game. Such render target is used in the editor now for camera preview functionality
+(which is shown on the GIF above).
+
+## Particle System
+
+![particle system fadeout](ps_fadeout.gif)
+
+Particle systems now have a built-in ability to fadeout when far away from the camera. It is a very useful optimization
+that allows disabling distant particle system and free GPU resources.
+
+## Skybox
+
+![skybox](skybox.png)
+
+Skybox was moved from camera node to scene itself, and sky boxes are now used in IBL as a source of indirect lighting.
+By default, every scene uses skybox as a source of lighting (if there's no reflection probe). This may be undesirable in
+some cases (for example - in stylized graphics) and a flat color can be used instead. It could be specified either in
+scene settings in the editor, or in scene rendering settings from code.
+
+## Improved Debugging
+
+Fyrox now tries to assign meaningful names for GPU objects to simplify debugging via various graphics
+debuggers. This option is off by default, but it can be enabled pretty easily:
+
+```rust
+fn main() {
+    let executor = Executor::from_params(
+        EventLoop::new().ok(),
+        GraphicsContextParams {
+            // This option forces the engine to use meaningful names for
+            // GPU objects (textures, buffers, shaders, etc.)
+            named_objects: true,
+            window_attributes: WindowAttributes::default(),
+            vsync: true,
+            msaa_sample_count: None,
+            graphics_server_constructor: Default::default(),
+        },
+    );
+    // ...
+}
+```
+
+After that, the list of GPU resource can be observed in a graphics debugger, such as [RenderDoc](https://renderdoc.org/)
+or similar ([NVIDIA Nsight](https://developer.nvidia.com/nsight-systems) or [AMD Radeon GPU Profiler](https://gpuopen.com/rgp/)):
+
+![gpu resources](gpu_resources.png)
+
+Not every resource can have a meaningful name, for example, the engine packs uniform data into a small number
+of buffers and such buffers will be called `UniformBuffer0/1/2/etc`.
+
+Ability to fetch memory usage by the graphics server
+Track vertex/fragment shader line location
+
+## OpenGL Isolation
+
+Fyrox used OpenGL from the very beginning (2019), because it was the easiest way to get crossplatform
+graphics on a wide variety of platforms (remember, wgpu didn't even exist at that time). While it still
+works ok, it is quite messy and has lots of bugs. This release isolated OpenGL in a separate crate and
+exposed public API for a graphics server that will be used in the future releases to transition to
+modern GAPIs.
+
+# Type Safety for Handles
 
 For a long time Fyrox supported only "untyped" handles (such as `Handle<Node>` or `Handle<UiNode>`), this 
 approach was bug-prone because it effectively erased all the useful type information. This release adds
@@ -35,6 +112,36 @@ strongly typed handles for all the scene and UI entities. It is now possible to 
 in a script and access the camera by it using a simple `graph[camera].projection_matrix()`. There's no need 
 to do a manual type casting. Typed handle improved the editor side as well - the handle selector will show 
 only the objects of the right type.
+
+# Scene
+
+Game scene and its nodes have quite a lot of improvements in this release.
+
+## Flipping for Sprite/Rectangle Nodes
+
+![Flipping for Sprite/Rectangle Nodes](flip_rect.gif)
+
+Sprite (3D) and Rectangle (2D) scene nodes now have an ability to flip in both vertical and horizontal directions.
+It was possible to flip these nodes before by setting its scale to negative values for desired axes, but this approach
+has undesired effects. When a node is flipped by its scaling, all its children nodes will be flipped as well. This may
+ruin some hierarchies where flipping shouldn't affect descendant nodes. For example if there's an NPC with a name strip
+above it, flipping it by negative scaling will result in flipped text, while `Flip X/Y` options will flip only the
+sprite/rectangle.
+
+## Reflection Probe
+
+![Reflection Probe](reflection_probe.png)
+
+Reflection probe is a special scene node that "captures" surroundings into a cube texture which is then used as a source
+of ambient lighting (with IBL) and reflections. This scene node is used only in PBR pipeline. Reflection probes can be
+either static or dynamic. Static reflection probes are updated only once and can include all the objects in the scene.
+Dynamic reflection probes are updating every frame, this mode is quite heavy and not every object should be drawn in
+the probe. You can use render mask to prevent objects from being rendered in the reflection probe to improve the
+performance of dynamic reflection probes.
+
+This release does not contain one very important part - there's no blending between the probes, it means that when the
+camera enters a new reflection probe, the sudden change of lighting and reflections may occur. Blending will be added in
+the stable release of Fyrox 1.0.
 
 # Resource Management
 
@@ -96,113 +203,6 @@ Item32[Generation<u32:1>]
 This is a custom format that was designed for better mergeability and type safety. An object starts with a name that
 followed by `[attributes]` which is then followed by `{children objects}`. Each attribute starts from a name and followed
 by a body `<type:value>`.
-
-# Rendering
-
-![pbr ibl](prb_ibl.png)
-
-Physically-based rendering pipeline is now fully complete and supports image-based lighting (IBL), environment
-mapping, and reflection probes. 
-
-![img.png](pbr_ibl_2.png)
-
-The renderer still lacks any global illumination, but that's planned for the future releases (most likely for Fyrox 2.0).
-
-## Render target for cameras 
-
-![camera rt](camera_rt.gif)
-
-It is now possible to specify render targets for cameras. It could be useful to create virtual in-game cameras that 
-show some other areas are in the game. Such render target is used in the editor now for camera preview functionality
-(which is shown on the GIF above).
-
-## Particle System
-
-![particle system fadeout](ps_fadeout.gif)
-
-Particle systems now have a built-in ability to fadeout when far away from the camera. It is a very useful optimization
-that allows disabling distant particle system and free GPU resources.
-
-## Skybox
-
-![skybox](skybox.png)
-
-Skybox was moved from camera node to scene itself, and sky boxes are now used in IBL as a source of indirect lighting.
-By default, every scene uses skybox as a source of lighting (if there's no reflection probe). This may be undesirable in
-some cases (for example - in stylized graphics) and a flat color can be used instead. It could be specified either in
-scene settings in the editor, or in scene rendering settings from code.
-
-## Improved Debugging
-
-Fyrox now tries to assign meaningful names for GPU objects to simplify debugging via various graphics
-debuggers. This option is off by default, but it can be enabled pretty easily:
-
-```rust
-fn main() {
-    let executor = Executor::from_params(
-        EventLoop::new().ok(),
-        GraphicsContextParams {
-            // This option forces the engine to use meaningful names for
-            // GPU objects (textures, buffers, shaders, etc.)
-            named_objects: true,
-            window_attributes: WindowAttributes::default(),
-            vsync: true,
-            msaa_sample_count: None,
-            graphics_server_constructor: Default::default(),
-        },
-    );
-    // ...
-}
-```
-
-After that, the list of GPU resource can be observed in a graphics debugger, such as [RenderDoc](https://renderdoc.org/)
-or similar ([NVIDIA Nsight](https://developer.nvidia.com/nsight-systems) or [AMD Radeon GPU Profiler](https://gpuopen.com/rgp/)):
-
-![gpu resources](gpu_resources.png)
-
-Not every resource can have a meaningful name, for example, the engine packs uniform data into a small number
-of buffers and such buffers will be called `UniformBuffer0/1/2/etc`. 
-
-Ability to fetch memory usage by the graphics server
- Track vertex/fragment shader line location
-
-## OpenGL Isolation
-
-Fyrox used OpenGL from the very beginning (2019), because it was the easiest way to get crossplatform
-graphics on a wide variety of platforms (remember, wgpu didn't even exist at that time). While it still
-works ok, it is quite messy and has lots of bugs. This release isolated OpenGL in a separate crate and 
-exposed public API for a graphics server that will be used in the future releases to transition to 
-modern GAPIs.
-
-# Scene
-
-Game scene and its nodes have quite a lot of improvements in this release. 
-
-## Flipping for Sprite/Rectangle Nodes
-
-![Flipping for Sprite/Rectangle Nodes](flip_rect.gif)
-
-Sprite (3D) and Rectangle (2D) scene nodes now have an ability to flip in both vertical and horizontal directions.
-It was possible to flip these nodes before by setting its scale to negative values for desired axes, but this approach
-has undesired effects. When a node is flipped by its scaling, all its children nodes will be flipped as well. This may
-ruin some hierarchies where flipping shouldn't affect descendant nodes. For example if there's an NPC with a name strip
-above it, flipping it by negative scaling will result in flipped text, while `Flip X/Y` options will flip only the 
-sprite/rectangle.
-
-## Reflection Probe
-
-![Reflection Probe](reflection_probe.png)
-
-Reflection probe is a special scene node that "captures" surroundings into a cube texture which is then used as a source
-of ambient lighting (with IBL) and reflections. This scene node is used only in PBR pipeline. Reflection probes can be
-either static or dynamic. Static reflection probes are updated only once and can include all the objects in the scene.
-Dynamic reflection probes are updating every frame, this mode is quite heavy and not every object should be drawn in
-the probe. You can use render mask to prevent objects from being rendered in the reflection probe to improve the 
-performance of dynamic reflection probes.
-
-This release does not contain one very important part - there's no blending between the probes, it means that when the
-camera enters a new reflection probe, the sudden change of lighting and reflections may occur. Blending will be added in
-the stable release of Fyrox 1.0.
 
 # Input
 
