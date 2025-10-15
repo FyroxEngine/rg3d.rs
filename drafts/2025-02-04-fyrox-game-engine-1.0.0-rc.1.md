@@ -110,8 +110,11 @@ The renderer still lacks any global illumination, but that's planned for the fut
 
 ## Render target for cameras 
 
+![camera rt](camera_rt.gif)
+
 It is now possible to specify render targets for cameras. It could be useful to create virtual in-game cameras that 
-show some other areas are in the game. 
+show some other areas are in the game. Such render target is used in the editor now for camera preview functionality
+(which is shown on the GIF above).
 
 ## Particle System
 
