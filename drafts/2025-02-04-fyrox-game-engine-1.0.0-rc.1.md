@@ -1,7 +1,7 @@
 ---
 title: "Fyrox Game Engine 1.0 Release Candidate"
-date: "2025-09-30"
-description: "Fyrox 1.0.0-rc.1 is intermediate release intended for beta testing before releasing stable 1.0"
+date: "2025-10-17"
+description: "Fyrox 1.0.0-rc.1 is an intermediate release intended for beta testing before releasing stable 1.0"
 categories: 
 - General
 meta:
@@ -20,12 +20,12 @@ meta:
 I'm happy to announce that Fyrox 1.0.0-rc.1 was released! Fyrox is a modern game engine written in Rust, it
 helps you to create 2D and 3D games with low effort using native editor; it is like Unity, but in Rust. 
 
-This is an intermediate release intended for beta testing before releasing the stable 1.0. The testing includes 
-the engine, the editor, the docs and the book. If you find a bug, confusing or incomplete documentation, please 
-file an issue or propose a solution by creating a pull request.
+This is an intermediate release intended for beta testing before releasing the stable 1.0. The list of changes in this 
+release is huge, it is mostly focused on bugfixes and quality-of-life improvements, but there's a new functionality as 
+well. 
 
-The list of changes in this release is huge, it is mostly focused on bugfixes and quality-of-life improvements, 
-but there's a new functionality as well.
+If you find a bug, confusing or incomplete documentation, please [file an issue](github.com/FyroxEngine/Fyrox/issues) 
+or propose a solution by [creating a pull request](https://github.com/FyroxEngine/Fyrox/pulls).
 
 # Rendering
 
@@ -92,9 +92,6 @@ or similar ([NVIDIA Nsight](https://developer.nvidia.com/nsight-systems) or [AMD
 
 Not every resource can have a meaningful name, for example, the engine packs uniform data into a small number
 of buffers and such buffers will be called `UniformBuffer0/1/2/etc`.
-
-Ability to fetch memory usage by the graphics server
-Track vertex/fragment shader line location
 
 ## OpenGL Isolation
 
@@ -357,12 +354,12 @@ tile and switch between them. It is also possible to rearrange them by dragging.
 
 FyroxEd is an important part of the engine, it has gotten a lot of improvements and new features as well.
 
-## Async scene loading
+## Async Scene Loading
 
 The editor now loads the scenes (both game and UI) asynchronously, not just blocks like it was before. This is much
 better in terms of user experience, because it leaves the editor responsive.
 
-## Ability to reset editor layout
+## Ability to Reset Editor Layout
 
 ![reset layout](reset_layout.gif)
 
@@ -379,7 +376,7 @@ long time and added a lot of headache when there was a need to copy complex valu
 release, it is finally added. This functionality works on multiple selected objects as well, thus allowing bulk pasting
 of properties.
 
-## Asset browser
+## Asset Browser
 
 ![asset browser](asset_browser.png)
 
@@ -397,7 +394,7 @@ shows that the preview is being generated:
 
 ![preview gen](preview_gen.gif)
 
-## Asset selector
+## Asset Selector
 
 It is now possible to select assets via the new asset selector tool. Previously, an asset could be assigned only by
 dragging it from the asset browser and dropping at a respective field in the inspector. This was quite confusing, 
