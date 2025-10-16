@@ -106,12 +106,17 @@ modern GAPIs.
 
 # Type Safety for Handles
 
+![type safety](type_safety.png)
+
 For a long time Fyrox supported only "untyped" handles (such as `Handle<Node>` or `Handle<UiNode>`), this 
-approach was bug-prone because it effectively erased all the useful type information. This release adds
-strongly typed handles for all the scene and UI entities. It is now possible to store `camera: Handle<Camera>`
-in a script and access the camera by it using a simple `graph[camera].projection_matrix()`. There's no need 
-to do a manual type casting. Typed handle improved the editor side as well - the handle selector will show 
-only the objects of the right type.
+approach was bug-prone because it effectively erased all the useful information about the actual node or widget type. 
+This release adds strongly typed handles for all the scene and UI entities. It is now possible to store 
+`camera: Handle<Camera>` in a script and access the camera by it using a simple `graph[camera].projection_matrix()`. 
+There's no need to do a manual type casting. Typed handle improved the editor side as well - the handle selector will
+show only the objects of the right type.
+
+The internals of the engine will slowly migrate to strongly-typed handles, there's a lot of places that can be improved
+with strongly-typed handles. 
 
 # Scene
 
