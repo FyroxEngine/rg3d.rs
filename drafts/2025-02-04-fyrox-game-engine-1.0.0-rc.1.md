@@ -277,9 +277,15 @@ impl ScriptTrait for Player {
 }
 ```
 
-# Physics  (TODO)
+# Physics
 
-- Joint motors
+Spherical, revolute, and prismatic joints now support joint motors. Motors allow you to make the linked rigid-bodies 
+move relative to one another, along the free degrees of freedom left by the joint, as if a motor was pushing them. The 
+joint motor can have a target relative velocity along the free degrees of freedom as well as a target position. 
+The stiffness of the motor controls the strength of the force that will be applied to make the bodies reach the 
+target relative positions along the free DOFs. The damping of the motor controls the strength of the force that
+will be applied to make the bodies reach the target relative velocities along the free DOFs. It is also possible to 
+configure the maximum impulse applied by the motor: this limits the maximum force/torque the motor is able to deliver.
 
 # User Interface
 
