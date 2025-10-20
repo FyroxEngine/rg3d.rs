@@ -163,6 +163,16 @@ useful for platforms where no file system is available (WebAssembly).
 The resource manager was improved significantly as well, it now offers more consistent API with some new 
 features. One of the most significant features is an ability to move a folder with resources.  
 
+## Migration
+
+![asset migrations](migration.png)
+
+This intermediate release keeps backwards compatibility with assets made in the previous versions of the
+engine, but the upcoming release of stable 1.0 will drop this compatibility. To help with migration, the
+editor has a special tool that loads all the assets made in old formats and automatically converts them
+to the latest version. Use this tool to migrate all the existing assets of your project before using 
+Fyrox 1.0.
+
 # Asset Format
 
 Fyrox now uses text-based format for its native assets. This adds an ability to merge changes from collaborative
