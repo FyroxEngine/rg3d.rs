@@ -27,6 +27,10 @@ well.
 If you find a bug, confusing or incomplete documentation, please [file an issue](github.com/FyroxEngine/Fyrox/issues) 
 or propose a solution by [creating a pull request](https://github.com/FyroxEngine/Fyrox/pulls).
 
+# Installation
+
+Use [the link](https://fyrox.rs/download.html) to download page to learn how to install this release.
+
 # Rendering
 
 ![pbr ibl](/assets/1.0.0-rc.1/prb_ibl.png)
