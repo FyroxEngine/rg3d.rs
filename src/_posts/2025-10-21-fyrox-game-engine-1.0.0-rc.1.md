@@ -1,6 +1,6 @@
 ---
 title: "Fyrox Game Engine 1.0 Release Candidate"
-date: "2025-10-17"
+date: "2025-10-21"
 description: "Fyrox 1.0.0-rc.1 is an intermediate release intended for beta testing before releasing stable 1.0"
 categories: 
 - General
@@ -14,7 +14,7 @@ meta:
   - property: og:url
     content: https://fyrox.rs/blog/post/fyrox-game-engine-1.0.0-rc.1/
   - property: og:image
-    content: https://fyrox.rs/assets/1.0.0-rc.1/particle_system.gif
+    content: https://fyrox.rs/assets/1.0.0-rc.1/prb_ibl.png
 ---
 
 I'm happy to announce that Fyrox 1.0.0-rc.1 was released! Fyrox is a modern game engine written in Rust, it
@@ -29,18 +29,18 @@ or propose a solution by [creating a pull request](https://github.com/FyroxEngin
 
 # Rendering
 
-![pbr ibl](prb_ibl.png)
+![pbr ibl](/assets/1.0.0-rc.1/prb_ibl.png)
 
 Physically-based rendering pipeline is now fully complete and supports image-based lighting (IBL), environment
 mapping, and reflection probes.
 
-![img.png](pbr_ibl_2.png)
+![img.png](/assets/1.0.0-rc.1/pbr_ibl_2.png)
 
 The renderer still lacks any global illumination, but that's planned for the future releases (most likely for Fyrox 2.0).
 
 ## Render target for cameras
 
-![camera rt](camera_rt.gif)
+![camera rt](/assets/1.0.0-rc.1/camera_rt.gif)
 
 It is now possible to specify render targets for cameras. It could be useful to create virtual in-game cameras that
 show some other areas are in the game. Such render target is used in the editor now for camera preview functionality
@@ -48,14 +48,14 @@ show some other areas are in the game. Such render target is used in the editor 
 
 ## Particle System
 
-![particle system fadeout](ps_fadeout.gif)
+![particle system fadeout](/assets/1.0.0-rc.1/ps_fadeout.gif)
 
 Particle systems now have a built-in ability to fadeout when far away from the camera. It is a very useful optimization
 that allows disabling distant particle system and free GPU resources.
 
 ## Skybox
 
-![skybox](skybox.png)
+![skybox](/assets/1.0.0-rc.1/skybox.png)
 
 Skybox was moved from camera node to scene itself, and sky boxes are now used in IBL as a source of indirect lighting.
 By default, every scene uses skybox as a source of lighting (if there's no reflection probe). This may be undesirable in
@@ -88,7 +88,7 @@ fn main() {
 After that, the list of GPU resource can be observed in a graphics debugger, such as [RenderDoc](https://renderdoc.org/)
 or similar ([NVIDIA Nsight](https://developer.nvidia.com/nsight-systems) or [AMD Radeon GPU Profiler](https://gpuopen.com/rgp/)):
 
-![gpu resources](gpu_resources.png)
+![gpu resources](/assets/1.0.0-rc.1/gpu_resources.png)
 
 Not every resource can have a meaningful name, for example, the engine packs uniform data into a small number
 of buffers and such buffers will be called `UniformBuffer0/1/2/etc`.
@@ -103,7 +103,7 @@ modern GAPIs.
 
 # Type Safety for Handles
 
-![type safety](type_safety.png)
+![type safety](/assets/1.0.0-rc.1/type_safety.png)
 
 For a long time Fyrox supported only "untyped" handles (such as `Handle<Node>` or `Handle<UiNode>`), this 
 approach was bug-prone because it effectively erased all the useful information about the actual node or widget type. 
@@ -121,7 +121,7 @@ Game scene and its nodes have quite a lot of improvements in this release.
 
 ## Flipping for Sprite/Rectangle Nodes
 
-![Flipping for Sprite/Rectangle Nodes](flip_rect.gif)
+![Flipping for Sprite/Rectangle Nodes](/assets/1.0.0-rc.1/flip_rect.gif)
 
 Sprite (3D) and Rectangle (2D) scene nodes now have an ability to flip in both vertical and horizontal directions.
 It was possible to flip these nodes before by setting its scale to negative values for desired axes, but this approach
@@ -132,7 +132,7 @@ sprite/rectangle.
 
 ## Reflection Probe
 
-![Reflection Probe](reflection_probe.png)
+![Reflection Probe](/assets/1.0.0-rc.1/reflection_probe.png)
 
 Reflection probe is a special scene node that "captures" surroundings into a cube texture which is then used as a source
 of ambient lighting (with IBL) and reflections. This scene node is used only in PBR pipeline. Reflection probes can be
@@ -165,7 +165,7 @@ features. One of the most significant features is an ability to move a folder wi
 
 ## Migration
 
-![asset migrations](migration.png)
+![asset migrations](/assets/1.0.0-rc.1/migration.png)
 
 This intermediate release keeps backwards compatibility with assets made in the previous versions of the
 engine, but the upcoming release of stable 1.0 will drop this compatibility. To help with migration, the
@@ -318,7 +318,7 @@ This change didn't affect the public API, and didn't break backward compatibilit
 
 ## Text Runs
 
-![text runs](runs.png)
+![text runs](/assets/1.0.0-rc.1/runs.png)
 
 Text now supports so-called runs which allows you to change the appearance of individual portions of the text. Each run
 can modify font, its size, brush, and shadow properties. It can be used to stylize the text, for example, in some games, 
@@ -329,7 +329,7 @@ last one on the overlapping set has the top priority.
 
 ## Widget Materials
 
-![widget material](widget_material.gif)
+![widget material](/assets/1.0.0-rc.1/widget_material.gif)
 
 For a long time, UI widgets didn't have an ability to assign custom materials and shaders, in this release this limitation
 is finally dropped. UI shaders have a built-in property group (`fyrox_widgetData`) that contains all useful properties that can be used
@@ -355,7 +355,7 @@ As usual, any additional data can be passed via custom property group and a cust
 
 ## Improved Docking
 
-![docking](docking.gif)
+![docking](/assets/1.0.0-rc.1/docking.gif)
 
 Docking manager now supports any number of windows in a tile, this means that you can now put multiple windows in a
 tile and switch between them. It is also possible to rearrange them by dragging.
@@ -371,7 +371,7 @@ better in terms of user experience, because it leaves the editor responsive.
 
 ## Ability to Reset Editor Layout
 
-![reset layout](reset_layout.gif)
+![reset layout](/assets/1.0.0-rc.1/reset_layout.gif)
 
 It is now possible to reset the editor layout to its defaults. It wasn't possible before, and in some situations it
 leads to corrupted layout that isn't usable at all. The only way to reset the editor's layout before was to delete 
@@ -379,7 +379,7 @@ the editor settings file. Now all you need is to press `View -> Reset Layout`.
 
 ## Copy/Paste for Inspector
 
-![copy/paste inspector](copy_paste.gif)
+![copy/paste inspector](/assets/1.0.0-rc.1/copy_paste.gif)
 
 It is now possible to copy and paste the values of object properties in the inspector. This feature was missing for a
 long time and added a lot of headache when there was a need to copy complex values from one object to another. In this
@@ -388,7 +388,7 @@ of properties.
 
 ## Asset Browser
 
-![asset browser](asset_browser.png)
+![asset browser](/assets/1.0.0-rc.1/asset_browser.png)
 
 The asset browser got lots of improvements in this release. Editing of the assets is now done via the same inspector as 
 for game objects. The inspector shows either import options (for foreign resources, such as texture in the picture
@@ -397,12 +397,12 @@ create and edit custom resources in the editor. Such resource can contain pretty
 
 The asset browser now gives visual indication whether it is possible to move a resource or not while dragging: 
 
-![dragging](am_dragging.gif)
+![dragging](/assets/1.0.0-rc.1/am_dragging.gif)
 
 Asset preview generation is now multithreaded and works a lot faster than before, it is also a visual indication that
 shows that the preview is being generated:
 
-![preview gen](preview_gen.gif)
+![preview gen](/assets/1.0.0-rc.1/preview_gen.gif)
 
 ## Asset Selector
 
@@ -410,14 +410,14 @@ It is now possible to select assets via the new asset selector tool. Previously,
 dragging it from the asset browser and dropping at a respective field in the inspector. This was quite confusing, 
 and now it is much more convenient:
 
-![asset selector](asset_selector.gif)
+![asset selector](/assets/1.0.0-rc.1/asset_selector.gif)
 
 This selector has searching functionality and loads only the assets that are currently in the view, so there's no 
 lagging during the search.
 
 ## 2D Grid
 
-![2d grid](2d_grid.png)
+![2d grid](/assets/1.0.0-rc.1/2d_grid.png)
 
 The editor now shows grid in 2D mode. The grid's cell size can be configured in the editor settings.
 
