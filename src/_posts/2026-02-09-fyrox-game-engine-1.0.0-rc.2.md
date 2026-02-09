@@ -43,20 +43,26 @@ applying `?` operator.
 #[type_uuid(id = "bf0f9804-56cb-4a2e-beba-93d75371a568")]
 #[visit(optional)]
 struct MyScript {
-    handle: Handle<Node>,
+    rigid_body: Handle<RigidBody>,
+    light: Handle<PointLight>,
 }
 
 impl ScriptTrait for MyScript {
     fn on_update(&mut self, context: &mut ScriptContext) -> GameResult {
-        let node = context.scene.graph.try_get(context.handle)?;
+        let graph = &context.scene.graph;
+        let node = graph.try_get(context.handle)?;
         println!("{}", node.name());
+        let rigid_body = graph.try_get(self.rigid_body)?;
+        let light = graph.try_get(self.light)?;
+        // Do something useful.
         Ok(())
     }
 }
 ```
 
 When an error occurs in any of the methods, the engine simply prints it to the log and continues execution as usual.
-This is the key difference between errors and standard panic mechanism.
+This is the key difference between errors and standard panic mechanism. Error handling via `?` operator flattens the 
+code and makes the code less verbose and much easier to read. 
 
 The `GameError` type can hold errors of pretty much any kind, so any error that implements `std::error::Error` trait
 can be returned.
@@ -91,7 +97,7 @@ error originates from.
 The engine now also allows you to handle all errors that may occur during script or plugin code execution. Each plugin
 has the `Plugin::on_game_error` method for that:
 
-```rust,no_run
+```rust
 #[derive(Visit, Clone, Reflect, Debug)]
 struct MyGame;
 
@@ -310,7 +316,8 @@ is separate threads.
 ![bb code](/assets/1.0.0-rc.2/bb_code.png)
 
 Fyrox now supports markup BBCode markup language for `Text` and `TextBox` widgets. This is a very simple approch that
-allows you to stylize the text with little to no effort.
+allows you to stylize the text with little to no effort. The main use case for this markup is to create stylized text 
+that can be used for descriptions, where specific parts of the text need to be highlighted.  
 
 The available tags are:
 
@@ -361,7 +368,8 @@ be written in an editor with syntax highlighting and more options.
 # What's Next?
 
 The next major goal for the project is to release Fyrox 1.0, which is planned for the 7th birthday of
-the engine which is 19th of March 2026.
+the engine which is 19th of March 2026. The time before the first stable release will be spent on the final 
+stabilization, book and docs improvements.
 
 # Support
 
