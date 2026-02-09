@@ -95,7 +95,7 @@
 
         <v-row>
             <v-col align="center">
-                <CpCode command="cargo install fyrox-project-manager --version=1.0.0-rc.1"> </CpCode>
+                <CpCode command="cargo install fyrox-project-manager --version={{version}}"> </CpCode>
             </v-col>
         </v-row>
 
