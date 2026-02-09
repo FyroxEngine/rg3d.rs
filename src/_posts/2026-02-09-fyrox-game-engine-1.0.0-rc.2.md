@@ -409,6 +409,7 @@ The list is split into four sections for ease of reading and finding particular 
 - Deduplicate fs events to prevent duplication of fs tree items
 - Correctly filter out editor nodes when generating a lightmap
 - Update vertex buffer if its layout has changed
+- Clip keyboard focus rectangle by widget's clip bounds
 
 ## Added
 
@@ -567,6 +568,9 @@ The list is split into four sections for ease of reading and finding particular 
 - Correctly kill child processes when starting a new export run
 - Updated MSRV
 - Ability to disable optimizations when exporting the project
+- Show full project path in the project manager to reduce confusion
+- Use home dir as default location for new projects
+- Adjusted styles for "delete project" message box in the project manager
 
 ## Removed
 
