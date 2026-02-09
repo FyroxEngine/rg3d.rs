@@ -127,10 +127,10 @@ export default {
         var instructions = "None";
         var link = "";
         var icon = "";
-        var version = "1.0.0-rc.1";
-        var windows = "https://fyrox.rs/assets/releases/1.0.0-rc.1/fyrox-project-manager-win-x86_64.zip";
-        var mac = "https://fyrox.rs/assets/releases/1.0.0-rc.1/fyrox-project-manager-macos-x86_64.zip";
-        var linux = "https://fyrox.rs/assets/releases/1.0.0-rc.1/fyrox-project-manager-linux-x86_64.zip";
+        var version = "1.0.0-rc.2";
+        var windows = "https://fyrox.rs/assets/releases/1.0.0-rc.2/fyrox-project-manager-win-x86_64.zip";
+        var mac = "https://fyrox.rs/assets/releases/1.0.0-rc.2/fyrox-project-manager-macos-x86_64.zip";
+        var linux = "https://fyrox.rs/assets/releases/1.0.0-rc.2/fyrox-project-manager-linux-x86_64.zip";
         var additionalCommand = "";
 
         if (navigator.userAgent.includes("win") != -1)  {
