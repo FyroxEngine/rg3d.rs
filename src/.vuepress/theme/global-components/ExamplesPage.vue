@@ -75,6 +75,12 @@ export default {
                     description: "This project is a web-demo for RPG tutorial from the book."
                 },
                 {
+                    title: "FPS Tutorial",
+                    img: "/assets/demo/fps/screenshot.jpg",
+                    link: "/assets/demo/fps/index.html",
+                    description: "This project is a web-demo for FPS tutorial from the book."
+                },
+                {
                     title: "Fish Folly",
                     img: "/assets/demo/fish_folly/screenshot.jpg",
                     link: "/assets/demo/fish_folly/index.html",
