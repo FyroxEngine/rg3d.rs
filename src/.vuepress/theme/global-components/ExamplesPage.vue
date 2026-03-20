@@ -69,6 +69,12 @@ export default {
                     description: "This project is a showcase for the user interface system of the engine."
                 },
                 {
+                    title: "RPG Tutorial",
+                    img: "/assets/demo/rpg/screenshot.jpg",
+                    link: "/assets/demo/rpg/index.html",
+                    description: "This project is a web-demo for RPG tutorial from the book."
+                },
+                {
                     title: "Fish Folly",
                     img: "/assets/demo/fish_folly/screenshot.jpg",
                     link: "/assets/demo/fish_folly/index.html",
