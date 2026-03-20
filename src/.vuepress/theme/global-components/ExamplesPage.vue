@@ -46,7 +46,7 @@ export default {
                 },
                 {
                     title: "Blend shapes",
-                    img: "/assets/examples/blendshape.png",
+                    img: "/assets/demo/blendshape/screenshot.png",
                     link: "/assets/demo/blendshape/index.html",
                     description: "This project shows how to use blend shapes to create facial expressions for your game characters. Use the set of sliders to control each blend shape's weight."
                 },
