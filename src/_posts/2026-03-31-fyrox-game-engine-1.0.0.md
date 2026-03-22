@@ -163,7 +163,8 @@ by adding confirmation dialog when closing the project manager.
 
 ![text box corner radius](/assets/1.0.0/tb_corner_radius.png)
 
-Text box now has a configurable corner radius property:
+Text box now has a configurable corner radius property. This is small but important change for consistent look 
+of the editor.
 
 # Animation Editor
 
@@ -173,6 +174,23 @@ It is now possible to capture the state of all animated properties in the animat
 creating an animation that should capture your actions made in the editor. To do that, make a change to a scene node's
 property that is currently being animated and click on the green key button. Then move the time cursor and repeat these
 actions again. After that you can preview the result by clicking on the button with eye icon.
+
+![animation editor background curves](/assets/1.0.0/anim_editor_background_curves.png)
+
+It is also possible now to disable drawing of background curves in the animation editor: 
+
+![animation editor background curves](/assets/1.0.0/anim_editor_background_curves.gif)
+
+Background curves are used to visualize values of other animated parameters, but showing them all at once in some cases
+creates quite noticeable visual clutter and now it can be removed in a single click. 
+
+# ABSM Editor 
+
+![absm](/assets/1.0.0/absm.png)
+
+Animation blending state machine editor was improved as well, it is not only the visual style improvements. Adding a 
+new animation or renaming one is now performed via new input box control. This is much more intuitive than the old 
+approach.
 
 # Book
 
