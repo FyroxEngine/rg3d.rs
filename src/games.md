@@ -9,6 +9,13 @@ A DeadSpace-like horror game. The action takes place on a spaceship that stays r
 
 <YtVideo url="https://www.youtube.com/embed/DgQXyCw3in4" />
 
+## [Fish Folly](https://github.com/mrDIMAS/FishFolly)
+
+![Fish Folly](https://raw.githubusercontent.com/mrDIMAS/FishFolly/refs/heads/main/pics/screenshot.png)
+ 
+A FallGuys-like 3D platformer based on Fyrox Game Engine. 
+See [the blog post](https://fyrox.rs/blog/post/how-i-made-a-game-in-fyrox/) for this game.
+
 ## [rusty-shooter](https://github.com/mrDIMAS/rusty-shooter)
 
 Nothing beats the classics! A Quake3-like arena shooter, it's a tech demo for the engine.
