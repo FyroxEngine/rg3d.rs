@@ -22,9 +22,12 @@ game engine written in Rust, it helps you to create 2D and 3D games with low eff
 Unity, but in Rust. This release is huge compared to the last one (0.36). Make sure to check release notes for 
 release-candidate versions as well as the release notes on this page.
 
+This release took a lot of effort, a lot of polishing and attention to details. Yet, the development team of the engine 
+is quite small with little to no funding, so it is impossible to catch all the bugs and polish all the "rough" parts.
 If you find a bug, confusing or incomplete documentation,
 please [file an issue](https://github.com/FyroxEngine/Fyrox/issues)
-or propose a solution by [creating a pull request](https://github.com/FyroxEngine/Fyrox/pulls).
+or propose a solution by [creating a pull request](https://github.com/FyroxEngine/Fyrox/pulls). Your feedback is very valuable to improve the engine, make
+it more stable and easy to use.
 
 # Release-Candidate Release Notes
 
