@@ -1,23 +1,21 @@
 ---
 title: "Fyrox Game Engine 1.0.0"
-date: "2026-03-31"
-description: "Fyrox 1.0.0 is the first stable release of the engine"
+date: "2026-03-24"
+description: "Fyrox 1.0.0 is the first stable release of the engine."
 categories:
   - General
 meta:
   - property: og:title
     content: Fyrox 1.0.0
   - property: og:description
-    content: Fyrox 1.0.0 is the first stable release of the engine
+    content: Fyrox 1.0.0 is the first stable release of the engine.
   - property: og:type
     content: article
   - property: og:url
     content: https://fyrox.rs/blog/post/fyrox-game-engine-1.0.0/
   - property: og:image
-    content: https://fyrox.rs/assets/1.0.0/light_map.png
+    content: https://fyrox.rs/assets/1.0.0/text_trim.png
 ---
-
-** WORK IN PROGRESS **
 
 I'm happy to announce that after 7 years in development the first stable Fyrox 1.0.0 was released! Fyrox is a modern
 game engine written in Rust, it helps you to create 2D and 3D games with low effort using native editor; it is like
